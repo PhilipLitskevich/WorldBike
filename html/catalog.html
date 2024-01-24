@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Каталог</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://api-maps.yandex.ru/v3/?apikey=fea225af-55b9-4955-bb23-c3187c0c1a7e&lang=en_US"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="#" data-popup="#popup" class="header__logo"><img src="img/logo.svg" alt="logo"></a>
+				<div class="header__menu menu">
+					<nav class="menu__body catalog-menu" data-da=".more-menu, 767.98, 1">
+						<ul class="catalog-menu__list menu-spoller" data-spollers="767.98" data-one-spoller>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Trade In</a>
+							</li>
+							<li class="catalog-menu__item menu-spoller__item">
+								<a href="#" class="catalog-menu__link">Велосипеды</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_bikes">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Горные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велосипеды для триатлона</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Городские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Двухподвесные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Шоссейные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Электровелосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Гравийные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Женские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Трековые велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Детские велосипеды</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Запчасти</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_things">
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Группы оборудования</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Рамы</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Вилки</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Запчасти для электронных&#160;групп</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Каретки</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Камеры</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Кассеты</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Колёса</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Манетки/Шифтеры</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Педали</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Переключатели скоростей</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Покрышки</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Сёдла и штыри</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Системы шатунов</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Тормоза</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Цепи</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Экипировка</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_equipment">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велокуртки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велошлемы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велотрусы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велоперчатки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Термобелье</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Очки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велообувь</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Аксессуары</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Аксессуары</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_accessories">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велокомпьютеры</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Инструменты</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Вилки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велочехлы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Крылья</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Насосы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Фляги, держатели</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Велостанки</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_switch">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Аксессуары для&#160;велостанков</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<div class="menu__actions actions-header">
+						<div class="actions-header__search search-header">
+							<button class="search-header__button" type="button">
+								<svg class="search-header__icon actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-search"></use>
+								</svg>
+							</button>
+							<form class="search-header__form" action="">
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="search-header__input input">
+								<button class="search-header__form-button" type="button">
+									<svg class="search-header__icon actions-header__icon">
+										<use xlink:href="img/icons/icons.svg#svg-search"></use>
+									</svg>
+								</button>
+							</form>
+						</div>
+						<div class="actions-header__user">
+							<a href="#" class="actions-header__link">
+								<svg class="actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-user"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="actions-header__favorites">
+							<a href="#" class="actions-header__link">
+								<svg class="actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="actions-header__cart">
+							<a href="#" class="actions-header__link">
+								<svg class="actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<button class="menu__icon icon-menu" type="button"><span></span></button>
+				</div>
+			</div>
+		</header>
+		<nav class="menu__body more-menu">
+			<button class="more-menu__close-btn icon-menu" type="button">
+				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none" stroke="#B3B3B3">
+					<line x1="0.857497" y1="0.857865" x2="23.4849" y2="23.4853" stroke-width="2" />
+					<line x1="23.3341" y1="0.707107" x2="0.706641" y2="23.3345" stroke-width="2" />
+				</svg>
+			</button>
+			<h3 class="more-menu__title">Доп. Информация</h3>
+			<ul class="more-menu__list">
+				<li class="more-menu__item"><a href="#" class="more-menu__link">О нас</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Веломастерская</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Хранение</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Гарантии</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Пользовательское соглашение</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Доставка и оплата</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Блог</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Контакты</a></li>
+			</ul>
+			<div class="more-menu__logo"></div>
+		</nav>
+		<main class="page">
+			<div class="page__container">
+				<div class="page__element"><img src="img/bydesign.jpg" alt=""></div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer-banner">
+				<div class="footer__container">
+					<div class="footer__form-section">
+						<h2 class="footer__form-title title">Подпишитесь на наши новости</h2>
+						<form action="#" class="footer__form footer-form">
+							<div class="footer-form__inner">
+								<input class="footer-form__input light input" autocomplete="off" type="email" name="form[]" data-error="Ошибка" placeholder="E-mail" required>
+								<button class="footer-form__button button" type="submit" required>Подписаться</button>
+							</div>
+							<div class="checkbox light">
+								<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+								<label for="c_1" class="checkbox__label"><span class="checkbox__text">Согласен(на) на обработку персональных
+										данных </span></label>
+							</div>
+						</form>
+						<div class="footer__form-section-bg"></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__container  footer__container_main">
+				<div class="footer__main main-footer">
+					<div class="main-footer__about footer-about">
+						<a href="#" class="footer-about__logo"><img src="img/logo.svg" alt="logo"></a>
+						<div class="footer-about__text">
+							<p>Компания World-bikes специализируется на продаже товаров для велосипедного спорта.</p>
+						</div>
+					</div>
+					<div class="main-footer__navigations navigations-footer" data-spollers="479.98,max">
+						<nav class="navigations-footer__body navigations-footer__body_catalog">
+							<button class="navigations-footer__title footer-title" data-spoller>
+								<span>Каталог</span>
+								<svg class="navigations-footer__spoiler-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<ul class="navigations-footer__list">
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Trade-in</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Велосипеды</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Экипировка</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Запчасти</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Велостанки</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Аксессуары</a>
+								</li>
+							</ul>
+						</nav>
+
+						<nav class="navigations-footer__body navigations-footer__body_for-clients">
+							<button class="navigations-footer__title footer-title" data-spoller>
+								<span>Для клиента</span>
+								<svg class="navigations-footer__spoiler-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<ul class="navigations-footer__list">
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">О нас</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Доставка и
+										оплата</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Блог</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Контакты</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Веломастерская</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Хранение</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Гарантии</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="navigations-footer__contacts footer-contacts" data-da=".footer__container_main, 767.98, 1">
+							<h3 class="navigations-footer__contacts-title footer-title">Контакты</h3>
+							<ul class="footer-contacts__list">
+								<li class="footer-contacts__item">
+									<svg class="footer-contacts__icon">
+										<use xlink:href="img/icons/icons.svg#svg-phone"></use>
+									</svg>
+									<div class="footer-contacts__links-group">
+										<a href="tel:+74950557586" class="footer-contacts__link footer-link">+7(495)055-75-86</a>
+										<a href="tel:+79651422299" class="footer-contacts__link footer-link">+7(965)142-22-99</a>
+									</div>
+								</li>
+								<li class="footer-contacts__item">
+									<svg class="footer-contacts__icon">
+										<use xlink:href="img/icons/icons.svg#svg-navigation"></use>
+									</svg>
+									<a href="#" class="footer-contacts__link footer-link">г. Москва, ул. Доватора, 7/8 с1</a>
+								</li>
+								<li class="footer-contacts__item">
+									<svg class="footer-contacts__icon">
+										<use xlink:href="img/icons/icons.svg#svg-mail"></use>
+									</svg>
+									<a href="mailto:order@world-bike.ru" class="footer-contacts__link footer-link">order@world-bike.ru</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bot bot-footer">
+					<p class="bot-footer__text">© 2023 world bike</p>
+					<a href="#" class="bot-footer__link">Пользовательское соглашение</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
