@@ -1,0 +1,29 @@
+.last-articles {
+	background-color: $lightColor;
+	@include adaptiveValue("padding-bottom", 80, 40, $containerWidth, 479.98, 1);
+	@include adaptiveValue("padding-top", 80, 40, $containerWidth, 479.98, 1);
+	overflow: hidden;
+
+	.offers__button-next, .offers__button-prev{
+		// background-color: $light-grey;
+		border-color: $light-grey;
+		svg {
+			fill: $lightColor;
+		}
+
+		&:hover{
+			background-color: $light-grey;
+		}
+	}
+
+	.offers-slider{
+		@media (max-width:$mobile){
+			 padding: 0; 
+		}
+	}
+}
+
+.last-articles__title {
+	margin-bottom: rem(80);
+	@include adaptiveValue("margin-bottom", 80, 32, $containerWidth, 479.98, 1);
+}

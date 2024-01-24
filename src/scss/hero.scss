@@ -1,0 +1,296 @@
+.section__hero {
+	position: relative;
+	padding-top: rem(105);
+	padding-bottom: rem(50);
+	@include adaptiveValue("padding-top", 105, 80, $containerWidth, 479.98, 1);
+	@include adaptiveValue("padding-bottom", 100, 80, $containerWidth, 479.98, 1);
+}
+
+.hero {
+	background-image: url("@img/hero-bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero__container {}
+
+.hero__content-wrapper {
+	position: relative;
+	margin-top: calc((1vh + 1vw) * 8);
+	max-width: rem(645);
+	@include adaptiveValue("max-width", 645, 350, 1800, 767.98, 1);
+	@include adaptiveValue("margin-left", 0, 100, 1500, 767.98, 2);
+
+	@media (max-width:$mobile) {
+		//  margin-top: min(30vh, 40vh);
+	}
+}
+
+.hero-title {
+	color: $lightColor;
+
+	/* desk h1 */
+	font-family: BebasNeueCyrillic;
+	font-size: rem(110);
+	@include adaptiveValue("font-size", 110, 60, 1800, 479.98, 1);
+	@include adaptiveValue("margin-bottom", 48, 24, 1800, 767.98, 1);
+
+	font-style: normal;
+	font-weight: 400;
+	line-height: 123%;
+	/* 135.3px */
+	letter-spacing: 2.2px;
+}
+
+.hero__text {
+	color: $lightColor ;
+
+	/* desk mob subhead */
+	font-family: Inter;
+	font-size: rem(18);
+	@include adaptiveValue("font-size", 18, 14, 1800, 767.98, 2);
+	font-style: normal;
+	font-weight: 300;
+	line-height: 160%;
+	/* 28.8px */
+	letter-spacing: 0.18px;
+}
+
+.hero__link {
+	display: inline-block;
+	margin-top: rem(40);
+	@include adaptiveValue("margin-top", 40, 32, 1800, 767.98, 1);
+	color: $lightColor;
+	background-color: $accentColor;
+	font-size: rem(16);
+	padding: em(16, 16) em(45.5, 16);
+	border-radius: rem(10);
+
+	transition: background-color .3s ease;
+
+	&:hover {
+		background-color: $accentHoverColor;
+	}
+
+	&:active {
+		background-color: $accentActiveColor
+	}
+}
+
+
+
+
+.hero-banner {
+	display: flex;
+	margin-top: rem(-31);
+
+	padding-left: max(rem(20), calc((100% - rem(1280)) / 2));
+	padding-right: max(rem(20), calc((100% - rem(1280)) / 2));
+	min-height: rem(212);
+	@include adaptiveValue("min-height", 276, 220, $containerWidth, 767.98, 2);
+
+	@media (max-width:$mobileSmall) {
+		padding: 0;
+		min-height: rem(180); 
+		margin-top: rem(-1);
+	}
+
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+		width: max(rem(21), calc(((100% - rem(1280)) / 2) + rem(1)));
+		background-color: $mainColor;
+
+		@media (max-width:$mobileSmall) {
+			display: none;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: rem(30);
+		right: 0;
+		bottom: rem(30);
+		width: max(rem(21), calc(((100% - rem(1280)) / 2) + rem(1)));
+		background-color: #2E2E2E;
+
+		@media (max-width:$mobile) {
+			background-color: $banner;
+		}
+
+		@media (max-width:$mobileSmall) {
+			display: none;
+		}
+	}
+}
+
+.hero-banner__slider {
+	flex: 0 0 33.333%;
+	position: relative;
+
+	@media (max-width:$mobile) {
+		flex: 0 0 50%;
+	}
+
+	@media (max-width:$mobileSmall) {
+		flex: 1 0 100%
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		top: rem(0);
+		bottom: rem(0);
+		background-color: inherit;
+		width: rem(49);
+		@include adaptiveValue("width", 49, 21, $containerWidth, 767.98, 2);
+		z-index: 10;
+		pointer-events: none;
+
+		@media (max-width:$mobile) {
+			@include adaptiveValue("width", 49, 21, 767.98, 479.98, 2);
+		}
+		@media (max-width:$mobileSmall){
+			 display: none; 
+		}
+	}
+
+	&::after {
+		right: rem(-1);
+	}
+
+	&::before {
+		left: rem(-1);
+	}
+
+	&_main {
+		border-radius: 0 10px 10px 0;
+		background-color: $mainColor;
+
+		.hero-banner__slide {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			@media (max-width:$mobile) {
+				padding-bottom: rem(30);
+				padding-top: rem(30);
+			}
+			@media (max-width:$mobileSmall){
+				 padding: rem(24) rem(25) rem(33) rem(20);
+				 min-height: 100%;
+			}
+		}
+		@media (max-width:$mobileSmall) {
+			border-radius: 0 0 0 0;
+
+		}
+	}
+
+	&_second {
+		margin: rem(30) 0;
+		background-color: $banner;
+
+		@media (max-width:$mobileSmall) {
+			display: none;
+		}
+	}
+
+	&_third {
+		margin: rem(30) 0;
+		background-color: #2E2E2E;
+
+		@media (max-width:$mobile) {
+			display: none;
+		}
+	}
+}
+
+.hero-banner__slider-paginations.swiper-pagination-bullets.swiper-pagination-horizontal {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	right: 0;
+	bottom: 7.314286%;
+
+	display: flex;
+	justify-content: center;
+	gap: rem(16);
+}
+
+.hero-banner__slider-paginations .swiper-pagination-bullet {
+	width: rem(12);
+	height: rem(12);
+	display: inline-block;
+	border-radius: 50%;
+	background-color: $grey-1;
+	opacity: 1;
+
+	transition: background-color .3s ease-in-out, transform .3s ease-in-out;
+}
+
+.hero-banner__slider-paginations .swiper-pagination-bullet-active {
+	background: $accentColor;
+	transform: scale(1.58);
+}
+
+.hero-banner__slider .hero-banner__wrapper.swiper-wrapper {
+	@media (min-width:$mobileSmall){
+		transition-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+	}
+	// transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+	// transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	// transition-timing-function: cubic-bezier(0.36, 0, 0.66, -0.56);
+	
+
+}
+
+.hero-banner__slide {
+	padding: rem(48);
+	@include adaptiveValue("padding", 48, 20, $containerWidth, 767.98, 2);
+	// min-height: 100%;
+	// font-size: rem(50);
+	color: $lightColor;
+
+	/* desk mob 24 */
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 160%;
+	/* 38.4px */
+	letter-spacing: 0.24px;
+	font-size: rem(24);
+	@include adaptiveValue("font-size", 24, 18, 1500, 767.98, 2);
+
+	@media (max-width:$mobile) {
+		@include adaptiveValue("padding", 48, 20, 767.98, 479.98, 2);
+		@include adaptiveValue("font-size", 24, 18, 767.98, 479.98, 1);
+	}
+	@media (max-width:$mobileSmall){
+		/* desk mob subhead */
+		font-family: Inter;
+		font-style: normal;
+		font-weight: 300;
+		letter-spacing: 0.18px; 
+	}
+}
+
+.hero-banner__link {
+	display: block;
+	margin-top: rem(40);
+	color: $accentColor;
+	@include adaptiveValue("margin-top", 40, 20, 1500, 767.98, 1);
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
