@@ -30,18 +30,38 @@
 .partners {
 	position: relative;
 	overflow: hidden;
+	padding: rem(40) 0;
+	@include adaptiveValue("padding-top", 40, 32.5, $containerWidth, 479.98, 1);
+	@include adaptiveValue("padding-bottom", 40, 32.5, $containerWidth, 479.98, 1);
+	margin: rem(48) 0 rem(66);
+	@include adaptiveValue("margin-top", 48, 0, $containerWidth, 479.98, 1);
+	@include adaptiveValue("margin-bottom", 66, 48, $containerWidth, 479.98, 1);
 }
 .partners__wrapper {
 	display: flex;
+	height: rem(125);
+	@include adaptiveValue("height", 125, 55);
 }
 
 .partners__slide {
 	display: flex;
 	align-items: center;
-	gap: rem(80);
-	padding: 0 rem(40);
+	@include adaptiveValue("gap", 80, 24);
+	@include adaptiveValue("padding-left", 40, 12);
+	@include adaptiveValue("padding-right", 40, 12);
 	flex-shrink: 0;
 	animation: ticker 10s linear infinite;
+}
+
+.partners__item {
+	width: fit-content;
+	height: 100%;
+
+	img {
+		width: auto;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 @keyframes ticker{

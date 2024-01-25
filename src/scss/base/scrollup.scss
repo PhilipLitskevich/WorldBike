@@ -26,10 +26,6 @@
 		fill: $lightColor;
 		transform: rotate(270deg);
 	}
-
-	@media (max-width:$mobileSmall){
-		 display: none; 
-	}
 }
 .scroll-up--active {
 	opacity: 1;

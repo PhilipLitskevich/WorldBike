@@ -86,3 +86,23 @@ scrollUp.addEventListener('click', () => {
 		behavior: 'smooth'
 	})
 })
+
+// Клонирование элементов слайдера партнеров
+
+function partnersInit() {
+	const partnersSections = document.querySelectorAll('.partners');
+	if (partnersSections){
+		partnersSections.forEach((partners) =>{
+			const originalSlide = partners.querySelector('.partners__slide:not(.clone)');
+			// Копируем указанный элемент со всеми его дочерними элементами
+			const cloneSlide = originalSlide.cloneNode(true);
+			// Добавляем класс .clone к склонированному элементу
+			cloneSlide.classList.add('clone');
+			// Вставляем склонированный элемент после оригинального
+			originalSlide.parentNode.insertBefore(cloneSlide, originalSlide.nextSibling);
+		})
+	} else {
+		console.log('Ой, кажется на странице нет секции партнеров')
+	}
+}
+partnersInit();
