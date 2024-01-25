@@ -4635,6 +4635,16 @@
             behavior: "smooth"
         });
     }));
+    function partnersInit() {
+        const partnersSections = document.querySelectorAll(".partners");
+        if (partnersSections) partnersSections.forEach((partners => {
+            const originalSlide = partners.querySelector(".partners__slide:not(.clone)");
+            const cloneSlide = originalSlide.cloneNode(true);
+            cloneSlide.classList.add("clone");
+            originalSlide.parentNode.insertBefore(cloneSlide, originalSlide.nextSibling);
+        })); else console.log("Ой, кажется на странице нет секции партнеров");
+    }
+    partnersInit();
     window["FLS"] = true;
     isWebp();
     addTouchClass();
