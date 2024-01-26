@@ -4377,41 +4377,68 @@
             },
             on: {}
         });
-        if (document.querySelector(".offers-slider")) {
-            new Swiper(".offers-slider", {
-                modules: [ Navigation ],
-                observer: true,
-                observeParents: true,
-                autoHeight: false,
-                speed: 800,
-                freeMode: {
-                    enabled: false
+        if (document.querySelector(".offers-slider")) new Swiper(".offers-slider", {
+            modules: [ Navigation ],
+            observer: true,
+            observeParents: true,
+            autoHeight: false,
+            speed: 800,
+            freeMode: {
+                enabled: false
+            },
+            navigation: {
+                nextEl: ".offers__button-next",
+                prevEl: ".offers__button-prev"
+            },
+            a11y: {
+                prevSlideMessage: "Previous slide",
+                nextSlideMessage: "Next slide"
+            },
+            slidesPerView: 3,
+            spaceBetween: 40,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    centeredSlides: true
                 },
-                navigation: {
-                    nextEl: ".offers__button-next",
-                    prevEl: ".offers__button-prev"
+                650: {
+                    slidesPerView: 2,
+                    centeredSlides: false
                 },
-                a11y: {
-                    prevSlideMessage: "Previous slide",
-                    nextSlideMessage: "Next slide"
-                },
-                slidesPerView: 3,
-                spaceBetween: 40,
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        centeredSlides: true
-                    },
-                    650: {
-                        slidesPerView: 2,
-                        centeredSlides: false
-                    },
-                    991.98: {
-                        slidesPerView: 3
-                    }
+                991.98: {
+                    slidesPerView: 3
                 }
-            });
-        }
+            }
+        });
+        if (document.querySelector(".articles-slider")) new Swiper(".articles-slider", {
+            modules: [ Navigation ],
+            observer: true,
+            observeParents: true,
+            autoHeight: false,
+            speed: 800,
+            freeMode: {
+                enabled: false
+            },
+            spaceBetween: 40,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.3
+                },
+                650: {
+                    slidesPerView: 2.3,
+                    centeredSlides: false
+                },
+                991.98: {
+                    slidesPerView: 3.3
+                },
+                1280: {
+                    slidesPerView: 3.6
+                },
+                1800: {
+                    slidesPerView: 4.6
+                }
+            }
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -4642,6 +4669,7 @@
             const cloneSlide = originalSlide.cloneNode(true);
             cloneSlide.classList.add("clone");
             originalSlide.parentNode.insertBefore(cloneSlide, originalSlide.nextSibling);
+            partners.classList.add("_active");
         })); else console.log("Ой, кажется на странице нет секции партнеров");
     }
     partnersInit();
