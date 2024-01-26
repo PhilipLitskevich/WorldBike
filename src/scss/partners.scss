@@ -36,6 +36,12 @@
 	margin: rem(48) 0 rem(66);
 	@include adaptiveValue("margin-top", 48, 0, $containerWidth, 479.98, 1);
 	@include adaptiveValue("margin-bottom", 66, 48, $containerWidth, 479.98, 1);
+
+	&._active{
+		.partners__slide{
+			animation: ticker 10s linear infinite;
+		}
+	}
 }
 .partners__wrapper {
 	display: flex;
@@ -50,7 +56,7 @@
 	@include adaptiveValue("padding-left", 40, 12);
 	@include adaptiveValue("padding-right", 40, 12);
 	flex-shrink: 0;
-	animation: ticker 10s linear infinite;
+
 }
 
 .partners__item {

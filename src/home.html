@@ -8,15 +8,709 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			@@include('html/_hero.htm',{})
+			<!-- Hero Section-->
+			<section class="section__hero hero" data-fullscreen>
+				<div class="hero__container">
+					<div class="hero__content-wrapper">
+						<h1 class="hero-title">Электро велосипеды</h1>
+						<div class="hero__text">
+							<p>
+								Cento10 Hybrid — это гоночный велосипед с помогающим педалированию электроприводом, который устанавливает новый,
+								очень высокий стандарт для данной категории
+							</p>
+						</div>
+						<a href="#" class="hero__link">Подробнее</a>
+					</div>
+					<div class="hero-banner__slider-paginations"></div>
+				</div>
+			</section>
+			<div class="hero__banner-wrapper hero-banner">
+				<!-- Slider 1 -->
+				<div class="hero-banner__slider hero-banner__slider_main swiper">
+					<div class="hero-banner__wrapper swiper-wrapper">
+						<!-- Slide 1 -->
+						<div class="hero-banner__slide swiper-slide">
+							<div class="hero-banner__text">
+								<p>Экстремальное вождение на горном велосипеде</p>
+							</div>
+							<a href="#" class="hero-banner__link">Подробнее</a>
+						</div>
+			
+						<!-- Slide 2 -->
+						<div class="hero-banner__slide swiper-slide">
+							<div class="hero-banner__text">
+								<p>Велосипеды для профессионалов</p>
+							</div>
+							<a href="#" class="hero-banner__link">Подробнее</a>
+						</div>
+			
+						<!-- Slide 2 -->
+						<div class="hero-banner__slide swiper-slide">
+							<div class="hero-banner__text">
+							<p>Долгая поездка на шоссейном велосипеде</p>
+							</div>
+							<a href="#" class="hero-banner__link">Подробнее</a>
+						</div>
+			
+					</div>
+				</div>
+				<!-- End -->
+				<!-- Slider 2 -->
+				<div class=" hero-banner__slider  hero-banner__slider_second swiper">
+					<div class=" hero-banner__wrapper swiper-wrapper">
+			
+						<!-- Slide 1 -->
+						<div class=" hero-banner__slide swiper-slide">
+							<p>Велосипеды для профессионалов</p>
+						</div>
+			
+						<!-- Slide 2 -->
+						<div class=" hero-banner__slide swiper-slide">
+							<p>Долгая поездка на шоссейном велосипеде</p>
+						</div>
+			
+						<!-- Slide 3 -->
+						<div class=" hero-banner__slide swiper-slide">
+							<p>Экстремальное вождение на горном велосипеде</p>
+						</div>
+					</div>
+			
+				</div>
+				<!-- End -->
+				<!-- Slider 3 -->
+				<div class=" hero-banner__slider  hero-banner__slider_third swiper">
+					<div class=" hero-banner__wrapper swiper-wrapper">
+						<!-- Slide 1 -->
+						<div class=" hero-banner__slide swiper-slide">
+							<p></p>Долгая поездка на шоссейном велосипеде</p>
+						</div>
+						<!-- Slide 2 -->
+						<div class=" hero-banner__slide swiper-slide">
+							<p></p>Экстремальное вождение на горном велосипеде</p>
+						</div>
+						<!-- Slide 3 -->
+						<div class=" hero-banner__slide swiper-slide">
+							<p>Велосипеды для профессионалов</p>
+						</div>
+					</div>
+				</div>
+				<!-- End -->
+			</div>
+			<!-- Hero Section End-->
+
+			<!-- Section Partners -->
 			@@include('html/_partners.htm',{})
-			@@include('html/_new.htm',{})
-			@@include('html/_catalog-s.htm',{})
-			@@include('html/_video.htm',{})
-			@@include('html/_winter.htm',{})
-			@@include('html/_equipments.htm',{})
-			@@include('html/_last-articles.htm',{})
-			@@include('html/_contacts-home.htm',{})
+			<!-- Section Partners End -->
+
+			<!-- Section New-->
+			<section class="section__new new">
+				<div class="new__container">
+					<h2 class="new__title title">Новинки</h2>
+			
+					<!-- Оболочка слайдера -->
+					<div class="swiper offers-slider offers">
+						<!-- Двигающееся часть слайдера -->
+						<div class="offers__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/italy.jpg",
+									"alt":"Италия",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/new-1.jpg",
+										"alt":"Велосипед",
+										"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+										"price":"684 840 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/new-2.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Verve 2 Disc Lithium Grey HYBD 2022",
+										"price":"89 300 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/new-3.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022",
+										"price":"115 000 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"В наличии",
+										"class":"product__status_in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/spain.jpg",
+									"alt":"Испания",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/new-4.jpg",
+										"alt":"Велосипед",
+										"title":"Scott Scale 700 SL 2016",
+										"price":"629 100 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/france.jpg",
+									"alt":"Франция",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/new-5.jpg",
+										"alt":"Велосипед",
+										"title":"Orbea ALMA H30 2021",
+										"price":"153 400 ₽",
+										"oldPrice":"163 211 ₽"
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+			
+						</div>
+			
+						<!-- Если нужна навигация (влево/вправо) -->
+						<button type="button" class="swiper-button-prev offers__button-prev">
+							<svg class="offers__button-image">
+								<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+							</svg>
+						</button>
+						<button type="button" class="swiper-button-next offers__button-next">
+							<svg class="offers__button-image">
+								<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+							</svg>
+						</button>
+						<div class="offers__link-wrapper" data-da=".new__container, 767.98, last">
+							<a href="#" class="offers__link">Показать все</a>
+						</div>
+					</div>
+			
+				</div>
+			</section>
+			<!-- Section New End -->
+
+			<!-- Section Catalog-->
+			<section class="section-home-catalog home-catalog">
+				<div class="home-catalog__container">
+					<h2 class="home-catalog__title title">Каталог</h2>
+					<div class="home-catalog__grid-wrapper ">
+						<a href="#" class="home-catalog__cell-link home-catalog__cell-link_bikes bikes">
+							<h3 class="home-catalog__cell-title bikes__title title">Велосипеды</h3>
+							<div class="bikes__bg"></div>
+						</a>	
+						<a href="#" class="home-catalog__cell-link home-catalog__cell-link_trade-in trade-in">
+							<h3 class="home-catalog__cell-title trade-in__title title">Trade-in</h3>
+							<div class="trade-in__bg"></div>
+						</a>
+						<a href="#" class="home-catalog__cell-link home-catalog__tcell-link_hings things">
+							<h3 class="home-catalog__cell-title things__title title">Запчасти</h3>
+							<div class="things__bg"></div>
+						</a>	
+						<a href="#" class="home-catalog__cell-link home-catalog__accesscell-link_ories accessories">
+							<h3 class="home-catalog__cell-title accessories__title title">Аксессуары</h3>
+							<div class="accessories__bg"></div>
+						</a>	
+						<a href="#" class="home-catalog__cell-link home-catalog__equicell-link_pment catalog-equipment">
+							<h3 class="home-catalog__cell-title catalog-equipment-title title ">Экипировка</h3>
+							<div class="catalog-equipment__bg"></div>
+						</a>	
+						<a href="#" class="home-catalog__cell-link home-catalog__stacell-link_tions stations">
+							<h3 class="home-catalog__cell-title stations__title title">Велостанки</h3>
+							<div class="stations__bg"></div>
+						</a>	
+					</div>
+				</div>
+			</section>
+			<!-- Section Catalog End-->
+
+			<!-- Section Video-->
+			<section class="section__video video-section">
+				<div class="video-section__container">
+					<div class="video-section__content">
+						<h2 class="video-section__title title">Ничего не сможет остановить вас</h2>
+						<div class="video-section__text-block">
+							<p>Наша компания специализируется на продаже товаров для велосипедного спорта — велосипедов, запасных частей, аксессуаров и различного спортивного инвентаря для активного спорта и отдыха.</p>
+							<a href="#" class="video__link-more">Подробнее</a>
+						</div>
+					</div>
+				</div>
+				<div class="video-section__wrapper">
+					<iframe class="video-section__video" src="https://www.youtube.com/embed/F5ZKI-g-_qo?si=SW0So0WPrKuMDMnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+				<div class="video-section__benefit benefits">
+					<div class="benefits__container">
+						<ul class="benefits__list">
+							<li class="benefits__item">
+								<div class="benefits__title-wrapper">
+									<img class="benefits__icon" src="@img/benefits-dimond.svg" alt="dimond">
+									<h3 class="benefits__title">Европейские бренды</h3>
+								</div>
+								<div class="benefits__text">
+									<p>Представляем десятки европейских брендов</p>
+								</div>
+							</li>
+							<li class="benefits__item">
+								<div class="benefits__title-wrapper">
+									<img class="benefits__icon" src="@img/benefits-sticker.svg" alt="sticker">
+									<h3 class="benefits__title">Вечная гарантия</h3>
+								</div>
+								<div class="benefits__text">
+									<p>На некоторые бренды предоставляем пожизненную гарантию</p>
+								</div>
+							</li>
+							<li class="benefits__item">
+								<div class="benefits__title-wrapper">
+									<img class="benefits__icon" src="@img/benefits-settings.svg" alt="settings">
+									<h3 class="benefits__title">Предпродажная настройка</h3>
+								</div>
+								<div class="benefits__text">
+									<p>Специалисты настроят ваш велосипед наилучшим образом</p>
+								</div>
+							</li>
+							<li class="benefits__item">
+								<div class="benefits__title-wrapper">
+									<img class="benefits__icon" src="@img/benefits-24-hours.svg" alt="24-hours">
+									<h3 class="benefits__title">Доставка за 24 часа</h3>
+								</div>
+								<div class="benefits__text">
+									<p>Доставляем товар всеми популярными транспортными компаниями</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- Section Video End-->
+			
+			<!-- Section Winter -->
+			<section class="section__winter winter">
+				<div class="winter__container">
+					<h2 class="winter__title title">Лучшие модели для зимней езды</h2>
+			
+					<!-- Оболочка слайдера -->
+					<div class="swiper offers-slider offers">
+						<!-- Двигающееся часть слайдера -->
+						<div class="offers__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/italy.jpg",
+									"alt":"Италия",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/winter-1.jpg",
+										"alt":"Велосипед",
+										"title":"Bianchi ARCADEX GRX600 40 Синий 2022",
+										"price":"351 890 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/winter-2.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Verve 1 Disc Low Step Era White HYBD 2022",
+										"price":"77 300 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/winter-3.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
+										"price":"78 000 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/winter-3.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
+										"price":"78 000 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/winter-3.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
+										"price":"78 000 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+										"img":"img/bikes/winter-3.jpg",
+										"alt":"Велосипед",
+										"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
+										"price":"78 000 ₽",
+										"oldPrice":""
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+						</div>
+			
+						<!-- Если нужна навигация (влево/вправо) -->
+						<button type="button" class="swiper-button-prev offers__button-prev">
+							<svg class="offers__button-image">
+								<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+							</svg>
+						</button>
+						<button type="button" class="swiper-button-next offers__button-next">
+							<svg class="offers__button-image">
+								<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+							</svg>
+						</button>
+						<div class="offers__link-wrapper" data-da=".winter__container, 767.98, last">
+							<a href="#" class="offers__link">Показать все</a>
+						</div>
+					</div>
+			
+				</div>
+			</section>
+			<!-- Section Winter End-->
+
+			<!-- Section Mountains -->
+
+			<!-- Section Mountains End-->
+			
+			<!-- Section Advantages -->
+			
+			<!-- Section Advantages End-->
+
+			<!-- Section Equipments-->
+			<section class="section__equipments equipments">
+				<div class="equipments__container">
+					<h2 class="equipments__title title">Экипировка</h2>
+			
+					<!-- Оболочка слайдера -->
+					<div class="swiper offers-slider offers">
+						<!-- Двигающееся часть слайдера -->
+						<div class="offers__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+										"url":"",
+										"alt":"",
+										"have":"no-country"
+										},
+									"product":{
+										"img":"img/equipments/1.jpg",
+										"alt":"Шлем",
+										"title":"Rudy Project Airstorm Lime Fluo White Shiny",
+										"price":"7 990 ₽",
+										"oldPrice":"10 627 ₽"
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+										"url":"",
+										"alt":"",
+										"have":"no-country"
+										},
+									"product":{
+										"img":"img/equipments/2.jpg",
+										"alt":"Шлем",
+										"title":"Rudy Project Protera Blue Orange Matt",
+										"price":"9 420 ₽",
+										"oldPrice":"12 529 ₽"
+									},
+									"status":{
+										"text":"Распродано",
+										"class":"product__status_out-in-stock"
+									}
+								})
+							</div>
+							<div class="offers__slide swiper-slide">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"",
+									"alt":"",
+									"have":"no-country"
+									},
+									"product":{
+										"img":"img/equipments/3.jpg",
+										"alt":"Шлем",
+										"title":"Rudy Project Avenger Titanium Lime Matt",
+										"price":"9 200 ₽",
+										"oldPrice":"12 236 ₽"
+									},
+									"status":{
+										"text":"В наличии",
+										"class":"product__status_in-stock"
+									}
+								})
+							</div>
+						</div>
+			
+						<!-- Если нужна навигация (влево/вправо) -->
+						<button type="button" class="swiper-button-prev offers__button-prev">
+							<svg class="offers__button-image">
+								<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+							</svg>
+						</button>
+						<button type="button" class="swiper-button-next offers__button-next">
+							<svg class="offers__button-image">
+								<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+							</svg>
+						</button>
+						<div class="offers__link-wrapper" data-da=".equipments__container, 767.98, last">
+							<a href="#" class="offers__link">Показать все</a>
+						</div>
+					</div>
+			
+				</div>
+			</section>
+			<!-- Section Equipments End-->
+			
+			<!-- Section Last articles -->
+			<section class="section__last-articles last-articles">
+				<div class="last-articles__container">
+					<h2 class="last-articles__title title">Последние обзоры</h2>
+				</div>
+				<!-- Оболочка слайдера -->
+				<div class="swiper last-articles__slider articles-slider">
+					<!-- Двигающееся часть слайдера -->
+					<div class="articles-slider__wrapper swiper-wrapper">
+						<!-- Слайд -->
+						<div class="articles-slider__slide swiper-slide">
+							@@include('html/_card-article.htm',{
+							"url":"1.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"BMC Kaius 01 идеальный гоночный гравийный велосипед",
+							"tag":"#обзор"
+							})
+						</div>
+						<div class="articles-slider__slide swiper-slide">
+							@@include('html/_card-article.htm',{
+							"url":"2.jpg",
+							"date":{
+							"text":"24.01.2023",
+							"attr":"2023-01-24"
+							},
+							"title":"Первые поездки на новой гоночной ракете Wilier Urta SLR 100mm XC MTB, всего 9,8 кг!",
+							"tag":"#обзор"
+							})
+						</div>
+						<div class="articles-slider__slide swiper-slide">
+							@@include('html/_card-article.htm',{
+							"url":"3.jpg",
+							"date":{
+							"text":"23.01.2023",
+							"attr":"2023-01-23"
+							},
+							"title":"Все новые гоночные велосипеды BMC Fourstroke XC оснащены волшебным подседельным штырем Autodrop.",
+							"tag":"#обзор"
+							})
+						</div>
+						<div class="articles-slider__slide swiper-slide">
+							@@include('html/_card-article.htm',{
+							"url":"4.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"BMC Kaius 01 идеальный гоночный гравийный велосипед",
+							"tag":"#обзор"
+							})
+						</div>
+						<div class="articles-slider__slide swiper-slide">
+							@@include('html/_card-article.htm',{
+							"url":"5.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"Pinarello Dogma F развивает карбоновый шоссейный велосипед следующего поколения, сохраняя возможность выбора ободного тормоза!",
+							"tag":"#обзор"
+							})
+						</div>
+					</div>
+				</div>
+			
+				<div class="last-articles__container">
+					<a href="#" class="last-articles__link-more">Показать все</a>
+				</div>
+			</section>
+			<!-- Section Last articles End-->
+			
+			<!-- Section Contacts -->
+			<section class="section-contacts contacts-home">
+				<div class="contacts-home__container">
+					<h2 class="contacts-home__title title">Контакты</h2>
+				</div>
+				<div class="contacts-home__map" id="map"></div>
+				<div class="contacts-home__container">
+					<ul class="contacts-home__list">
+						<li class="contacts-home__item">
+							<svg class="contacts-home__icon">
+								<use xlink:href="img/icons/icons.svg#svg-phone"></use>
+							</svg>
+							<div class="contacts-home__links-group">
+								<a href="tel:+74950557586" class="contacts-home__link link">+7(495)055-75-86</a>
+								<a href="tel:+79651422299" class="contacts-home__link link">+7(965)142-22-99</a>
+							</div>
+						</li>
+						<li class="contacts-home__item">
+							<svg class="contacts-home__icon">
+								<use xlink:href="img/icons/icons.svg#svg-navigation"></use>
+							</svg>
+							<a href="#" class="contacts-home__link link">г. Москва, ул. Доватора, 7/8 с1</a>
+						</li>
+						<li class="contacts-home__item">
+							<svg class="contacts-home__icon">
+								<use xlink:href="img/icons/icons.svg#svg-mail"></use>
+							</svg>
+							<a href="mailto:order@world-bike.ru" class="contacts-home__link link">order@world-bike.ru</a>
+						</li>
+						<li class="contacts-home__item">
+							<svg class="contacts-home__icon">
+								<use xlink:href="img/icons/icons.svg#svg-calendar"></use>
+							</svg>
+							<div class="contacts-home__text-wrapper">
+								<p>Без выходных </p>
+								<p>10:00-20:00</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- Section Contacts End-->
+
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

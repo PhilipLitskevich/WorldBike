@@ -100,6 +100,7 @@ function partnersInit() {
 			cloneSlide.classList.add('clone');
 			// Вставляем склонированный элемент после оригинального
 			originalSlide.parentNode.insertBefore(cloneSlide, originalSlide.nextSibling);
+			partners.classList.add('_active')
 		})
 	} else {
 		console.log('Ой, кажется на странице нет секции партнеров')

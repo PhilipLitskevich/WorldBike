@@ -104,7 +104,7 @@ function initSliders() {
 
 	if (document.querySelector('.offers-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		const offersSlider = new Swiper('.offers-slider', { // Указываем скласс нужного слайдера
+		new Swiper('.offers-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
@@ -144,6 +144,48 @@ function initSliders() {
 				},
 				991.98: {
 					slidesPerView: 3,
+				},
+			},
+		});
+		// end
+	}
+	if (document.querySelector('.articles-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.articles-slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+
+			observer: true,
+			observeParents: true,
+			// allowTouchMove: false,
+			autoHeight: false,
+			speed: 800,
+			// loop: true,
+			// loopAdditionalSlides: 7,
+			freeMode: {
+				enabled: false,
+			},
+			spaceBetween: 40,
+			breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1.3,
+					// centeredSlides: true,
+				},
+				// when window width is >= 480px
+				650: {
+					slidesPerView: 2.3,
+					centeredSlides: false,
+				},
+				991.98: {
+					slidesPerView: 3.3,
+				},
+				1280: {
+					slidesPerView: 3.6,
+				},
+				1800: {
+					slidesPerView: 4.6,
 				},
 			},
 		});
