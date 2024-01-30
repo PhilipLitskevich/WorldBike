@@ -4,7 +4,7 @@
 	right: rem(15);
 	bottom: rem(15);
 	width: rem(81);
-	@include adaptiveValue("width", 81, 40, $containerWidth, 479.98, 1);
+	@include adaptiveValue("width", 81, 50, $containerWidth, 479.98, 1);
 	aspect-ratio: 1 / 1;
 	display: flex;
 	justify-content: center;
@@ -14,7 +14,7 @@
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(50px);
-	z-index: 200;
+	z-index: 1500;
 
 	border-radius: 50%;
 	background-color: rgba(#000,  0);

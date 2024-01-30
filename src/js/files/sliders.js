@@ -91,7 +91,7 @@ function initSliders() {
 				479.98: {
 					slidesPerView: 1,
 					allowTouchMove: false,
-					allowTouchMove: true,
+					// allowTouchMove: true,
 				}
 			},
 			// События
@@ -154,7 +154,7 @@ function initSliders() {
 		new Swiper('.articles-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [],
 
 			observer: true,
 			observeParents: true,
@@ -171,15 +171,17 @@ function initSliders() {
 				// when window width is >= 320px
 				320: {
 					slidesPerView: 1.3,
+					spaceBetween: 8,
 					// centeredSlides: true,
 				},
-				// when window width is >= 480px
 				650: {
 					slidesPerView: 2.3,
 					centeredSlides: false,
+					spaceBetween: 20,
 				},
 				991.98: {
 					slidesPerView: 3.3,
+					spaceBetween: 40,
 				},
 				1280: {
 					slidesPerView: 3.6,
@@ -187,6 +189,83 @@ function initSliders() {
 				1800: {
 					slidesPerView: 4.6,
 				},
+			},
+		});
+		// end
+	}
+	
+	copyChildrenAndAddClasses('.mountains__container_grid', '.mountains__wrapper', ['mountains__slide', 'swiper-slide']);
+
+	if (document.querySelector('.mountains-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.mountains-slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [],
+
+			observer: true,
+			observeParents: true,
+			// allowTouchMove: false,
+			autoHeight: false,
+			speed: 800,
+			// loop: true,
+			// loopAdditionalSlides: 7,
+			freeMode: {
+				enabled: false,
+			},
+			spaceBetween: 40,
+			breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1.05,
+					spaceBetween: 16,
+					// centeredSlides: true,
+				},
+				450: {
+					slidesPerView: 1.15,
+				},
+				635: {
+					slidesPerView: 1.4,
+					spaceBetween: 25,
+				}
+			},
+		});
+		// end
+	}
+	copyChildrenAndAddClasses('.advantages__body', '.advantages-slide__wrapper', ['advantages__slide', 'swiper-slide']);
+
+	if (document.querySelector('.advantages-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.advantages-slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [],
+
+			observer: true,
+			observeParents: true,
+			// allowTouchMove: false,
+			autoHeight: false,
+			speed: 800,
+			// loop: true,
+			// loopAdditionalSlides: 7,
+			freeMode: {
+				enabled: false,
+			},
+			spaceBetween: 40,
+			breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1.2,
+					spaceBetween: 16,
+					// centeredSlides: true,
+				},
+				450: {
+					slidesPerView: 1.35,
+				},
+				635: {
+					slidesPerView: 1.5,
+					spaceBetween: 25,
+				}
 			},
 		});
 		// end
@@ -237,16 +316,6 @@ function createSlider(sliderPar) {
 
 		}
 	});
-	// console.log(mainSlider, 'Первый слайдер')
-	// console.log(secondSliderPar.slider, 'Второй слайдер')
-	// console.log(thirdSliderPar.slider, 'Третий слайдер')
-	// // // let a = undefined;
-	// // if (mainSlider && a) {
-	// // 	// console.log('Работает')
-	// // } else {
-	// // 	console.log('не Работает')
-
-	// }
 
 	sliderPar.init = true;
 	//End
@@ -269,5 +338,20 @@ function createSlider(sliderPar) {
 		// console.log('Существует третий слайдер')
 	}
 }
+
+//Скопировать слайды и добавить в слайдер
+function copyChildrenAndAddClasses(donorClass, acceptorClass, classNames = ['slider-name__slide', 'swiper-slide']) {
+  const donor = document.querySelector(donorClass);
+  const acceptor = document.querySelector(acceptorClass);
+
+  if (donor && acceptor) {
+    [...donor.children].forEach((child) => {
+      const clonedChild = child.cloneNode(true);
+      clonedChild.classList.add(...classNames);
+      acceptor.appendChild(clonedChild);
+    });
+  }
+}
+
 
 

@@ -29,6 +29,23 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
+	@media (max-width:$tablet) {
+		background-position: right 37% center;
+
+		display: flex;
+		align-items: center;
+	}
+
+	&__container {
+		@media (max-width:$tablet) {
+			margin: 0 0 0 rem(50);
+		}
+
+		@media (max-width:$mobileSmall) {
+			margin: 0;
+		}
+	}
+
 	//.hero__content-wrapper
 	&__content-wrapper {
 		position: relative;
@@ -37,8 +54,8 @@
 		@include adaptiveValue("max-width", 645, 350, 1800, 767.98, 1);
 		@include adaptiveValue("margin-left", 0, 100, 1500, 767.98, 2);
 
-		@media (max-width:$mobile) {
-			//  margin-top: min(30vh, 40vh);
+		@media (max-width:$tablet) {
+			margin: 0;
 		}
 	}
 
@@ -46,7 +63,6 @@
 	&__text {
 		color: $lightColor ;
 
-		/* desk mob subhead */
 		font-family: Inter;
 		font-size: rem(18);
 		@include adaptiveValue("font-size", 18, 14, 1800, 767.98, 2);
@@ -241,11 +257,20 @@
 	opacity: 1;
 
 	transition: background-color .3s ease-in-out, transform .3s ease-in-out;
+
+	@media (max-width:$mobile) {
+		width: rem(8);
+		height: rem(8);
+	}
 }
 
 .hero-banner__slider-paginations .swiper-pagination-bullet-active {
 	background: $accentColor;
 	transform: scale(1.58);
+
+	@media (max-width:$mobileSmall) {
+		transform: scale(1.5);
+	}
 }
 
 .hero-banner__slider .hero-banner__wrapper.swiper-wrapper {
@@ -849,6 +874,205 @@
 // Section Mountains
 //========================================================================================================================================================
 
+.mountains {
+	@include adaptiveValue("padding-top", 132, 40);
+	@include adaptiveValue("padding-bottom", 80, 40);
+	background: $bg;
+
+	// .mountains__container
+	&__container {
+		// .mountains__container_grid
+		&_grid,
+		// .mountains__container_description
+		&_description {
+			@media (min-width:$tablet) {
+				padding: 0;
+				margin: 0;
+			}
+		}
+		// .mountains__container_grid
+		&_grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: rem(16);
+
+			@media (min-width:$tablet) {
+				max-width: rem(618);
+			}
+
+			@media (max-width:$mobile) {
+				display: none;
+			}
+		}
+		// .mountains__container_description
+		&_description {
+			max-width: rem(510);
+
+			@media (max-width:$tablet) {
+				box-sizing: border-box;
+				width: 100%;
+				max-width: 100%;
+				display: flex;
+				gap: rem(16);
+			}
+
+			@media (max-width: em(650)) {
+				flex-direction: column;
+			}
+		}
+	}
+
+	// .mountains__title
+	&__title {
+		max-width: rem(370);
+		margin-bottom: rem(80);
+		@include adaptiveValue("margin-bottom", 80, 32);
+	}
+
+	// .mountains__content
+	&__content {
+		display: flex;
+		gap: rem(32);
+		@include adaptiveValue("gap", 50, 20, $containerWidth, 991.98, 2);
+		justify-content: space-between;
+
+		@media (min-width:$tablet) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+			padding: 0 rem(20);
+			margin: 0 auto;
+		}
+
+		@media (max-width:$tablet) {
+			flex-direction: column;
+		}
+	}
+
+	// .mountains__description-img
+	&__description-img {
+		width: 100%;
+		aspect-ratio: 510/257;
+		border-radius: rem(10);
+		background-size: contain;
+		background-position: center top;
+		background-image: url('@img/mountains/content.jpg');
+
+		margin-bottom: rem(29);
+
+		@media (max-width:$tablet) {
+			aspect-ratio: auto;
+			margin-bottom: rem(0);
+			flex-grow: 1;
+			flex-basis: 50%;
+			width: 100%;
+			height: auto;
+			min-height: rem(200);
+			background-size: cover;
+		}
+
+		@media (max-width: em(650)) {
+			margin: 0 rem(-20);
+			width: auto;
+			aspect-ratio: 360/160;
+		}
+	}
+
+	// .mountains__description-inner
+	&__description-inner {
+		@media (max-width:$tablet) {
+			flex-basis: 50%;
+		}
+
+		display: flex;
+		@include adaptiveValue("gap", 40, 32);
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+
+
+	}
+
+	// .mountains__description-text
+	&__description-text {
+		color: $grey-1;
+
+		font-size: rem(16);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%;
+		/* 25.6px */
+
+		p:not(:last-child) {
+			margin-bottom: rem(8);
+		}
+	}
+
+	// .mountains__description-link
+	&__description-link {
+		padding: em(16, 16) em(58, 16);
+		font-size: rem(16);
+		border-radius: rem(10);
+	}
+}
+
+.mountains-card {
+	padding: rem(26) rem(28) rem(32) rem(25);
+
+	background-color: #34312D;
+	border-radius: rem(10);
+
+	color: $lightColor;
+
+	// .mountains-card__header
+	&__header {
+		display: flex;
+		gap: rem(10);
+		align-items: center;
+		margin-bottom: rem(26);
+	}
+
+	// .mountains-card__title
+	&__title {
+		flex-grow: 1;
+		/* desk mob 20 */
+		font-size: rem(20);
+		font-weight: 500;
+		line-height: 160%;
+		/* 32px */
+		letter-spacing: 0.2px;
+	}
+
+	// .mountains-card__icon
+	&__icon {
+		flex-basis: rem(71);
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		width: rem(71);
+		height: rem(71);
+	}
+
+	// .mountains-card__text
+	&__text {
+		/* desk mob text 16 */
+		font-size: rem(16);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%;
+		/* 25.6px */
+	}
+}
+
+.mountains-slider {
+	padding-left: rem(16);
+	padding-right: rem(16);
+
+	@media (min-width:$mobile) {
+		display: none;
+	}
+}
+
 //========================================================================================================================================================
 // Mountains End
 //========================================================================================================================================================
@@ -856,6 +1080,168 @@
 //========================================================================================================================================================
 // Section Advantages
 //========================================================================================================================================================
+
+.section__advantages {
+	@include adaptiveValue("padding-top", 160, 48);
+	@include adaptiveValue("padding-bottom", 160, 58);
+}
+
+.advantages {
+
+	// .advantages__container
+	.advantages__container {}
+
+	// .advantages__title
+	.advantages__title {
+		@include adaptiveValue("margin-bottom", 80, 32);
+	}
+
+	// .advantages__wrapper
+	&__wrapper {
+		display: flex;
+		justify-content: flex-end;
+
+		@media (max-width:$mobile) {
+			display: none;
+		}
+	}
+
+	// .advantages__bg
+	&__bg {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	// .advantages__bg_left
+	&__bg_left {
+		// width: auto;
+		flex-grow: 1;
+		// background-color: #2E2E2E;
+		background-image: url('@img/advantages-bg.jpg');
+
+		border-radius: 0 rem(10) rem(10) 0;
+
+		@media (max-width: em(900)) {
+			display: none;
+		}
+	}
+
+	// .advantages__body
+	&__body {
+		// padding: 0 rem(80);
+
+		@include adaptiveValue("padding-right", 80, 40, 1500, 991.98, 2);
+		@include adaptiveValue("padding-left", 80, 40, 1500, 991.98, 2);
+		width: fit-content;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: rem(40);
+		@include adaptiveValue("gap", 40, 20, 1500, 991.98, 1);
+
+		@media (max-width:$tablet) {
+			padding-right: rem(20);
+			padding-left: rem(20);
+		}
+
+		@media (max-width: em(900)) {
+			width: 100%;
+		}
+	}
+
+	// .advantages__card
+	&__card {
+		max-width: rem(290);
+		border-radius: rem(10);
+		padding: rem(32);
+		background-color: $accentColor;
+		color: $lightColor;
+
+		display: flex;
+		flex-direction: column;
+
+		&:nth-child(2) {
+			background-color: #EB6B16;
+
+			.advantages-card__title {
+				max-width: 80%;
+			}
+		}
+
+		&:nth-child(3) {
+			background-color: #E1610C;
+		}
+
+		&:nth-child(4) {
+			background-color: #D75702;
+
+			.advantages-card__title {
+				max-width: 80%;
+			}
+		}
+
+		@media (max-width: em(900)) {
+			max-width: none;
+		}
+	}
+
+	// .advantages__bg_right
+	&__bg_right {
+		width: max(rem(16), calc((100% - rem(1280)) / 2));
+		border-radius: rem(10) 0 0 rem(10);
+		background-color: $mainColor;
+		background-image: url('@img/advantages-bg_right.jpg');
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+	}
+}
+
+.advantages-card__title {
+	/* desk mob 20 */
+	font-size: rem(20);
+	font-weight: 500;
+	line-height: 160%;
+	/* 32px */
+	letter-spacing: 0.2px;
+	// min-height: rem(64);
+
+	margin-bottom: rem(16);
+}
+
+.advantages-card__text {
+	/* desk  mob 16 light */
+	font-size: rem(16);
+	font-weight: 300;
+	line-height: 160%;
+	/* 25.6px */
+	flex-grow: 1;
+}
+
+.advantages-card__link {
+	display: inline-block;
+	margin-top: rem(24);
+	font-size: rem(16);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 123%;
+	/* 19.68px */
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.advantages-slider {
+	padding: 0 rem(16);
+
+	@media (min-width:$mobile) {
+		display: none;
+	}
+}
 
 //========================================================================================================================================================
 // Advantages End

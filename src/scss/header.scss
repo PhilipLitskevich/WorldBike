@@ -13,23 +13,23 @@ body[style*="padding-right: 17px"] {
 .header {
 	position: absolute;
 	z-index: 1;
-	// position: relative;
-	// overflow-x: hidden;
-	// overflow-y: visible;
 	inset: 0 0 auto 0;
 	@include adaptiveValue("padding-top", 28, 33, $containerWidth, 360, 1);
 	@include adaptiveValue("padding-bottom", 28, 32, $containerWidth, 360, 1);
 
+	// .header__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
 	}
 
+	// .header__menu	
 	&__menu {
 		display: flex;
 		align-items: center;
 	}
 
+	// .header__logo
 	&__logo {
 		@include adaptiveValue("margin-right", 50, 20, $containerWidth, 768, 1);
 
@@ -62,6 +62,7 @@ body[style*="padding-right: 17px"] {
 		width: 100%;
 	}
 
+	// .catalog-menu__list
 	&__list {
 		display: flex;
 		row-gap: rem(8);
@@ -75,6 +76,7 @@ body[style*="padding-right: 17px"] {
 		@include adaptiveValue("column-gap", 32, 10, $containerWidth, 780, 1);
 	}
 
+	//.catalog-menu__item
 	&__item {
 		position: relative;
 
@@ -96,39 +98,10 @@ body[style*="padding-right: 17px"] {
 			padding-right: rem(46);
 
 			width: 100%;
-
-			&::after {
-				content: '';
-				position: absolute;
-				top: rem(0);
-				left: rem(0);
-				right: rem(0);
-
-				background-color: #f8f8f8;
-				border-radius: rem(10);
-				width: 100%;
-				height: rem(61);
-				z-index: -1;
-
-				transition: background-color .3s ease;
-			}
-
-			&._active {
-				.catalog-menu__link {
-					color: #fff;
-				}
-
-				.menu-spoller__button svg {
-					fill: #fff;
-				}
-
-				&::after {
-					background-color: $accentColor;
-				}
-			}
 		}
 	}
 
+	//.catalog-menu__link
 	&__link {
 		text-transform: uppercase;
 		color: #fff;
@@ -158,6 +131,33 @@ body[style*="padding-right: 17px"] {
 				line-height: 160%;
 				/* 32px */
 				letter-spacing: 0.2px;
+			}
+		}
+
+		@media (max-width:$mobile) {
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: rem(-16);
+				right: rem(-46);
+
+				bottom: rem(-16);
+				left: rem(-16);
+				transition: background-colors .3s ease;
+
+				background-color: $bg;
+				border-radius: rem(10);
+				z-index: -1;
+			}
+
+			._active & {
+				color: #fff;
+
+				&::after {
+					background-color: $accentColor;
+				}
 			}
 		}
 	}
@@ -194,6 +194,7 @@ body[style*="padding-right: 17px"] {
 		width: 100%;
 	}
 
+	// .sub-menu__list
 	&__list {
 		position: relative;
 
@@ -236,6 +237,7 @@ body[style*="padding-right: 17px"] {
 			}
 		}
 
+		// .sub-menu__list_bikes
 		&_bikes {
 			@media (min-width:$mobile) {
 				padding-bottom: rem(135);
@@ -254,6 +256,7 @@ body[style*="padding-right: 17px"] {
 			}
 		}
 
+		// .sub-menu__list_things
 		&_things {
 			@media (min-width:$mobile) {
 				padding-bottom: rem(23);
@@ -285,6 +288,7 @@ body[style*="padding-right: 17px"] {
 
 		}
 
+		// .sub-menu__list_equipment
 		&_equipment {
 			@media (min-width:$mobile) {
 				padding-right: rem(96);
@@ -303,6 +307,7 @@ body[style*="padding-right: 17px"] {
 			}
 		}
 
+		// .sub-menu__list_accessories 
 		&_accessories {
 			@media (min-width:$mobile) {
 				row-gap: rem(15.5);
@@ -322,6 +327,7 @@ body[style*="padding-right: 17px"] {
 			}
 		}
 
+		// .sub-menu__list_switch 
 		&_switch {
 			@media (min-width:$mobile) {
 				padding-bottom: rem(116);
@@ -345,6 +351,7 @@ body[style*="padding-right: 17px"] {
 		}
 	}
 
+	// .sub-menu__link
 	&__link {
 		color: $grey-3;
 		font-size: rem(14);
@@ -357,9 +364,8 @@ body[style*="padding-right: 17px"] {
 		@media (max-width:$mobile) {
 			color: $grey-1;
 
-			/* desk mob text 16 */
 			font-family: Inter;
-			font-size: 16px;
+			font-size: rem(16);
 			font-style: normal;
 			font-weight: 400;
 			line-height: 160%;
@@ -393,6 +399,10 @@ body[style*="padding-right: 17px"] {
 	@media (max-width:$mobile) {
 		&._spoller-active {
 			transform: rotate(180deg) translateY(5px);
+		}
+
+		._active & svg {
+			fill: $lightColor;
 		}
 	}
 
@@ -440,11 +450,11 @@ body[style*="padding-right: 17px"] {
 	}
 
 	row-gap: rem(15);
-
+	// .actions-header__link
 	&__link {
 		height: fit-content;
 	}
-
+// .actions-header__icon
 	&__icon {
 		width: rem(24);
 		@include adaptiveValue("width", 24, 19, $containerWidth, 767.98, 2);
@@ -490,14 +500,12 @@ body[style*="padding-right: 17px"] {
 	border: 1px solid #4C4C4C;
 	background: $mainColor;
 	padding: rem(10) rem(50) rem(10) rem(16);
-	// flex-basis: 100%;
-	// flex: 1 0 rem(193);
 	color: #777;
 	font-family: Inter;
 	font-size: rem(14);
 	font-weight: 400;
 
-	::placeholder {
+	&::placeholder {
 		color: #777;
 		font-family: Inter;
 		font-size: rem(14);
@@ -520,15 +528,17 @@ body[style*="padding-right: 17px"] {
 }
 
 .actions-header {
-	&__favorites, &__cart{
+
+	&__favorites,
+	&__cart {
 		position: relative;
 
-		&::after{
-			content:'';
+		&::after {
+			content: '';
 			position: absolute;
 			top: rem(1);
 			right: rem(1);
-			
+
 			width: rem(6);
 			aspect-ratio: 1/1;
 			border-radius: 50%;

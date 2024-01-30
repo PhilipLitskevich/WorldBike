@@ -72,11 +72,21 @@
 			}
 		}
 	}
+	.touch & {
+		border-radius: rem(10) rem(10) 0 0;
 
+		&::after {
+			bottom: rem(-85);
+		}
+
+		.product__btn {
+			bottom: rem(-70);
+			opacity: 1;
+		}
+	}
 	@media (max-width:$mobile) {
 		border-radius: rem(10) rem(10) 0 0;
 
-		// margin-bottom: rem(85);
 		&::after {
 			bottom: rem(-85);
 		}
