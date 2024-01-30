@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240126153520">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240130170649">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,7 +135,7 @@
 									<use xlink:href="img/icons/icons.svg#svg-search"></use>
 								</svg>
 							</button>
-							<form class="search-header__form" action="">
+							<form class="search-header__form" action="#">
 								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="search-header__input input">
 								<button class="search-header__form-button" type="button">
 									<svg class="search-header__icon actions-header__icon">
@@ -198,8 +198,8 @@
 						<h1 class="hero-title">Электро велосипеды</h1>
 						<div class="hero__text">
 							<p>
-								Cento10 Hybrid — это гоночный велосипед с помогающим педалированию электроприводом, который устанавливает новый,
-								очень высокий стандарт для данной категории
+								Cento10 Hybrid — это гоночный велосипед с помогающим педалированию электроприводом, который
+								устанавливает новый, очень высокий стандарт для данной категории
 							</p>
 						</div>
 						<a href="#" class="hero__link">Подробнее</a>
@@ -265,11 +265,11 @@
 					<div class=" hero-banner__wrapper swiper-wrapper">
 						<!-- Slide 1 -->
 						<div class=" hero-banner__slide swiper-slide">
-							<p></p>Долгая поездка на шоссейном велосипеде</p>
+							<p>Долгая поездка на шоссейном велосипеде</p>
 						</div>
 						<!-- Slide 2 -->
 						<div class=" hero-banner__slide swiper-slide">
-							<p></p>Экстремальное вождение на горном велосипеде</p>
+							<p>Экстремальное вождение на горном велосипеде</p>
 						</div>
 						<!-- Slide 3 -->
 						<div class=" hero-banner__slide swiper-slide">
@@ -282,7 +282,8 @@
 			<!-- Hero Section End-->
 
 			<!-- Section Partners -->
-			<section class="section-partners partners">
+			<!-- ВАЖНО картинки должны иметь высоту 125px для корректного отображения и адаптива -->
+			<div class="partners">
 				<div class="partners__wrapper">
 					<div class="partners__slide">
 						<div class="partners__item">
@@ -308,7 +309,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 			<!-- Section Partners End -->
 
 			<!-- Section New-->
@@ -333,6 +334,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -365,6 +372,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -397,6 +410,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/new-3.webp" type="image/webp"><img src="img/bikes/new-3.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -429,6 +448,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/new-4.webp" type="image/webp"><img src="img/bikes/new-4.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -461,6 +486,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/new-5.webp" type="image/webp"><img src="img/bikes/new-5.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -544,13 +575,14 @@
 					<div class="video-section__content">
 						<h2 class="video-section__title title">Ничего не сможет остановить вас</h2>
 						<div class="video-section__text-block">
-							<p>Наша компания специализируется на продаже товаров для велосипедного спорта — велосипедов, запасных частей, аксессуаров и различного спортивного инвентаря для активного спорта и отдыха.</p>
+							<p>Наша компания специализируется на продаже товаров для велосипедного спорта — велосипедов, запасных
+								частей, аксессуаров и различного спортивного инвентаря для активного спорта и отдыха.</p>
 							<a href="#" class="video__link-more">Подробнее</a>
 						</div>
 					</div>
 				</div>
 				<div class="video-section__wrapper">
-					<iframe class="video-section__video" src="https://www.youtube.com/embed/F5ZKI-g-_qo?si=SW0So0WPrKuMDMnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<iframe class="video-section__video" src="https://www.youtube.com/embed/F5ZKI-g-_qo?si=SW0So0WPrKuMDMnA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				</div>
 				<div class="video-section__benefit benefits">
 					<div class="benefits__container">
@@ -619,6 +651,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -651,6 +689,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/winter-2.webp" type="image/webp"><img src="img/bikes/winter-2.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -683,6 +727,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/winter-3.webp" type="image/webp"><img src="img/bikes/winter-3.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -715,6 +765,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/winter-3.webp" type="image/webp"><img src="img/bikes/winter-3.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -747,6 +803,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/winter-3.webp" type="image/webp"><img src="img/bikes/winter-3.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -779,6 +841,12 @@
 											<div class="image-switch__item">
 												<div class="image-switch__img"><picture><source srcset="img/bikes/winter-3.webp" type="image/webp"><img src="img/bikes/winter-3.jpg" alt="Велосипед"></picture></div>
 											</div>
+
+											<!-- Есть возможность добавлять несколько картинок -->
+											<!-- <div class="image-switch__item">
+				<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Велосипед"></picture></div>
+			</div> -->
+
 										</div>
 										<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 									</a>
@@ -823,9 +891,125 @@
 
 			<!-- Section Mountains -->
 
+			<section class="section-mountains mountains">
+
+
+				<div class="mountains__container">
+					<h2 class="mountains__title title">Горные велосипеды</h2>
+				</div>
+				<div class="mountains__content">
+					<div class="mountains__container mountains__container_grid">
+
+						<div class="mountains__card mountains-card">
+							<header class="mountains-card__header">
+								<h3 class="mountains-card__title">Рама</h3>
+								<img src="img/mountains/bike.svg" alt="Рама" class="mountains-card__icon">
+							</header>
+							<div class="mountains-card__text">
+								<p>Основной компонент велосипеда, который во многом определяет его предназначение, стиль катания,
+									удобство и безопасность</p>
+							</div>
+						</div>
+						<div class="mountains__card mountains-card">
+							<header class="mountains-card__header">
+								<h3 class="mountains-card__title">Бортовой компьютер</h3>
+								<img src="img/mountains/сomputer.svg" alt="Рама" class="mountains-card__icon">
+							</header>
+							<div class="mountains-card__text">
+								<p>Один из важнейших компонентов в устройстве велосипеда, от которого зависит безопасность райдера
+								</p>
+							</div>
+						</div>
+						<div class="mountains__card mountains-card">
+							<header class="mountains-card__header">
+								<h3 class="mountains-card__title">Трансмиссия</h3>
+								<img src="img/mountains/transmission.svg" alt="Рама" class="mountains-card__icon">
+							</header>
+							<div class="mountains-card__text">
+								<p>Компонент, который передает усилия ног на колеса</p>
+							</div>
+						</div>
+						<div class="mountains__card mountains-card">
+							<header class="mountains-card__header">
+								<h3 class="mountains-card__title">Оборудование</h3>
+								<img src="img/mountains/equipment.svg" alt="Рама" class="mountains-card__icon">
+							</header>
+							<div class="mountains-card__text">
+								<p>Наравне с рамой являются основным компонентом велосипеда. Выбор подходящих колёс помогает
+									улучшить
+									скоростные характеристики и комфорт</p>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="mountains__slider mountains-slider swiper">
+						<div class="mountains__wrapper swiper-wrapper">
+						</div>
+					</div>
+
+					<div class="mountains__container mountains__container_description">
+						<div class="mountains__description-img">
+						</div>
+						<div class="mountains__description-inner">
+							<div class="mountains__description-text">
+								<p>Горный велосипед несмотря на свое название часто и активно используются в условиях города, так как
+									обладает рядом характеристик, позволяющих сделать велопрогулку максимально приятной и комфортной</p>
+							</div>
+							<a href="#" class="mountains__description-link button">Каталог</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- Section Mountains End-->
 
 			<!-- Section Advantages -->
+
+			<section class="section__advantages advantages">
+				<div class="advantages__container">
+					<h2 class="advantages__title title">Преимущества</h2>
+				</div>
+				<div class="advantages__wrapper">
+					<div class="advantages__bg advantages__bg_left"></div>
+					<div class="advantages__body">
+						<div class="advantages__card advantages-card">
+							<h3 class="advantages-card__title">БЕСПЛАТНАЯ ДОСТАВКА</h3>
+							<div class="advantages-card__text">
+								<p>Мы пользуемся всеми популярными видами доставки</p>
+							</div>
+							<a href="#" class="advantages-card__link">Подробнее</a>
+						</div>
+						<div class="advantages__card advantages-card">
+							<h3 class="advantages-card__title">ОБМЕН И ВОЗВРАТ</h3>
+							<div class="advantages-card__text">
+								<p>Все товары обеспечены фирменной гарантией фирм-производителей</p>
+							</div>
+							<a href="#" class="advantages-card__link">Подробнее</a>
+						</div>
+						<div class="advantages__card advantages-card">
+							<h3 class="advantages-card__title">ДОП. ОБСЛУЖИВАНИЕ</h3>
+							<div class="advantages-card__text">
+								<p>Мы выполняем ремонт велосипеда любой сложности</p>
+							</div>
+							<a href="#" class="advantages-card__link">Подробнее</a>
+						</div>
+						<div class="advantages__card advantages-card">
+							<h3 class="advantages-card__title">ОНЛАЙН ОПЛАТА</h3>
+							<div class="advantages-card__text">
+								<p>Для удобства вы можете оплатить товар банковской картой через сайт</p>
+							</div>
+							<a href="#" class="advantages-card__link">Подробнее</a>
+						</div>
+					</div>
+					<div class="advantages__bg advantages__bg_right"></div>
+				</div>
+
+				<div class="advantages__slider advantages-slider swiper">
+					<div class="advantages-slide__wrapper swiper-wrapper">
+					</div>
+				</div>
+			</section>
 
 			<!-- Section Advantages End-->
 
@@ -840,12 +1024,9 @@
 						<div class="offers__wrapper swiper-wrapper">
 							<!-- Слайд -->
 							<div class="offers__slide swiper-slide">
-								<!-- добавить класс sm для маленького размера -->
-								<article class="product  no-country">
+
+								<article class="product">
 									<div class="product__status product__status_out-in-stock">Распродано</div>
-									<div class="product__country">
-										<img src="" alt="">
-									</div>
 									<a href="#" class="product__image">
 										<div class="product__switch image-switch">
 											<div class="image-switch__item">
@@ -870,14 +1051,12 @@
 										<span>В 1 клик</span>
 									</button>
 								</article>
+
 							</div>
 							<div class="offers__slide swiper-slide">
-								<!-- добавить класс sm для маленького размера -->
-								<article class="product  no-country">
+
+								<article class="product">
 									<div class="product__status product__status_out-in-stock">Распродано</div>
-									<div class="product__country">
-										<img src="" alt="">
-									</div>
 									<a href="#" class="product__image">
 										<div class="product__switch image-switch">
 											<div class="image-switch__item">
@@ -902,14 +1081,12 @@
 										<span>В 1 клик</span>
 									</button>
 								</article>
+
 							</div>
 							<div class="offers__slide swiper-slide">
-								<!-- добавить класс sm для маленького размера -->
-								<article class="product  no-country">
+
+								<article class="product">
 									<div class="product__status product__status_in-stock">В наличии</div>
-									<div class="product__country">
-										<img src="" alt="">
-									</div>
 									<a href="#" class="product__image">
 										<div class="product__switch image-switch">
 											<div class="image-switch__item">
@@ -934,6 +1111,7 @@
 										<span>В 1 клик</span>
 									</button>
 								</article>
+
 							</div>
 						</div>
 
@@ -1094,7 +1272,15 @@
 			</section>
 			<!-- Section Contacts End-->
 
+			<div class="scroll-up__wrapper">
+
+			</div>
 		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
 		<footer class="footer">
 			<div class="footer-banner">
 				<div class="footer__container">
@@ -1103,7 +1289,7 @@
 						<form action="#" class="footer__form footer-form">
 							<div class="footer-form__inner">
 								<input class="footer-form__input light input" autocomplete="off" type="email" name="form[]" data-error="Ошибка" placeholder="E-mail" required>
-								<button class="footer-form__button button" type="submit" required>Подписаться</button>
+								<button class="footer-form__button button" type="submit">Подписаться</button>
 							</div>
 							<div class="checkbox light">
 								<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
@@ -1215,12 +1401,7 @@
 	</div>
 
 
-	<div class="scroll-up" tabindex="0" aria-label="Наверх" role="button">
-		<svg class="scroll-up__arrow">
-			<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
-		</svg>
-	</div>
-	<script src="js/app.min.js?_v=20240126153520"></script>
+	<script src="js/app.min.js?_v=20240130170649"></script>
 </body>
 
 </html>

@@ -4371,8 +4371,7 @@
                 },
                 479.98: {
                     slidesPerView: 1,
-                    allowTouchMove: false,
-                    allowTouchMove: true
+                    allowTouchMove: false
                 }
             },
             on: {}
@@ -4411,7 +4410,7 @@
             }
         });
         if (document.querySelector(".articles-slider")) new Swiper(".articles-slider", {
-            modules: [ Navigation ],
+            modules: [],
             observer: true,
             observeParents: true,
             autoHeight: false,
@@ -4422,20 +4421,73 @@
             spaceBetween: 40,
             breakpoints: {
                 320: {
-                    slidesPerView: 1.3
+                    slidesPerView: 1.3,
+                    spaceBetween: 8
                 },
                 650: {
                     slidesPerView: 2.3,
-                    centeredSlides: false
+                    centeredSlides: false,
+                    spaceBetween: 20
                 },
                 991.98: {
-                    slidesPerView: 3.3
+                    slidesPerView: 3.3,
+                    spaceBetween: 40
                 },
                 1280: {
                     slidesPerView: 3.6
                 },
                 1800: {
                     slidesPerView: 4.6
+                }
+            }
+        });
+        copyChildrenAndAddClasses(".mountains__container_grid", ".mountains__wrapper", [ "mountains__slide", "swiper-slide" ]);
+        if (document.querySelector(".mountains-slider")) new Swiper(".mountains-slider", {
+            modules: [],
+            observer: true,
+            observeParents: true,
+            autoHeight: false,
+            speed: 800,
+            freeMode: {
+                enabled: false
+            },
+            spaceBetween: 40,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.05,
+                    spaceBetween: 16
+                },
+                450: {
+                    slidesPerView: 1.15
+                },
+                635: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 25
+                }
+            }
+        });
+        copyChildrenAndAddClasses(".advantages__body", ".advantages-slide__wrapper", [ "advantages__slide", "swiper-slide" ]);
+        if (document.querySelector(".advantages-slider")) new Swiper(".advantages-slider", {
+            modules: [],
+            observer: true,
+            observeParents: true,
+            autoHeight: false,
+            speed: 800,
+            freeMode: {
+                enabled: false
+            },
+            spaceBetween: 40,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 16
+                },
+                450: {
+                    slidesPerView: 1.35
+                },
+                635: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 25
                 }
             }
         });
@@ -4468,6 +4520,15 @@
         if (mainSlider && secondSliderPar.init && thirdSliderPar.init) mainSlider.controller.control = [ secondSliderPar.slider, thirdSliderPar.slider ]; else if (mainSlider && secondSliderPar.init) mainSlider.controller.control = [ secondSliderPar.slider ]; else if (mainSlider && thirdSliderPar.init) mainSlider.controller.control = [ thirdSliderPar.slider ];
         if (mainSlider && secondSliderPar.init) secondSliderPar.slider.controller.control = [ mainSlider ];
         if (mainSlider && thirdSliderPar.init) thirdSliderPar.slider.controller.control = [ mainSlider ];
+    }
+    function copyChildrenAndAddClasses(donorClass, acceptorClass, classNames = [ "slider-name__slide", "swiper-slide" ]) {
+        const donor = document.querySelector(donorClass);
+        const acceptor = document.querySelector(acceptorClass);
+        if (donor && acceptor) [ ...donor.children ].forEach((child => {
+            const clonedChild = child.cloneNode(true);
+            clonedChild.classList.add(...classNames);
+            acceptor.appendChild(clonedChild);
+        }));
     }
     let addWindowScrollEvent = false;
     setTimeout((() => {
