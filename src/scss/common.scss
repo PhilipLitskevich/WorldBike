@@ -17,8 +17,10 @@
 .link {
 	transition: color .3s ease;
 
-	&:hover {
-		color: $accentColor;
+	@media (any-hover: hover){
+		&:hover{
+			color: $accentColor;
+		}
 	}
 }
 
@@ -53,7 +55,6 @@
 	}
 
 	@media (min-width:$mobile) {
-
 		&:hover,
 		&:focus-within {
 			border-radius: rem(10) rem(10) 0 0;
@@ -246,8 +247,10 @@
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 
-		&:hover {
-			color: $accentColor;
+		@media (any-hover: hover){
+			&:hover{
+				color: $accentColor;
+			}
 		}
 	}
 }
@@ -296,8 +299,12 @@
 	transition: opacity .3s ease, bottom .2s ease .15s, ;
 }
 
-.product__btn:hover {
-	background-color: $accentHoverColor;
+.product__btn {
+	@media (any-hover: hover){
+		&:hover{
+			background-color: $accentHoverColor;
+		}
+	}
 }
 
 .product__btn:active {
@@ -386,8 +393,11 @@
 	display: block;
 	color: $accentColor;
 
-	&:hover {
-		text-decoration: underline;
+
+	@media (any-hover: hover){
+		&:hover{
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -411,9 +421,12 @@
 		width: 100%;
 	}
 
-	&:hover {
-		a {
-			color: $accentColor;
+
+	@media (any-hover: hover){
+		&:hover{
+			a {
+				color: $accentColor;
+			}
 		}
 	}
 }
@@ -422,9 +435,10 @@
 	display: block;
 	margin-top: auto;
 	transition: color .3s ease;
-
-	&:hover {
-		color: $accentColor;
+	@media (any-hover: hover){
+		&:hover{
+			color: $accentColor;
+		}
 	}
 }
 
@@ -492,9 +506,11 @@
 	&__link {
 		transition: color .3s ease;
 
-		&:hover {
-			color: $accentColor;
-		}
+		@media (any-hover: hover){
+			&:hover{
+				color: $accentColor;
+			}
+		}		
 	}
 
 	// .breadcrambs__current
@@ -559,13 +575,14 @@
 	background-color: $bg;
 	border-radius: rem(10);
 	transition: background-color .3s ease, color .3s ease;
-
-	&:hover {
-		background-color: $accentHoverColor;
+	@media (any-hover: hover){
+		&:hover{
+			background-color: $accentHoverColor;
 		color: $lightColor;
 
 		.spollers-icon {
 			fill: $lightColor;
+		}
 		}
 	}
 

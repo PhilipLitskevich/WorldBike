@@ -32,7 +32,11 @@
 	margin: rem(-10) auto;
 	transition: color .3s ease;
 
-	&:hover {
-		color: $accentColor;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: $accentColor;
+		}
 	}
+	
 }

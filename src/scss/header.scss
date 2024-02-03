@@ -16,10 +16,12 @@ body[style*="padding-right: 17px"] {
 	inset: 0 0 auto 0;
 	@include adaptiveValue("padding-top", 28, 33, $containerWidth, 360, 1);
 	@include adaptiveValue("padding-bottom", 28, 32, $containerWidth, 360, 1);
-	&._absolute{
+
+	&._absolute {
 		position: absolute;
 		background-color: transparent;
 	}
+
 	// .header__container
 	&__container {
 		display: flex;
@@ -51,13 +53,14 @@ body[style*="padding-right: 17px"] {
 
 .catalog-menu {
 	@include adaptiveValue("margin-right", 74, 15, $containerWidth, 780, 1);
+
 	li a {
 		transition: color .3s ease;
 
-		@media (min-width:$mobile){
+		@media (min-width:$mobile) and (any-hover: hover) {
 			&:hover {
 				color: $accentColor;
-			}	  
+			}
 		}
 	}
 
@@ -84,7 +87,7 @@ body[style*="padding-right: 17px"] {
 	&__item {
 		position: relative;
 
-		@media (min-width:$mobile) {
+		@media (min-width:$mobile) and (any-hover: hover) {
 			html:not(.touch) &:hover .sub-menu {
 				display: block;
 			}
@@ -394,7 +397,7 @@ body[style*="padding-right: 17px"] {
 		fill: $mainColor;
 	}
 
-	@media (min-width:$mobile){
+	@media (min-width:$mobile) and (any-hover: hover) {
 		&:hover {
 			svg {
 				fill: $accentColor;
@@ -456,11 +459,13 @@ body[style*="padding-right: 17px"] {
 	}
 
 	row-gap: rem(15);
+
 	// .actions-header__link
 	&__link {
 		height: fit-content;
 	}
-// .actions-header__icon
+
+	// .actions-header__icon
 	&__icon {
 		width: rem(24);
 		@include adaptiveValue("width", 24, 19, $containerWidth, 767.98, 2);
@@ -469,8 +474,10 @@ body[style*="padding-right: 17px"] {
 		stroke: #fff;
 		transition: stroke .3s ease;
 
-		&:hover {
-			stroke: $accentColor;
+		@media (any-hover: hover) {
+			&:hover {
+				stroke: $accentColor;
+			}
 		}
 	}
 }
@@ -527,8 +534,10 @@ body[style*="padding-right: 17px"] {
 	.search-header__icon {
 		stroke: #777;
 
-		&:hover {
-			stroke: $accentColor;
+		@media (any-hover: hover) {
+			&:hover {
+				stroke: $accentColor;
+			}
 		}
 	}
 }
@@ -643,11 +652,11 @@ body[style*="padding-right: 17px"] {
 
 		transition: color .3s ease;
 
-		&:hover {
-			color: $accentColor;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
 		}
-
-		@media (max-width:$mobile) {}
 	}
 
 	&__close-btn {
@@ -662,8 +671,10 @@ body[style*="padding-right: 17px"] {
 		svg {
 			transition: stroke .3s ease;
 
-			&:hover {
-				stroke: $accentColor;
+			@media (any-hover: hover) {
+				&:hover {
+					stroke: $accentColor;
+				}
 			}
 		}
 
@@ -712,12 +723,13 @@ body[style*="padding-right: 17px"] {
 		top: calc(50% - rem(1));
 	}
 
-	&:hover {
-
-		span,
-		&::before,
-		&::after {
-			background-color: $accentColor;
+	@media (any-hover: hover) {
+		&:hover {
+			span,
+			&::before,
+			&::after {
+				background-color: $accentColor;
+			}
 		}
 	}
 

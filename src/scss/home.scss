@@ -86,8 +86,10 @@
 
 		transition: background-color .3s ease;
 
-		&:hover {
-			background-color: $accentHoverColor;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $accentHoverColor;
+			}
 		}
 
 		&:active {
@@ -314,8 +316,10 @@
 	color: $accentColor;
 	@include adaptiveValue("margin-top", 40, 20, 1500, 767.98, 1);
 
-	&:hover {
-		text-decoration: underline;
+	@media (any-hover: hover) {
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -385,8 +389,10 @@
 	background-color: $mainColor;
 	transition: background-color .3s ease-in-out;
 
-	&:hover {
-		background-color: $accentColor;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $accentColor;
+		}
 	}
 }
 
@@ -721,8 +727,10 @@
 	/* 19.68px */
 	transition: color .3s ease;
 
-	&:hover {
-		color: $accentColor;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $accentColor;
+		}
 	}
 }
 
@@ -881,6 +889,7 @@
 
 	// .mountains__container
 	&__container {
+
 		// .mountains__container_grid
 		&_grid,
 		// .mountains__container_description
@@ -890,6 +899,7 @@
 				margin: 0;
 			}
 		}
+
 		// .mountains__container_grid
 		&_grid {
 			display: grid;
@@ -905,6 +915,7 @@
 				display: none;
 			}
 		}
+
 		// .mountains__container_description
 		&_description {
 			max-width: rem(510);
@@ -1233,6 +1244,12 @@
 	&:hover {
 		text-decoration: underline;
 	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 .advantages-slider {
@@ -1303,8 +1320,10 @@
 
 		transition: color .3s ease;
 
-		&:hover {
-			color: $accentColor;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
 		}
 	}
 }
