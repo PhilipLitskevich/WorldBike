@@ -1,3 +1,10 @@
+// Создаем элемент тега script
+var script = document.createElement('script');
+// Устанавливаем атрибуты src и другие параметры скрипта API
+script.src = 'https://api-maps.yandex.ru/v3/?apikey=fea225af-55b9-4955-bb23-c3187c0c1a7e&lang=en_US';
+// Добавляем скрипт в раздел head
+document.head.appendChild(script);
+
 import mapCustomization from '../map-customization.json'
 // "https://api-maps.yandex.ru/v3/?apikey=fea225af-55b9-4955-bb23-c3187c0c1a7e&lang=ru_RU"
 
