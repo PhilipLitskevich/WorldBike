@@ -11,12 +11,15 @@ body[style*="padding-right: 17px"] {
 
 //====================================================================================================
 .header {
-	position: absolute;
+	background-color: $mainColor;
 	z-index: 1;
 	inset: 0 0 auto 0;
 	@include adaptiveValue("padding-top", 28, 33, $containerWidth, 360, 1);
 	@include adaptiveValue("padding-bottom", 28, 32, $containerWidth, 360, 1);
-
+	&._absolute{
+		position: absolute;
+		background-color: transparent;
+	}
 	// .header__container
 	&__container {
 		display: flex;
@@ -48,12 +51,13 @@ body[style*="padding-right: 17px"] {
 
 .catalog-menu {
 	@include adaptiveValue("margin-right", 74, 15, $containerWidth, 780, 1);
-
 	li a {
 		transition: color .3s ease;
 
-		&:hover {
-			color: $accentColor;
+		@media (min-width:$mobile){
+			&:hover {
+				color: $accentColor;
+			}	  
 		}
 	}
 
@@ -390,9 +394,11 @@ body[style*="padding-right: 17px"] {
 		fill: $mainColor;
 	}
 
-	&:hover {
-		svg {
-			fill: $accentColor;
+	@media (min-width:$mobile){
+		&:hover {
+			svg {
+				fill: $accentColor;
+			}
 		}
 	}
 
@@ -550,7 +556,7 @@ body[style*="padding-right: 17px"] {
 .more-menu {
 	overflow: auto;
 	position: fixed;
-	z-index: 160;
+	z-index: 1500;
 	top: 0;
 	right: rem(-448);
 

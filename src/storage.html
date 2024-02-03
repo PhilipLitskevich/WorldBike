@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Хранение велосипеда"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			@@include('html/_page-header.htm',{
+			"image":"storage.jpg",
+			"title":"Хранение велосипеда"
+			})
+
+			<div class="storage">
+				<div class="storage__container">
+					<div class="storage__text">
+						<p>Любишь кататься — люби и велосипед в квартире на зиму парковать или сдавай к нам на хранение и обслуживание. Типичное хранение велосипеда зимой у большенства людей не только занимает простарнство в коридорах на чердаках и балконах, но и изрядно портит велосипед и его агрегаты. Хранение велосипеда в квартире часто превращается в большую проблему. А мы вас ценим дорогие клиенты и предлагаем решить эту проблему.</p>
+					</div>
+
+					<div class="storage__wrapper">
+						<div class="storage__prices">
+							<a href="#" class="storage__price storage__price_main">Хранение велосипеда на 6 месяцев с октября по апрель всего 5 000 ₽</a>
+							<a href="#" class="storage__price">Комплексное техническое обслуживание велосипеда в подарок (вместо 3500 РУБ.)</a>
+						</div>
+						<div class="storage__description">
+							<p>Ваш велосипед будет храниться в теплом и сухом помещение на протяжение всего срока хранения. Перед упаковкой велосипед осматривается и смазывается для консервирования, а при выдачи его вам, проводится комплексное техническое обслуживание.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			@@include('html/_partners.htm',{})
+
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

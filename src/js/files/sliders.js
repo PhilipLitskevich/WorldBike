@@ -8,7 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Pagination, Autoplay, Controller, Navigation } from 'swiper/modules';
+import { Pagination, Autoplay, Controller, Navigation, FreeMode } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -37,16 +37,18 @@ let thirdSliderPar = {
 	selector: '.hero-banner__slider_third',
 	init: false,
 }
+
 const breakpointChecker = function (sliderPar) {
 	if (sliderPar.breakpoint.matches === true) {
 		if (sliderPar.init) {
-			sliderPar.slider.detachEvents();
+			sliderPar.slider.disable();
 			// sliderPar.slider.destroy(true, true);
 			sliderPar.init = false;
 		}
 		return sliderPar;
 	} else if (sliderPar.breakpoint.matches === false) {
 		createSlider(sliderPar);
+		// sliderPar.slider.enable()
 	}
 };
 // Инициализация слайдеров
@@ -54,6 +56,10 @@ function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
 	if (document.querySelector('.hero-banner__slider_main')) { // Указываем скласс нужного слайдера
+
+		shiftChildrenOrder('.hero-banner__slider_main', secondSliderPar.selector, 'hero-banner__text');
+		shiftChildrenOrder(secondSliderPar.selector, thirdSliderPar.selector, 'hero-banner__text')
+
 		// Создаем слайдер
 		mainSlider = new Swiper('.hero-banner__slider_main', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
@@ -75,29 +81,21 @@ function initSliders() {
 				disableOnInteraction: false,
 				pauseOnMouseEnter: true,
 			},
-
 			// Пагинация
 			pagination: {
 				el: '.hero-banner__slider-paginations',
 				clickable: true,
 			},
 			breakpoints: {
-				// when window width is >= 320px
 				320: {
 					slidesPerView: 1.4,
 					allowTouchMove: true,
 				},
-				// when window width is >= 480px
 				479.98: {
 					slidesPerView: 1,
 					allowTouchMove: false,
-					// allowTouchMove: true,
 				}
 			},
-			// События
-			on: {
-
-			}
 		});
 		// end
 	}
@@ -132,7 +130,6 @@ function initSliders() {
 			slidesPerView: 3,
 			spaceBetween: 40,
 			breakpoints: {
-				// when window width is >= 320px
 				320: {
 					slidesPerView: 1,
 					centeredSlides: true,
@@ -158,21 +155,16 @@ function initSliders() {
 
 			observer: true,
 			observeParents: true,
-			// allowTouchMove: false,
 			autoHeight: false,
 			speed: 800,
-			// loop: true,
-			// loopAdditionalSlides: 7,
 			freeMode: {
 				enabled: false,
 			},
 			spaceBetween: 40,
 			breakpoints: {
-				// when window width is >= 320px
 				320: {
 					slidesPerView: 1.3,
 					spaceBetween: 8,
-					// centeredSlides: true,
 				},
 				650: {
 					slidesPerView: 2.3,
@@ -193,33 +185,28 @@ function initSliders() {
 		});
 		// end
 	}
-	
-	copyChildrenAndAddClasses('.mountains__container_grid', '.mountains__wrapper', ['mountains__slide', 'swiper-slide']);
 
+	copyChildrenAndAddClasses('.mountains__container_grid', '.mountains__wrapper', ['mountains__slide', 'swiper-slide']);
 	if (document.querySelector('.mountains-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		new Swiper('.mountains-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [],
-
+			modules: [FreeMode],
 			observer: true,
 			observeParents: true,
-			// allowTouchMove: false,
 			autoHeight: false,
 			speed: 800,
-			// loop: true,
-			// loopAdditionalSlides: 7,
 			freeMode: {
-				enabled: false,
+				enabled: true,
+				sticky: true,
+				momentumVelocityRatio: 0.4,
 			},
 			spaceBetween: 40,
 			breakpoints: {
-				// when window width is >= 320px
 				320: {
 					slidesPerView: 1.05,
 					spaceBetween: 16,
-					// centeredSlides: true,
 				},
 				450: {
 					slidesPerView: 1.15,
@@ -233,31 +220,26 @@ function initSliders() {
 		// end
 	}
 	copyChildrenAndAddClasses('.advantages__body', '.advantages-slide__wrapper', ['advantages__slide', 'swiper-slide']);
-
 	if (document.querySelector('.advantages-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		new Swiper('.advantages-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [],
-
+			modules: [FreeMode],
 			observer: true,
 			observeParents: true,
-			// allowTouchMove: false,
 			autoHeight: false,
 			speed: 800,
-			// loop: true,
-			// loopAdditionalSlides: 7,
 			freeMode: {
-				enabled: false,
+				enabled: true,
+				sticky: true,
+				momentumVelocityRatio: 0.4,
 			},
 			spaceBetween: 40,
 			breakpoints: {
-				// when window width is >= 320px
 				320: {
 					slidesPerView: 1.2,
 					spaceBetween: 16,
-					// centeredSlides: true,
 				},
 				450: {
 					slidesPerView: 1.35,
@@ -271,8 +253,6 @@ function initSliders() {
 		// end
 	}
 }
-
-
 
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
@@ -291,32 +271,21 @@ window.addEventListener("load", function (e) {
 	// kickstart
 	breakpointChecker(secondSliderPar);
 	breakpointChecker(thirdSliderPar);
-	// breakpointChecker(thirdSlider, breakpointThird);
-
 });
 //Begin
 function createSlider(sliderPar) {
 	// Создаем слайдер
 	sliderPar.slider = new Swiper(sliderPar.selector, { // Указываем скласс нужного слайдера
-		// Подключаем модули слайдера
-		// для конкретного случая
 		modules: [Controller],
 		allowTouchMove: false,
-		// observer: true,
-		// observeParents: true,
 		slidesPerView: 1,
 		spaceBetween: 0,
 		autoHeight: true,
-		// speed: 800,
 		loop: true,
 		freeMode: {
 			enabled: false,
 		},
-		on: {
-
-		}
 	});
-
 	sliderPar.init = true;
 	//End
 	if (mainSlider && secondSliderPar.init && thirdSliderPar.init) {
@@ -341,16 +310,42 @@ function createSlider(sliderPar) {
 
 //Скопировать слайды и добавить в слайдер
 function copyChildrenAndAddClasses(donorClass, acceptorClass, classNames = ['slider-name__slide', 'swiper-slide']) {
-  const donor = document.querySelector(donorClass);
-  const acceptor = document.querySelector(acceptorClass);
+	const donor = document.querySelector(donorClass);
+	const acceptor = document.querySelector(acceptorClass);
 
-  if (donor && acceptor) {
-    [...donor.children].forEach((child) => {
-      const clonedChild = child.cloneNode(true);
-      clonedChild.classList.add(...classNames);
-      acceptor.appendChild(clonedChild);
-    });
-  }
+	if (donor && acceptor) {
+		[...donor.children].forEach((child) => {
+			const clonedChild = child.cloneNode(true);
+			clonedChild.classList.add(...classNames);
+			acceptor.appendChild(clonedChild);
+		});
+	}
+}
+
+// Копирование контента слайдов и сдвиг на одну позицию
+function shiftChildrenOrder(sourceSelector, targetSelector, className) {
+	const sourceElement = document.querySelector(sourceSelector);
+	const targetElement = document.querySelector(targetSelector).querySelector('.swiper-wrapper');
+
+	if (sourceElement && targetElement) {
+		const children = [...sourceElement.getElementsByClassName(className)];
+		const clonedChildren = children.map(child => child.cloneNode(true));
+
+		targetElement.textContent = '';
+
+		const firstElement = clonedChildren.shift();
+		clonedChildren.push(firstElement);
+
+		clonedChildren.forEach(child => {
+			if (!child.classList.contains('hero-banner__slide')) {
+				child.classList.add('hero-banner__slide')
+			}
+			if (!child.classList.contains('swiper-slide')) {
+				child.classList.add('swiper-slide')
+			}
+			targetElement.appendChild(child);
+		});
+	}
 }
 
 

@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Каталог"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-				<div class="page__container">
-				<div class="page__element"><img src="@img/bydesign.jpg" alt=""></div>
+@@include('html/_head.htm',{
+"title":"Каталог"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<div class="page-header" style="background-image: url('img/page-header/catalog.jpg');">
+				<div class="page-header__container">
+					<nav class="breadcrambs">
+						<ul class="breadcrambs__list">
+							<li class="breadcrambs__item">
+								<a href="#" class="breadcrambs__link">Главная</a>
+							</li>
+							<li class="breadcrambs__item">
+								<a href="#" class="breadcrambs__link">Велосипеды</a>
+							</li>
+							<li class="breadcrambs__item">
+								<span href="#" class="breadcrambs__current">Горные велосипеды</span>
+							</li>
+						</ul>
+					</nav>
+					<h1 class="page-header__title title">Горные велосипеды</h1>
 				</div>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+			</div>
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
 </html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Контакты"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			@@include('html/_page-header.htm',{
+			"image":"contacts.jpg",
+			"title":"Контакты"
+			})
+
+			<div class="map" id="map"></div>
+
+			<div class="contacts">
+				<div class="contacts__container">
+					<div class="contacts__col">
+						<div class="contacts__field">
+							<h3>Адрес магазина:</h3>
+							<p><a href="#">Россия, Москва, ул. Доватора, дом 7/8 с1</a></p>
+						</div>
+						<div class="contacts__field">
+							<h3>График работы:</h3>
+							<p>Понедельник — Воскресение с 10:00 до 20:00 часа</p>
+							<p>БЕЗ ВЫХОДНЫХ</p>
+						</div>
+						<div class="contacts__field">
+							<h3>Телефоны:</h3>
+							<p><a href="tel:+74950557586">+7 (495) 055-75-86</a></p>
+							<p><a href="tel:+7 9651422299">+7 (965) 142-22-99</a></p>
+						</div>
+						<div class="contacts__field">
+							<h3>E-mail:</h3>
+							<p><a href="mailto:order@world-bike.ru">order@world-bike.ru</a> — заказы</p>
+							<p><a href="mailto:info@world-bike.ru">info@world-bike.ru</a> — информация</p>
+							<p><a href="mailto:opt@world-bike.ru">opt@world-bike.ru</a> — опт</p>
+						</div>
+					</div>
+					<div class="contacts__col">
+						<div class="contacts__field">
+							<h3>Юридическая информация:</h3>
+							<dl class="information">
+								<div class="information__item">
+									<dt class="information__term">Наименование: </dt>
+									<dd class="information__val">ИП НЕТРЕБИН ВЛАДИСЛАВ ВЯЧЕСЛАВОВИЧ</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">ИНН:</dt>
+									<dd class="information__val">402573939444</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">ОГРН: </dt>
+									<dd class="information__val">317402700004683</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Фактический адрес: </dt>
+									<dd class="information__val">Москва, ул. Доватора, дом 7/8 с1</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Юридический адрес: </dt>
+									<dd class="information__val">Москва, ул. Доватора, дом 7/8 с1</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Расчетный счет: </dt>
+									<dd class="information__val">40802810800000085888</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Банк: </dt>
+									<dd class="information__val">АО «ТИНЬКОФФ БАНК»</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Корр.счет: </dt>
+									<dd class="information__val">30101810145250000974 </dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">БИК: </dt>
+									<dd class="information__val">044525974</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="contact-us">
+				<div class="contact-us__bg" style="background-image: url('@img/contact-us-bg.jpg');">
+
+				</div>
+				<div class="contact-us__container">
+					<h2 class="contact-us__title title">
+						СВЯЖИТЕСЬ С НАМИ ПО ЛЮБЫМ ВОПРОСАМ
+					</h2>
+					<form class="contact-us__form">
+						<div class="contact-us__form-grid">
+							<input autocomplete="off" type="text" name="form[name:]" data-error="Ошибка" placeholder="Имя"
+								class="input light">
+							<input autocomplete="off" type="email" name="form[email:]" data-error="Ошибка" placeholder="E-mail"
+								class="input light">
+							<input autocomplete="off" type="number" name="form[phone:]" data-error="Ошибка" placeholder="Телефон"
+								class="input light">
+							<input autocomplete="off" type="text" name="form[company:]" data-error="Ошибка" placeholder="Компания"
+								class="input light">
+						</div>
+						<textarea autocomplete="off" name="form[message:]" placeholder="Сообщение" data-error="Ошибка"
+							class="input light contact-us__textarea"></textarea>
+						<button type="submit" class="button contact-us__button"><span>Задать вопрос</span></button>
+					</form>
+				</div>
+			</section>
+
+			<section class="faq">
+				<div class="faq__container">
+
+					<h2 class="faq__title title">
+						Часто задаваемые вопросы
+					</h2>
+
+					<div data-spollers class="spollers" data-one-spoller>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Получу ли я тот же товар, что и на картинке?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Где я могу посмотреть чек о продаже?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Как я могу вернуть товар?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Будете ли вы пополнять запасы товаров, помеченных как «нет в наличии»?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								С какими видами доставки вы работаете?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			@@include('html/_partners.htm',{})
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

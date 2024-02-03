@@ -67,32 +67,33 @@ if (formSearch && formSearchBtn) {
 }
 
 // ScrollUp
-
 const offset = 500;
 const scrollUp = document.querySelector('.scroll-up')
-const getTop = () => document.documentElement.scrollTop;
+if (scrollUp) {
+	const getTop = () => document.documentElement.scrollTop;
 
-window.addEventListener('scroll', () => {
-	if (getTop() > offset) {
-		scrollUp.classList.add('scroll-up--active');
-	} else {
-		scrollUp.classList.remove('scroll-up--active');
-	}
-});
+	window.addEventListener('scroll', () => {
+		if (getTop() > offset) {
+			scrollUp.classList.add('scroll-up--active');
+		} else {
+			scrollUp.classList.remove('scroll-up--active');
+		}
+	});
 
-scrollUp.addEventListener('click', () => {
-	window.scrollTo({
-		top: 0,
-		behavior: 'smooth'
+	scrollUp.addEventListener('click', () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
 	})
-})
+}
 
 // Клонирование элементов слайдера партнеров
 
 function partnersInit() {
 	const partnersSections = document.querySelectorAll('.partners');
-	if (partnersSections){
-		partnersSections.forEach((partners) =>{
+	if (partnersSections) {
+		partnersSections.forEach((partners) => {
 			const originalSlide = partners.querySelector('.partners__slide:not(.clone)');
 			// Копируем указанный элемент со всеми его дочерними элементами
 			const cloneSlide = originalSlide.cloneNode(true);

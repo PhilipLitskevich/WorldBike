@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Блог"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			@@include('html/_page-header.htm',{
+			"image":"blog.jpg",
+			"title":"Блог"
+			})
+
+			<div class="blog">
+				<div class="blog__container">
+					<div class="blog__wrapper">
+
+						@@include('html/_card-article.htm',{
+							"url":"1.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"BMC Kaius 01 идеальный гоночный гравийный велосипед",
+							"tag":"#обзор"
+							})
+
+							@@include('html/_card-article.htm',{
+							"url":"2.jpg",
+							"date":{
+							"text":"24.01.2023",
+							"attr":"2023-01-24"
+							},
+							"title":"Первые поездки на новой гоночной ракете Wilier Urta SLR 100mm XC MTB, всего 9,8 кг!",
+							"tag":"#обзор"
+							})
+
+							@@include('html/_card-article.htm',{
+							"url":"3.jpg",
+							"date":{
+							"text":"23.01.2023",
+							"attr":"2023-01-23"
+							},
+							"title":"Все новые гоночные велосипеды BMC Fourstroke XC оснащены волшебным подседельным штырем Autodrop.",
+							"tag":"#обзор"
+							})
+
+							@@include('html/_card-article.htm',{
+							"url":"4.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"BMC Kaius 01 идеальный гоночный гравийный велосипед",
+							"tag":"#обзор"
+							})
+
+							@@include('html/_card-article.htm',{
+							"url":"5.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"Pinarello Dogma F развивает карбоновый шоссейный велосипед следующего поколения, сохраняя возможность выбора ободного тормоза!",
+							"tag":"#обзор"
+							})
+
+							@@include('html/_card-article.htm',{
+							"url":"1.jpg",
+							"date":{
+							"text":"25.01.2023",
+							"attr":"2023-01-25"
+							},
+							"title":"BMC Kaius 01 идеальный гоночный гравийный велосипед",
+							"tag":"#обзор"
+							})
+
+							
+					</div>
+					<button class="button-more">показать все</button>
+				</div>
+			</div>
+
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

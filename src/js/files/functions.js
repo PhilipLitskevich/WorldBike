@@ -31,7 +31,11 @@ export function addLoadedClass() {
 	window.addEventListener("load", function () {
 		setTimeout(function () {
 			document.documentElement.classList.add('loaded');
-		}, 0);
+			setTimeout(function () {
+				const loader = document.getElementById('loader');
+				loader.parentNode.removeChild(loader);
+			}, 1210);
+		}, 1500);
 	});
 }
 // Получение хеша в адресе сайта
@@ -259,7 +263,10 @@ export function spollers() {
 						hideSpollersBody(spollersBlock);
 					}
 					spollerTitle.classList.toggle('_spoller-active');
-					spollerTitle.parentElement.classList.toggle('_active');
+					// добавить дополнительный кастомный класс
+					if (spollerTitle.classList.contains('menu-spoller__button')){
+						spollerTitle.parentElement.classList.toggle('_active');
+					}
 					_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
 				}
 				e.preventDefault();

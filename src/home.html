@@ -5,8 +5,11 @@
 })
 
 <body>
+	@@include('html/_loader.htm',{})
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+		@@include('html/_header.htm',{
+			"class": "_absolute"
+		})
 		<main class="page">
 			<!-- Hero Section-->
 			<section class="section__hero hero" data-fullscreen>
@@ -57,42 +60,12 @@
 				<!-- End -->
 				<!-- Slider 2 -->
 				<div class=" hero-banner__slider  hero-banner__slider_second swiper">
-					<div class=" hero-banner__wrapper swiper-wrapper">
-
-						<!-- Slide 1 -->
-						<div class=" hero-banner__slide swiper-slide">
-							<p>Велосипеды для профессионалов</p>
-						</div>
-
-						<!-- Slide 2 -->
-						<div class=" hero-banner__slide swiper-slide">
-							<p>Долгая поездка на шоссейном велосипеде</p>
-						</div>
-
-						<!-- Slide 3 -->
-						<div class=" hero-banner__slide swiper-slide">
-							<p>Экстремальное вождение на горном велосипеде</p>
-						</div>
-					</div>
-
+					<div class=" hero-banner__wrapper swiper-wrapper"></div>
 				</div>
 				<!-- End -->
 				<!-- Slider 3 -->
 				<div class=" hero-banner__slider  hero-banner__slider_third swiper">
-					<div class=" hero-banner__wrapper swiper-wrapper">
-						<!-- Slide 1 -->
-						<div class=" hero-banner__slide swiper-slide">
-							<p>Долгая поездка на шоссейном велосипеде</p>
-						</div>
-						<!-- Slide 2 -->
-						<div class=" hero-banner__slide swiper-slide">
-							<p>Экстремальное вождение на горном велосипеде</p>
-						</div>
-						<!-- Slide 3 -->
-						<div class=" hero-banner__slide swiper-slide">
-							<p>Велосипеды для профессионалов</p>
-						</div>
-					</div>
+					<div class="hero-banner__wrapper swiper-wrapper"></div>
 				</div>
 				<!-- End -->
 			</div>
@@ -217,7 +190,6 @@
 								}
 								})
 							</div>
-
 						</div>
 
 						<!-- Если нужна навигация (влево/вправо) -->
@@ -826,7 +798,7 @@
 				<div class="contacts-home__container">
 					<h2 class="contacts-home__title title">Контакты</h2>
 				</div>
-				<div class="contacts-home__map" id="map"></div>
+				<div class="map" id="map"></div>
 				<div class="contacts-home__container">
 					<ul class="contacts-home__list">
 						<li class="contacts-home__item">
