@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Каталог</title>
+	<title>Контакты</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -374,7 +374,7 @@
 			<div class="more-menu__logo"></div>
 		</nav>
 		<main class="page">
-			<div class="page-header" style="background-image: url('img/page-header/catalog.jpg');">
+			<div class="page-header" style="background-image: url('img/page-header/contacts.jpg');">
 				<div class="page-header__container">
 					<nav class="breadcrambs">
 						<ul class="breadcrambs__list">
@@ -382,14 +382,220 @@
 								<a href="#" class="breadcrambs__link">Главная</a>
 							</li>
 							<li class="breadcrambs__item">
-								<a href="#" class="breadcrambs__link">Велосипеды</a>
-							</li>
-							<li class="breadcrambs__item">
-								<span href="#" class="breadcrambs__current">Горные велосипеды</span>
+								<span href="#" class="breadcrambs__current">Контакты</span>
 							</li>
 						</ul>
 					</nav>
-					<h1 class="page-header__title title">Горные велосипеды</h1>
+					<h1 class="page-header__title title">Контакты</h1>
+				</div>
+			</div>
+
+			<div class="map" id="map"></div>
+
+			<div class="contacts">
+				<div class="contacts__container">
+					<div class="contacts__col">
+						<div class="contacts__field">
+							<h3>Адрес магазина:</h3>
+							<p><a href="#">Россия, Москва, ул. Доватора, дом 7/8 с1</a></p>
+						</div>
+						<div class="contacts__field">
+							<h3>График работы:</h3>
+							<p>Понедельник — Воскресение с 10:00 до 20:00 часа</p>
+							<p>БЕЗ ВЫХОДНЫХ</p>
+						</div>
+						<div class="contacts__field">
+							<h3>Телефоны:</h3>
+							<p><a href="tel:+74950557586">+7 (495) 055-75-86</a></p>
+							<p><a href="tel:+7 9651422299">+7 (965) 142-22-99</a></p>
+						</div>
+						<div class="contacts__field">
+							<h3>E-mail:</h3>
+							<p><a href="mailto:order@world-bike.ru">order@world-bike.ru</a> — заказы</p>
+							<p><a href="mailto:info@world-bike.ru">info@world-bike.ru</a> — информация</p>
+							<p><a href="mailto:opt@world-bike.ru">opt@world-bike.ru</a> — опт</p>
+						</div>
+					</div>
+					<div class="contacts__col">
+						<div class="contacts__field">
+							<h3>Юридическая информация:</h3>
+							<dl class="information">
+								<div class="information__item">
+									<dt class="information__term">Наименование: </dt>
+									<dd class="information__val">ИП НЕТРЕБИН ВЛАДИСЛАВ ВЯЧЕСЛАВОВИЧ</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">ИНН:</dt>
+									<dd class="information__val">402573939444</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">ОГРН: </dt>
+									<dd class="information__val">317402700004683</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Фактический адрес: </dt>
+									<dd class="information__val">Москва, ул. Доватора, дом 7/8 с1</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Юридический адрес: </dt>
+									<dd class="information__val">Москва, ул. Доватора, дом 7/8 с1</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Расчетный счет: </dt>
+									<dd class="information__val">40802810800000085888</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Банк: </dt>
+									<dd class="information__val">АО «ТИНЬКОФФ БАНК»</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Корр.счет: </dt>
+									<dd class="information__val">30101810145250000974 </dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">БИК: </dt>
+									<dd class="information__val">044525974</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="contact-us">
+				<div class="contact-us__bg" style="background-image: url('img/contact-us-bg.jpg');">
+
+				</div>
+				<div class="contact-us__container">
+					<h2 class="contact-us__title title">
+						СВЯЖИТЕСЬ С НАМИ ПО ЛЮБЫМ ВОПРОСАМ
+					</h2>
+					<form class="contact-us__form">
+						<div class="contact-us__form-grid">
+							<input autocomplete="off" type="text" name="form[name:]" data-error="Ошибка" placeholder="Имя" class="input light">
+							<input autocomplete="off" type="email" name="form[email:]" data-error="Ошибка" placeholder="E-mail" class="input light">
+							<input autocomplete="off" type="number" name="form[phone:]" data-error="Ошибка" placeholder="Телефон" class="input light">
+							<input autocomplete="off" type="text" name="form[company:]" data-error="Ошибка" placeholder="Компания" class="input light">
+						</div>
+						<textarea autocomplete="off" name="form[message:]" placeholder="Сообщение" data-error="Ошибка" class="input light contact-us__textarea"></textarea>
+						<button type="submit" class="button contact-us__button"><span>Задать вопрос</span></button>
+					</form>
+				</div>
+			</section>
+
+			<section class="faq">
+				<div class="faq__container">
+
+					<h2 class="faq__title title">
+						Часто задаваемые вопросы
+					</h2>
+
+					<div data-spollers class="spollers" data-one-spoller>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Получу ли я тот же товар, что и на картинке?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Где я могу посмотреть чек о продаже?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Как я могу вернуть товар?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Будете ли вы пополнять запасы товаров, помеченных как «нет в наличии»?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								С какими видами доставки вы работаете?
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Consectetur cras scelerisque dis nec mi vestibulum ullamcorper turpis enim natoque tempus a malesuada
+									suspendisse iaculis adipiscing himenaeos tincidunt.Tellus pharetra dis nostra urna a scelerisque id
+									parturient ullamcorper ullamcorper class ad consectetur tristique et.</p>
+								<p>Hendrerit mollis facilisi odio a montes scelerisque a scelerisque justo a praesent conubia aenean mi
+									tempor.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ВАЖНО картинки должны иметь высоту 125px для корректного отображения и адаптива -->
+			<div class="partners">
+				<div class="partners__wrapper">
+					<div class="partners__slide">
+						<div class="partners__item">
+							<picture><source srcset="img/partners/1.webp" type="image/webp"><img src="img/partners/1.jpg" alt="partner logo"></picture>
+						</div>
+						<div class="partners__item">
+							<picture><source srcset="img/partners/2.webp" type="image/webp"><img src="img/partners/2.jpg" alt="partner logo"></picture>
+						</div>
+						<div class="partners__item">
+							<picture><source srcset="img/partners/3.webp" type="image/webp"><img src="img/partners/3.jpg" alt="partner logo"></picture>
+						</div>
+						<div class="partners__item">
+							<picture><source srcset="img/partners/4.webp" type="image/webp"><img src="img/partners/4.jpg" alt="partner logo"></picture>
+						</div>
+						<div class="partners__item">
+							<picture><source srcset="img/partners/5.webp" type="image/webp"><img src="img/partners/5.jpg" alt="partner logo"></picture>
+						</div>
+						<div class="partners__item">
+							<picture><source srcset="img/partners/6.webp" type="image/webp"><img src="img/partners/6.jpg" alt="partner logo"></picture>
+						</div>
+						<div class="partners__item">
+							<picture><source srcset="img/partners/7.webp" type="image/webp"><img src="img/partners/7.jpg" alt="partner logo"></picture>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
