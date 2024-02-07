@@ -43,6 +43,11 @@ export function rangeInit() {
 			toValue.addEventListener('change', function () {
 				item.noUiSlider.set([null, this.value]);
 			});
+
+			const filterResetBtn = document.querySelector('.filter__button-reset')
+			filterResetBtn.addEventListener('click', () => {
+				item.noUiSlider.reset()
+			})
 		})
 	}
 
