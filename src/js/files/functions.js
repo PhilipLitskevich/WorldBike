@@ -264,7 +264,7 @@ export function spollers() {
 					}
 					spollerTitle.classList.toggle('_spoller-active');
 					// добавить дополнительный кастомный класс
-					if (spollerTitle.classList.contains('menu-spoller__button')){
+					if (spollerTitle.classList.contains('menu-spoller__button')) {
 						spollerTitle.parentElement.classList.toggle('_active');
 					}
 					_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
@@ -426,16 +426,45 @@ export function tabs() {
 // Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
 	if (document.querySelector(".icon-menu")) {
+		// const menu = document.querySelector('.more-menu')
+		// var elements = menu.querySelectorAll('a, button');
+		// var elementsList = Array.from(elements);
+		// console.log(elementsList);
 		document.addEventListener("click", function (e) {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
-				// let open = document.querySelectorAll('._sub-menu-open');
-				// let active = document.querySelectorAll('._sub-menu-active');
-				// if (open.length > 0 || active.length > 0) {
-				// 	open.forEach((el) => el.classList.remove('._sub-menu-open'));
-				// 	active.forEach((el) => el.classList.remove('._sub-menu-active'))
-				// }
+				document.querySelector('.more-menu__close-btn').focus();
+
+				//Закрытие меню при потере фокуса
+				// const menu = document.querySelector('.more-menu')
+				// menu.addEventListener('blur', (el) => {
+				// 	if (!menu.matches(':focus-within')) {
+				// 		bodyUnlock();
+				// 		document.documentElement.classList.remove("menu-open");
+				// 	}
+				// }, true)
+				//
+
+				// const menuChilds = menu.children
+				// console.log(menuChilds)
+			}
+			if (bodyLockStatus && e.target.closest('.filter-btn')) {
+				bodyLockToggle();
+				document.documentElement.classList.toggle("filter-open");
+				if (e.target.closest('.catalog__filter-btn')) {
+					document.querySelector('.filter__button-close').focus();
+
+					//Закрытие меню при потере фокуса
+					// const filter = document.querySelector('.filter')
+					// filter.addEventListener('blur', (el) => {
+					// 	if (!filter.matches(':focus-within')) {
+					// 		bodyUnlock();
+					// 		document.documentElement.classList.remove("filter-open");
+					// 	}
+					// }, true)
+					//
+				}
 			}
 		});
 	};

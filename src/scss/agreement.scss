@@ -20,11 +20,20 @@
 	&:not(:last-child) {
 		@include adaptiveValue("margin-bottom", 16, 8);
 	}
+	a {
+		transition: color .3s ease;
+		@media (any-hover: hover){
+			&:hover{
+				color: $accentColor;
+			}
+		}
+	}
 }
 
 .agreement__chapter-wrapper {
 	@include adaptiveValue("margin-bottom", 160, 48);
 	background-color: $bg;
+	border-radius: rem(10);
 	padding: rem(40) 0;
 	@include adaptiveValue("padding-right", 40, 24, $containerWidth, 400, 1);
 	@include adaptiveValue("padding-left", 40, 24, $containerWidth, 400, 1);
@@ -70,6 +79,15 @@
 		color: #101010;
 		&:not(:last-child){
 			margin-bottom: rem(8);
+		}
+	}
+
+	a {
+		transition: color .3s ease;
+		@media (any-hover: hover){
+			&:hover{
+				color: $accentColor;
+			}
 		}
 	}
 }

@@ -2,10 +2,12 @@
 // Снипет (HTML): sel
 .select {
 	position: relative;
+
 	// .select__body
 	&__body {
 		position: relative;
 	}
+
 	// .select__title
 	&__title {
 		color: inherit;
@@ -16,6 +18,7 @@
 		width: 100%;
 		border-radius: 4px;
 	}
+
 	// .select__value
 	&__value {
 		display: flex;
@@ -23,9 +26,11 @@
 		height: rem(30);
 		padding: 0 rem(15);
 		gap: rem(10);
-		> * {
+
+		>* {
 			flex: 1 1 auto;
 		}
+
 		&:after {
 			content: "";
 			align-self: stretch;
@@ -34,10 +39,12 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
 			._select-open & {
 				transform: rotate(-180deg);
 			}
 		}
+
 		&._select-pseudo-label {
 			&::before {
 				content: attr(data-pseudo-label);
@@ -45,15 +52,18 @@
 			}
 		}
 	}
+
 	// .select__text
 	&__text {
 		flex: 1 1 auto;
 	}
+
 	&__input {
 		width: 100%;
 		background-color: transparent;
 		height: 100%;
 	}
+
 	// .select__options
 	&__options {
 		color: #000;
@@ -68,12 +78,14 @@
 		border-top: 0;
 		padding: 10px 0px 5px 0px;
 	}
+
 	// .select__scroll
 	&__scroll {
 		overflow-y: auto;
 		overflow-x: hidden;
 		// Максимальная высота
 		max-height: 200px;
+
 		// Стили скроллбара
 		.simplebar-scrollbar {
 			&::before {
@@ -81,6 +93,7 @@
 			}
 		}
 	}
+
 	// .select__option
 	&__option {
 		width: 100%;
@@ -89,13 +102,51 @@
 		cursor: pointer;
 		padding: 5px 15px;
 		color: inherit;
+
 		&._select-selected {
 			background-color: #eee;
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				background: #d9d9d9;
 			}
+		}
+	}
+
+	&_control {
+		flex-basis: rem(290);
+		.select__title {
+			position: relative;
+			z-index: 200;
+			border: 1px solid #e5e5e5;
+			border-radius: rem(10);
+		}
+
+		.select__value {
+			max-width: 290px;
+			width: auto;
+			height: 60px;
+			padding: 0 rem(25) rem(0) rem(16);
+			&::after {
+				flex: 0 0 18px;
+				background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1972_406)'%3E%3Cpath d='M2.17519 3.48213L8.4752 9.49998C8.5502 9.57141 8.63145 9.62189 8.71895 9.65141C8.80645 9.68141 8.9002 9.69641 9.0002 9.69641C9.1002 9.69641 9.19395 9.68141 9.28145 9.65141C9.36895 9.62189 9.4502 9.57141 9.5252 9.49998L15.8439 3.48213C16.0189 3.31546 16.1064 3.10713 16.1064 2.85713C16.1064 2.60713 16.0127 2.39284 15.8252 2.21427C15.6377 2.0357 15.4189 1.94641 15.1689 1.94641C14.9189 1.94641 14.7002 2.0357 14.5127 2.21427L9.00019 7.46427L3.48769 2.21427C3.31269 2.0476 3.09719 1.96427 2.84119 1.96427C2.58469 1.96427 2.36269 2.05355 2.17519 2.23213C1.98769 2.4107 1.89394 2.61903 1.89394 2.85713C1.89394 3.09522 1.98769 3.30355 2.17519 3.48213Z' fill='%23777777' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1972_406'%3E%3Crect width='10' height='18' fill='white' transform='matrix(-4.37114e-08 -1 -1 4.37114e-08 18 10)' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+
+		.select__options{
+			// position: relative;
+			z-index: 150;
+			top: 40px;
+			padding-top: 31px;
+			padding-bottom: 11px;
+			border-radius: 0 0 10px 10px;
+		}
+		.select__option{
+
 		}
 	}
 
@@ -104,25 +155,25 @@
 		display: inline-flex;
 		align-items: center;
 	}
-	&__asset {
-	}
-	&__text {
-	}
+
+	&__asset {}
+
+	&__text {}
 
 	// Состояния селекта
 	&._select-open {
 		z-index: 5;
 	}
-	&._select-disabled {
-	}
-	&._select-active {
-	}
-	&._select-focus {
-	}
-	&._select-multiple {
-	}
-	&._select-checkbox {
-	}
+
+	&._select-disabled {}
+
+	&._select-active {}
+
+	&._select-focus {}
+
+	&._select-multiple {}
+
+	&._select-checkbox {}
 }
 
 // Тег

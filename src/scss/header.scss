@@ -7,6 +7,7 @@ body[style*="padding-right: 17px"] {
 
 .menu-open body::after {
 	opacity: 1;
+	pointer-events: auto;
 }
 
 //====================================================================================================
@@ -569,7 +570,7 @@ body[style*="padding-right: 17px"] {
 	top: 0;
 	right: rem(-448);
 
-	transition: right .3s ease-in-out;
+	transition: right .5s ease;
 
 	width: rem(448);
 	height: 100vh;

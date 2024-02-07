@@ -27,6 +27,608 @@
 					<h1 class="page-header__title title">Горные велосипеды</h1>
 				</div>
 			</div>
+
+			<div class="catalog">
+				<div class="catalog__container">
+					<div class="catalog__filter filter">
+						<div class="filter__inner">
+							<h2 class="filter__title">Фильтр</h2>
+							<button class="filter__button-close filter-btn">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M23.6273 23.6274L0.999924 1.00001L1.70703 0.292908L24.3344 22.9203L23.6273 23.6274Z"
+										fill="#B3B3B3" />
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M0.999459 22.6274L23.6269 -1.45435e-05L24.334 0.707092L1.70657 23.3345L0.999459 22.6274Z"
+										fill="#B3B3B3" />
+								</svg>
+							</button>
+						</div>
+						<button class="filter__button-show button">
+							Показать <span> 37 </span> товаров
+						</button>
+						<div class="checkbox-switch filter__checkbox-switch">
+							<input id="cs_1" data-error="Ошибка" class="checkbox-switch__input" type="checkbox" value="1"
+								name="form[]">
+							<label for="cs_1" class="checkbox-switch__label"><span class="checkbox-switch__text">Только в
+									наличии</span></label>
+						</div>
+
+						<div data-spollers class="spollers-filter">
+							<div class="spollers-filter__item">
+								<button type="button" data-spoller class="spollers-filter__title">
+									Категории товара
+									<svg class="spollers-filter-icon">
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="spollers-filter__body">
+									<div class="checkbox">
+										<input id="cf_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_1" class="checkbox__label"><span class="checkbox__text">Велосипеды для
+												триатлона</span></label>
+									</div>
+									<div class="checkbox">
+										<input id="cf_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_2" class="checkbox__label"><span class="checkbox__text">Горные
+												велосипеды</span></label>
+									</div>
+									<div class="checkbox">
+										<input id="cf_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_3" class="checkbox__label"><span class="checkbox__text">Городские
+												велосипеды</span></label>
+									</div>
+									<div class="checkbox">
+										<input id="cf_4" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_4" class="checkbox__label"><span class="checkbox__text">Гравийные
+												велосипеды</span></label>
+									</div>
+									<div class="checkbox">
+										<input id="cf_5" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_5" class="checkbox__label"><span class="checkbox__text">Двухподвесные
+												велосипеды</span></label>
+									</div>
+									<div class="checkbox">
+										<input id="cf_6" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_6" class="checkbox__label"><span class="checkbox__text">Детские
+												велосипеды</span></label>
+									</div>
+									<div class="checkbox">
+										<input id="cf_7" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cf_7" class="checkbox__label"><span class="checkbox__text">Электро
+												велосипеды</span></label>
+									</div>
+									<!-- <button class="filter__more-btn">Показать ещё</button> -->
+								</div>
+							</div>
+							<div class="spollers-filter__item spollers-filter__item_price">
+								<button type="button" data-spoller class="spollers-filter__title">
+									Цена
+									<svg class="spollers-filter-icon">
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div data-range class="spollers-filter__body price-filter">
+									<div data-range-item id="price-range" class="price-filter__range"></div>
+									<div class="price-filter__inputs">
+										<input data-range-from="0" id="price-range__from" value="1000" autocomplete="off" type="number" name="form[]" class="price-filter__input">
+										<span>-</span>
+										<input data-range-to="5000" id="price-range__to" value="3000" autocomplete="off" type="number" name="form[]" class="price-filter__input">
+									</div>
+								</div>
+							</div>
+							<div class="spollers-filter__item">
+								<button type="button" data-spoller class="spollers-filter__title">
+									Бренд
+									<svg class="spollers-filter-icon">
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="spollers-filter__body">
+									<div class="checkbox">
+										<input id="cfb_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_1" class="checkbox__label">
+											<span class="checkbox__text">Bianci</span>
+											<span class="quantity">(24)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_2" class="checkbox__label">
+											<span class="checkbox__text">BMC</span>
+											<span class="quantity">(118)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_3" class="checkbox__label">
+											<span class="checkbox__text">Ciclistino</span>
+											<span class="quantity">(2)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_4" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_4" class="checkbox__label">
+											<span class="checkbox__text">Cipollini</span>
+											<span class="quantity">(38)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_5" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_5" class="checkbox__label">
+											<span class="checkbox__text">Colnago</span>
+											<span class="quantity">(19)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_6" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_6" class="checkbox__label">
+											<span class="checkbox__text">Aist</span>
+											<span class="quantity">(24)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_7" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_7" class="checkbox__label">
+											<span class="checkbox__text">Spirit</span>
+											<span class="quantity">(20)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfb_8" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfb_8" class="checkbox__label">
+											<span class="checkbox__text">Trek</span>
+											<span class="quantity">(14)</span>
+										</label>
+									</div>
+									<!-- <button class="filter__more-btn">Показать ещё</button> -->
+								</div>
+							</div>
+							<div class="spollers-filter__item">
+								<button type="button" data-spoller class="spollers-filter__title">
+									Материал рамы
+									<svg class="spollers-filter-icon">
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="spollers-filter__body">
+									<div class="checkbox">
+										<input id="cfm_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfm_1" class="checkbox__label">
+											<span class="checkbox__text">Алюминий</span>
+											<span class="quantity">(56)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfm_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfm_2" class="checkbox__label">
+											<span class="checkbox__text">Карбон</span>
+											<span class="quantity">(74)</span>
+										</label>
+									</div>
+									<div class="checkbox">
+										<input id="cfm_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<label for="cfm_3" class="checkbox__label">
+											<span class="checkbox__text">Сталь</span>
+											<span class="quantity">(2)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="spollers-filter__item spollers-filter__item_colors">
+								<button type="button" data-spoller class="spollers-filter__title">
+									Цвет
+									<svg class="spollers-filter-icon">
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="spollers-filter__body">
+									<div class="colors">
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #f2f1ef;;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Дымчато-белый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #38d5c8;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Бирюзовый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #acb690;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Болотный</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #cc7e3b;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Перу</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #740222;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Бардовый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #44acfb;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Голубой</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #fef95f;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Кукурузный</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #0d7f19;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Зеленый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #ffd536;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Блестящий зеленовато-желтый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #fe7e56;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Коралловый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #ac632c;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Оранжево-коричневый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #fd0012;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Красный</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #25fd3c;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Лайм</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #353839;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Гранитовый серый (Гранитный)</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #fea32a;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Бриллиантовый оранжево-желтый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #e5e4e2;;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Платиновый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #79526f;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Умеренный пурпурный</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #fec0cb;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Розовый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #bdbdbd;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Светло-серый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #7f7f7f;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Серый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #0026f9;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Международный синий Кляйна</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #061e42;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Ночной синий</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #8926f9;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Сине-лиловый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #49423d;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Темно-серый</span>
+											</label>
+										</div>
+										<div class="color-checkbox">
+											<label class="color-checkbox__label" style="background-color: #000;">
+												<input class="color-checkbox__input" type="checkbox" value="1" name="form[]">
+												<span class="color-name visually-hidden">Черный</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="filter__button-reset button-hover">Сбросить фильтры</button>
+
+					</div>
+					<div class="catalog__body">
+						<div class="catalog__control">
+							<select name="form[]" class="control">
+								<option value="1" selected>Сортировка от последнего</option>
+								<option value="2">По популярности</option>
+								<option value="3">По рейтингу</option>
+								<option value="4">Цены: по убыванию</option>
+							</select>
+							<div class="catalog__sort-buttons">
+								<button class="catalog__sort-btn _current" disabled id="3x3">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-sort3x3"></use>
+									</svg>
+								</button>
+								<button class="catalog__sort-btn" id="2x2">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-sort2x2"></use>
+									</svg>
+								</button>
+							</div>
+							<button class="catalog__filter-btn filter-btn">
+								<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.33301 5.33337L11.9997 16V24L19.9997 28V16L26.6663 5.33337H5.33301Z" stroke="#777777"
+										stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</div>
+						<div class="catalog__cards">
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							<div class="catalog__banner">
+								<span>Акция</span>
+								<h3>Скидка 20%</h3>
+								<p>На всю экипировку</p>
+								<div class="catalog__banner-bg" style="background-image: url('@img/catalog-banner.png');"></div>
+							</div>
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+							@@include('html/_card-product.htm',{
+							"size":"",
+							"country":{
+							"url":"img/countries/italy.jpg",
+							"alt":"Италия",
+							"have":""
+							},
+							"product":{
+							"img":"img/bikes/new-1.jpg",
+							"alt":"Велосипед",
+							"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+							"price":"684 840 ₽",
+							"oldPrice":""
+							},
+							"status":{
+							"text":"Распродано",
+							"class":"product__status_out-in-stock"
+							}
+							})
+						</div>
+						<div class="catalog__pagging pagging">
+							<button type="button" class="pagging__arrow pagging__arrow_left pagging__arrow_double" disabled>
+								<svg>
+									<use xlink:href="img/icons/icons.svg#svg-pagging-double-arrow"></use>
+								</svg>
+							</button>
+							<button type="button" class="pagging__arrow pagging__arrow_left" disabled>
+								<svg>
+									<use xlink:href="img/icons/icons.svg#svg-pagging-arrow"></use>
+								</svg>
+							</button>
+							<ul class="pagging__list">
+								<li class="pagging__item">
+									<span href="#" class="pagging__link _current">1</span>
+								</li>
+								<li class="pagging__item">
+									<a href="#" class="pagging__link">2</a>
+								</li>
+								<li class="pagging__item">
+									<a href="#" class="pagging__link">3</a>
+								</li>
+								<li class="pagging__item">
+									<a href="#" class="pagging__link">4</a>
+								</li>
+								<li class="pagging__item">
+									<a href="#" class="pagging__link">...</a>
+								</li>
+							</ul>
+							<button type="button" class="pagging__arrow pagging__arrow_right">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#svg-pagging-arrow"></use>
+								</svg>
+							</button>
+							<button type="button" class="pagging__arrow pagging__arrow_right pagging__arrow_double">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#svg-pagging-double-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</main>
 		<button class="scroll-up" tabindex="0" aria-label="Наверх">
 			<svg class="scroll-up__arrow">

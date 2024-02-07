@@ -58,13 +58,38 @@ if (isMobile.any) {
 	}
 }
 
-const formSearchBtn = document.querySelector('.search-header__button');
-const formSearch = document.querySelector('.search-header__form');
-if (formSearch && formSearchBtn) {
-	formSearchBtn.addEventListener('click', () => {
-		formSearch.classList.toggle('_active')
-	})
+function formSearchInit() {
+	const formSearchBtn = document.querySelector('.search-header__button');
+	const formSearch = document.querySelector('.search-header__form');
+	const searchInput = formSearch.querySelector('.search-header__input')
+	const searchSubmit = formSearch.querySelector('.search-header__form-button')
+
+	function formSearchDeactivate(){
+		formSearch.classList.remove('_active')
+		searchInput.setAttribute('tabindex', -1);
+		searchSubmit.setAttribute('tabindex', -1);
+	}
+
+	if (formSearch && formSearchBtn) {
+		formSearchBtn.addEventListener('click', () => {
+			formSearch.classList.toggle('_active')
+			if (formSearch.classList.contains('_active')) {
+				searchInput.setAttribute('tabindex', 0);
+				searchSubmit.setAttribute('tabindex', 0);
+				searchInput.focus();
+
+				formSearch.addEventListener('blur', (el) => {
+					if (!formSearch.matches(':focus-within')) {
+						formSearchDeactivate()
+					}
+				}, true)
+			} else {
+				formSearchDeactivate()
+			}
+		})
+	}
 }
+formSearchInit()
 
 // ScrollUp
 const offset = 500;
@@ -89,7 +114,6 @@ if (scrollUp) {
 }
 
 // Клонирование элементов слайдера партнеров
-
 function partnersInit() {
 	const partnersSections = document.querySelectorAll('.partners');
 	if (partnersSections) {
@@ -108,3 +132,92 @@ function partnersInit() {
 	}
 }
 partnersInit();
+function initSort() {
+	const sort2 = document.getElementById('2x2')
+	const sort3 = document.getElementById('3x3')
+	const catalog = document.querySelector('.catalog__cards')
+
+	if (sort2 && sort3 && catalog) {
+		sort2.addEventListener('click', () => {
+			if (sort2.hasAttribute('disabled')) {
+				return
+			}
+			catalog.classList.add('sort-two')
+			sort2.setAttribute('disabled', true)
+			sort3.removeAttribute('disabled')
+		})
+		sort3.addEventListener('click', () => {
+			if (sort3.hasAttribute('disabled')) {
+				return
+			}
+			catalog.classList.remove('sort-two')
+			sort3.setAttribute('disabled', true)
+			sort2.removeAttribute('disabled')
+		})
+	}
+}
+initSort();
+
+function initFilterResetBtn() {
+	const filterResetBtn = document.querySelector('.filter__button-reset')
+	const filter = document.querySelector('.filter')
+	if (filterResetBtn && filter) {
+		filterResetBtn.addEventListener('click', () => {
+			filter.querySelectorAll('input[type=checkbox]').forEach((chk) => {
+				chk.checked = false
+			})
+		})
+	}
+}
+initFilterResetBtn()
+
+const spollersFilter = document.querySelector('.spollers-filter')
+const spollersFilterItem = spollersFilter.querySelectorAll('.spollers-filter__item:not(.spollers-filter__item_price, spollers-filter__item_colors)')
+spollersFilterItem.forEach((item)=>{
+	const spollerBody = item.querySelector('.spollers-filter__body')
+	const spoilersItemChilds = spollerBody.children
+	function createButton() {
+		var button = document.createElement('button');
+		button.classList.add('filter__more-btn');
+		button.textContent = 'Показать ещё';
+		return button;
+	}
+	if(spoilersItemChilds.length > 5){
+		var button = createButton();
+		
+		// Добавляем слушатель события клика
+		button.addEventListener('click', function() {
+			// Обработка события клика на кнопку
+			// console.log('Кнопка нажата!');
+			if(spollerBody.classList.contains('_open')){
+				button.textContent = 'Показать ещё'
+			} else (
+				button.textContent = 'Скрыть'
+			);
+			spollerBody.classList.toggle('_open')
+		});
+		spollerBody.appendChild(button);
+	}
+	// console.log(spoilersItemChilds)
+})
+
+// console.log(spollersFilterItem.length)
+
+// function handleViewportChange(mq) {
+//   if (mq.matches) {
+//     // Функция, которую нужно выполнить, когда размер вьюпорта соответствует брейкпоинту
+//     console.log('Размер вьюпорта соответствует брейкпоинту');
+//   } else {
+//     // Функция, которую нужно выполнить, когда размер вьюпорта не соответствует брейкпоинту
+//     console.log('Размер вьюпорта не соответствует брейкпоинту');
+//   }
+// }
+
+// var breakpoint = '(min-width: 768px)'; // Установите нужный брейкпоинт
+// var mql = window.matchMedia(breakpoint);
+
+// // Выполняем функцию при загрузке страницы
+// handleViewportChange(mql);
+
+// // Добавляем слушателя событий, чтобы функция выполнилась каждый раз, когда размер вьюпорта проходит брейкпоинт
+// mql.addListener(handleViewportChange);
