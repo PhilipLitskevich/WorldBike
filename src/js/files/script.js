@@ -64,7 +64,7 @@ function formSearchInit() {
 	const searchInput = formSearch.querySelector('.search-header__input')
 	const searchSubmit = formSearch.querySelector('.search-header__form-button')
 
-	function formSearchDeactivate(){
+	function formSearchDeactivate() {
 		formSearch.classList.remove('_active')
 		searchInput.setAttribute('tabindex', -1);
 		searchSubmit.setAttribute('tabindex', -1);
@@ -171,35 +171,40 @@ function initFilterResetBtn() {
 }
 initFilterResetBtn()
 
-const spollersFilter = document.querySelector('.spollers-filter')
-const spollersFilterItem = spollersFilter.querySelectorAll('.spollers-filter__item:not(.spollers-filter__item_price, spollers-filter__item_colors)')
-spollersFilterItem.forEach((item)=>{
-	const spollerBody = item.querySelector('.spollers-filter__body')
-	const spoilersItemChilds = spollerBody.children
-	function createButton() {
-		var button = document.createElement('button');
-		button.classList.add('filter__more-btn');
-		button.textContent = 'Показать ещё';
-		return button;
+function spollersFilterInit() {
+	const spollersFilter = document.querySelector('.spollers-filter')
+	if (spollersFilter) {
+		const spollersFilterItem = spollersFilter.querySelectorAll('.spollers-filter__item:not(.spollers-filter__item_price, spollers-filter__item_colors)')
+
+		spollersFilterItem.forEach((item) => {
+			const spollerBody = item.querySelector('.spollers-filter__body')
+			const spoilersItemChilds = spollerBody.children
+			function createButton() {
+				var button = document.createElement('button');
+				button.classList.add('filter__more-btn');
+				button.textContent = 'Показать ещё';
+				return button;
+			}
+			if (spoilersItemChilds.length > 5) {
+				var button = createButton();
+
+				// Добавляем слушатель события клика
+				button.addEventListener('click', function () {
+					// Обработка события клика на кнопку
+					// console.log('Кнопка нажата!');
+					if (spollerBody.classList.contains('_open')) {
+						button.textContent = 'Показать ещё'
+					} else (
+						button.textContent = 'Скрыть'
+					);
+					spollerBody.classList.toggle('_open')
+				});
+				spollerBody.appendChild(button);
+			}
+		})
 	}
-	if(spoilersItemChilds.length > 5){
-		var button = createButton();
-		
-		// Добавляем слушатель события клика
-		button.addEventListener('click', function() {
-			// Обработка события клика на кнопку
-			// console.log('Кнопка нажата!');
-			if(spollerBody.classList.contains('_open')){
-				button.textContent = 'Показать ещё'
-			} else (
-				button.textContent = 'Скрыть'
-			);
-			spollerBody.classList.toggle('_open')
-		});
-		spollerBody.appendChild(button);
-	}
-	// console.log(spoilersItemChilds)
-})
+}
+spollersFilterInit();
 
 // console.log(spollersFilterItem.length)
 
