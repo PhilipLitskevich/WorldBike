@@ -6894,26 +6894,31 @@
         }));
     }
     initFilterResetBtn();
-    const spollersFilter = document.querySelector(".spollers-filter");
-    const spollersFilterItem = spollersFilter.querySelectorAll(".spollers-filter__item:not(.spollers-filter__item_price, spollers-filter__item_colors)");
-    spollersFilterItem.forEach((item => {
-        const spollerBody = item.querySelector(".spollers-filter__body");
-        const spoilersItemChilds = spollerBody.children;
-        function createButton() {
-            var button = document.createElement("button");
-            button.classList.add("filter__more-btn");
-            button.textContent = "Показать ещё";
-            return button;
-        }
-        if (spoilersItemChilds.length > 5) {
-            var button = createButton();
-            button.addEventListener("click", (function() {
-                if (spollerBody.classList.contains("_open")) button.textContent = "Показать ещё"; else button.textContent = "Скрыть";
-                spollerBody.classList.toggle("_open");
+    function spollersFilterInit() {
+        const spollersFilter = document.querySelector(".spollers-filter");
+        if (spollersFilter) {
+            const spollersFilterItem = spollersFilter.querySelectorAll(".spollers-filter__item:not(.spollers-filter__item_price, spollers-filter__item_colors)");
+            spollersFilterItem.forEach((item => {
+                const spollerBody = item.querySelector(".spollers-filter__body");
+                const spoilersItemChilds = spollerBody.children;
+                function createButton() {
+                    var button = document.createElement("button");
+                    button.classList.add("filter__more-btn");
+                    button.textContent = "Показать ещё";
+                    return button;
+                }
+                if (spoilersItemChilds.length > 5) {
+                    var button = createButton();
+                    button.addEventListener("click", (function() {
+                        if (spollerBody.classList.contains("_open")) button.textContent = "Показать ещё"; else button.textContent = "Скрыть";
+                        spollerBody.classList.toggle("_open");
+                    }));
+                    spollerBody.appendChild(button);
+                }
             }));
-            spollerBody.appendChild(button);
         }
-    }));
+    }
+    spollersFilterInit();
     window["FLS"] = true;
     isWebp();
     addTouchClass();
