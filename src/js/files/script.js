@@ -85,7 +85,7 @@ function formSearchInit() {
 				} else {
 					formSearchDeactivate()
 				}
-			} else if (!e.target.closest('.search-header__form')) {
+			} else if (!e.target.closest('.search-header__form') && formSearch.classList.contains('_active')) {
 				formSearchDeactivate()
 			}
 		})
