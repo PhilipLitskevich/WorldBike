@@ -68,22 +68,24 @@ function formSearchInit() {
 		formSearch.classList.remove('_active')
 		searchInput.setAttribute('tabindex', -1);
 		searchSubmit.setAttribute('tabindex', -1);
+		formSearchBtn.focus();
 	}
 
+	function formSearchActivate() {
+		formSearch.classList.add('_active')
+		searchInput.setAttribute('tabindex', 0);
+		searchSubmit.setAttribute('tabindex', 0);
+		searchInput.focus();
+	}
 	if (formSearch && formSearchBtn) {
-		formSearchBtn.addEventListener('click', () => {
-			formSearch.classList.toggle('_active')
-			if (formSearch.classList.contains('_active')) {
-				searchInput.setAttribute('tabindex', 0);
-				searchSubmit.setAttribute('tabindex', 0);
-				searchInput.focus();
-
-				formSearch.addEventListener('blur', (el) => {
-					if (!formSearch.matches(':focus-within')) {
-						formSearchDeactivate()
-					}
-				}, true)
-			} else {
+		document.addEventListener("click", function (e) {
+			if (e.target.closest('.search-header__button')) {
+				if (!formSearch.classList.contains('_active')) {
+					formSearchActivate()
+				} else {
+					formSearchDeactivate()
+				}
+			} else if (!e.target.closest('.search-header__form')) {
 				formSearchDeactivate()
 			}
 		})
@@ -206,16 +208,41 @@ function spollersFilterInit() {
 }
 spollersFilterInit();
 
+
+function filterInit() {
+	const filter = document.querySelector('.filter')
+	if (filter) {
+		function handleViewportChange(mq) {
+			if (mq.matches) {
+				// Функция, которую нужно выполнить, когда размер вьюпорта соответствует брейкпоинту
+				filter.style.display = 'none'
+				console.log('Размер вьюпорта соответствует брейкпоинту');
+			} else {
+				// Функция, которую нужно выполнить, когда размер вьюпорта не соответствует брейкпоинту
+				filter.removeAttribute('style');
+				console.log('Размер вьюпорта не соответствует брейкпоинту');
+			}
+		}
+		var breakpoint = '(max-width: 767.98px)'; // Установите нужный брейкпоинт
+		var mql = window.matchMedia(breakpoint);
+
+		// Выполняем функцию при загрузке страницы
+		handleViewportChange(mql);
+		// Добавляем слушателя событий, чтобы функция выполнилась каждый раз, когда размер вьюпорта проходит брейкпоинт
+		mql.addEventListener('change', handleViewportChange);
+	}
+}
+filterInit()
 // console.log(spollersFilterItem.length)
 
 // function handleViewportChange(mq) {
-//   if (mq.matches) {
-//     // Функция, которую нужно выполнить, когда размер вьюпорта соответствует брейкпоинту
-//     console.log('Размер вьюпорта соответствует брейкпоинту');
-//   } else {
-//     // Функция, которую нужно выполнить, когда размер вьюпорта не соответствует брейкпоинту
-//     console.log('Размер вьюпорта не соответствует брейкпоинту');
-//   }
+// 	if (mq.matches) {
+// 		// Функция, которую нужно выполнить, когда размер вьюпорта соответствует брейкпоинту
+// 		console.log('Размер вьюпорта соответствует брейкпоинту');
+// 	} else {
+// 		// Функция, которую нужно выполнить, когда размер вьюпорта не соответствует брейкпоинту
+// 		console.log('Размер вьюпорта не соответствует брейкпоинту');
+// 	}
 // }
 
 // var breakpoint = '(min-width: 768px)'; // Установите нужный брейкпоинт
@@ -225,4 +252,4 @@ spollersFilterInit();
 // handleViewportChange(mql);
 
 // // Добавляем слушателя событий, чтобы функция выполнилась каждый раз, когда размер вьюпорта проходит брейкпоинт
-// mql.addListener(handleViewportChange);
+// mql.addEventListener('change', handleViewportChange);

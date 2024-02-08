@@ -86,12 +86,19 @@
     flex-shrink: 0;
 		width: 64px;
 		height: 64px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
+		background-image: url('@img/filter.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 32px 32px;
 		@media (min-width:$mobile) {
 			display: none;
+		}
+
+		@media (any-hover: hover){
+			transition: border-color .3s ease;
+			&:hover{
+				border-color: $accentColor
+			}
 		}
 	}
 

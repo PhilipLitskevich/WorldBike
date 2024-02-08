@@ -426,56 +426,70 @@ export function tabs() {
 // Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
 	if (document.querySelector(".icon-menu")) {
-		// const menu = document.querySelector('.more-menu')
-		// var elements = menu.querySelectorAll('a, button');
-		// var elementsList = Array.from(elements);
-		// console.log(elementsList);
+		const menu = document.querySelector('.more-menu')
+		if (menu) {
+			menu.style.display = 'none';
+		}
 		document.addEventListener("click", function (e) {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
-				document.querySelector('.more-menu__close-btn').focus();
-
-				//Закрытие меню при потере фокуса
-				// const menu = document.querySelector('.more-menu')
-				// menu.addEventListener('blur', (el) => {
-				// 	if (!menu.matches(':focus-within')) {
-				// 		bodyUnlock();
-				// 		document.documentElement.classList.remove("menu-open");
-				// 	}
-				// }, true)
-				//
-
-				// const menuChilds = menu.children
-				// console.log(menuChilds)
-			}
-			if (bodyLockStatus && e.target.closest('.filter-btn')) {
-				bodyLockToggle();
-				document.documentElement.classList.toggle("filter-open");
-				if (e.target.closest('.catalog__filter-btn')) {
-					document.querySelector('.filter__button-close').focus();
-
-					//Закрытие меню при потере фокуса
-					// const filter = document.querySelector('.filter')
-					// filter.addEventListener('blur', (el) => {
-					// 	if (!filter.matches(':focus-within')) {
-					// 		bodyUnlock();
-					// 		document.documentElement.classList.remove("filter-open");
-					// 	}
-					// }, true)
-					//
+				if (!document.documentElement.classList.contains('menu-open')) {
+					menuOpen(menu, 'menu-open', '.more-menu__close-btn')
+				} else {
+					menuClose(menu, 'menu-open', '.menu__icon.icon-menu')
 				}
+			}
+			if (bodyLockStatus && !e.target.closest('.more-menu') && document.documentElement.classList.contains('menu-open')) {
+				menuClose(menu, 'menu-open', '.menu__icon.icon-menu')
 			}
 		});
 	};
 }
-export function menuOpen() {
+export function menuOpen(menu, openClass, focusClasss) {
 	bodyLock();
-	document.documentElement.classList.add("menu-open");
+	menu.removeAttribute('style');
+	setTimeout(()=>{document.documentElement.classList.add(openClass)}, 10);
+	document.querySelector(focusClasss).focus();
 }
-export function menuClose() {
+export function menuClose(menu, openClass, focusClasss) {
 	bodyUnlock();
-	document.documentElement.classList.remove("menu-open");
+	document.documentElement.classList.remove(openClass);
+	setTimeout(() => {menu.style.display = 'none' }, 510)
+	document.querySelector(focusClasss).focus();
+}
+
+export function filterInit() {
+	const filter = document.querySelector('.filter')
+	if (filter) {
+		function handleViewportChange(mq) {
+			if (mq.matches) {
+				// Функция, которую нужно выполнить, когда размер вьюпорта соответствует брейкпоинту
+				filter.style.display = 'none'
+			} else {
+				// Функция, которую нужно выполнить, когда размер вьюпорта не соответствует брейкпоинту
+				filter.removeAttribute('style');
+			}
+		}
+		const breakpoint = '(max-width: 767.98px)'; // Установите нужный брейкпоинт
+		const mql = window.matchMedia(breakpoint);
+		// Выполняем функцию при загрузке страницы
+		handleViewportChange(mql);
+		// Добавляем слушателя событий, чтобы функция выполнилась каждый раз, когда размер вьюпорта проходит брейкпоинт
+		mql.addEventListener('change', handleViewportChange);
+
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.filter-btn')) {
+				if (!document.documentElement.classList.contains('filter-open')) {
+					menuOpen(filter, 'filter-open', '.filter__button-close')
+				} else {
+					menuClose(filter, 'filter-open', '.catalog__filter-btn.filter-btn')
+				}
+			}
+			if (bodyLockStatus && !e.target.closest('.filter') && document.documentElement.classList.contains('filter-open')) {
+				menuClose(filter, 'filter-open', '.catalog__filter-btn.filter-btn')
+			}
+		})
+	}
 }
 // Модуль "показать еще" =======================================================================================================================================================================================================================
 /*
