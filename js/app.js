@@ -6865,7 +6865,7 @@
             searchInput.focus();
         }
         if (formSearch && formSearchBtn) document.addEventListener("click", (function(e) {
-            if (e.target.closest(".search-header__button")) if (!formSearch.classList.contains("_active")) formSearchActivate(); else formSearchDeactivate(); else if (!e.target.closest(".search-header__form")) formSearchDeactivate();
+            if (e.target.closest(".search-header__button")) if (!formSearch.classList.contains("_active")) formSearchActivate(); else formSearchDeactivate(); else if (!e.target.closest(".search-header__form") && formSearch.classList.contains("_active")) formSearchDeactivate();
         }));
     }
     formSearchInit();
