@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240208165215">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240216173952">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -355,9 +355,8 @@
 		</header>
 		<nav class="menu__body more-menu">
 			<button class="more-menu__close-btn icon-menu" type="button">
-				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none" stroke="#B3B3B3">
-					<line x1="0.857497" y1="0.857865" x2="23.4849" y2="23.4853" stroke-width="2" />
-					<line x1="23.3341" y1="0.707107" x2="0.706641" y2="23.3345" stroke-width="2" />
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
 				</svg>
 			</button>
 			<h3 class="more-menu__title">Доп. Информация</h3>
@@ -609,13 +608,15 @@
 				<div class="footer__container">
 					<div class="footer__form-section">
 						<h2 class="footer__form-title title">Подпишитесь на наши новости</h2>
-						<form action="#" class="footer__form footer-form">
+						<form action="#" class="footer__form footer-form" data-dev data-popup-message="#thankfulness">
 							<div class="footer-form__inner">
-								<input class="footer-form__input light input" autocomplete="off" type="email" name="form[]" data-error="Ошибка" placeholder="E-mail" required>
+								<div class="footer-form__input-wrapper">
+									<input class="footer-form__input light input" autocomplete="off" type="text" name="form[]" data-error="Введен не верный E-mail" placeholder="E-mail" required data-required="email" data-validate>
+								</div>
 								<button class="footer-form__button button" type="submit">Подписаться</button>
 							</div>
-							<div class="checkbox light">
-								<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+							<div class="checkbox light footer-form__checkbox">
+								<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]" data-required data-validate data-error="Обязательно">
 								<label for="c_1" class="checkbox__label"><span class="checkbox__text">Согласен(на) на обработку персональных
 										данных </span></label>
 							</div>
@@ -712,19 +713,73 @@
 			</div>
 		</footer>
 	</div>
+	<div id="thankfulness" aria-hidden="true" class="popup thankfulness">
+		<div class="popup__wrapper popup-quick__wrapper">
+			<div class="popup__content thankfulness__content">
+				<button data-close type="button" class="popup__close thankfulness__close">
+					<svg class="close">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<svg class="thankfulness__img" width="98" height="99" viewBox="0 0 98 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect y="0.5" width="98" height="98" rx="49" fill="#F57520" />
+					<path d="M21 51.9091L38.6897 69.5L78 26.5" stroke="white" stroke-width="8.16667" />
+				</svg>
+				<div class="thankfulness__text title">
+					<p>
+						Благодарим за подписку!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="quick" aria-hidden="true" class="popup popup-quick">
+		<div class="popup__wrapper popup-quick__wrapper">
+			<div class="popup__content popup-quick__content">
+				<button data-close type="button" class="popup__close">
+					<svg class="close">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<h2 class="popup-quick__title">Заказ в один клик</h2>
+				<div class="popup-quick__inner">
+					<div class="popup-quick__product product-popup-quick">
+						<div class="product-popup-quick__image-wrapper"></div>
+						<h3 class="product-popup-quick__name"></h3>
+					</div>
+
+					<form class="popup-quick__form form-quick" method="POST" data-dev data-popup-message="#thankfulness">
+						<!-- action="https://jsonplaceholder.typicode.com/posts" -->
+						<h3 class="form-quick__title">
+							Укажите ваше имя и телефон, и наш менеджер свяжется с вами для оформления заказа.
+						</h3>
+						<input autocomplete="off" type="number" name="id товара" data-error="Ошибка" placeholder="id товара" class="input product-id visually-hidden">
+						<input autocomplete="off" type="text" name="Имя" data-error="Ошибка" placeholder="Имя" class="input">
+						<input autocomplete="off" type="tel" name="Телефон" data-error="Ошибка" placeholder="Телефон" class="input">
+						<p class="form-quick__messege">
+							Нажимая на кнопку «Заказать» я даю своё согласие на обработку персональных данных и принимаю <a href="#">условия соглашения</a>
+						</p>
+						<button type="submit" class="button form-quick__button">Заказать</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="popup" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close">Закрыть</button>
 				<div class="popup__text">
+					текст
 				</div>
 			</div>
 		</div>
 	</div>
 
 
-	<script src="js/app.min.js?_v=20240208165215"></script>
+	<script src="js/app.min.js?_v=20240216173952"></script>
 </body>
 
 </html>

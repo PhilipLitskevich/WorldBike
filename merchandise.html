@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Карточка товара</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240216173952">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		:root {
+			--bg: hsl(0, 0%, 7%);
+			;
+			--trans-dur: 0.3s;
+		}
+
+		.loader {
+			position: fixed;
+			z-index: 2000;
+			background-color: var(--bg);
+			font: 1em/1.5 sans-serif;
+			height: 100vh;
+			width: 100vw;
+			display: grid;
+			place-items: center;
+			transition:
+				background-color var(--trans-dur) ease,
+				opacity var(--trans-dur) ease,
+				z-index var(--trans-dur) ease,
+				transform 1.2s cubic-bezier(0.87, 0, 0.13, 1);
+		}
+
+		.smiley {
+			width: 8em;
+			height: 8em;
+		}
+
+		.smiley__eye1,
+		.smiley__eye2,
+		.smiley__mouth1,
+		.smiley__mouth2 {
+			animation: eye1 3s ease-in-out infinite;
+		}
+
+		.smiley__eye1,
+		.smiley__eye2 {
+			transform-origin: 64px 64px;
+		}
+
+		.smiley__eye2 {
+			animation-name: eye2;
+		}
+
+		.smiley__mouth1 {
+			animation-name: mouth1;
+		}
+
+		.smiley__mouth2 {
+			animation-name: mouth2;
+			visibility: hidden;
+		}
+
+		/* Animations */
+		@keyframes eye1 {
+			from {
+				transform: rotate(-260deg) translate(0, -56px);
+			}
+
+			50%,
+			60% {
+				animation-timing-function: cubic-bezier(0.17, 0, 0.58, 1);
+				transform: rotate(-40deg) translate(0, -56px) scale(1);
+			}
+
+			to {
+				transform: rotate(225deg) translate(0, -56px) scale(0.35);
+			}
+		}
+
+		@keyframes eye2 {
+			from {
+				transform: rotate(-260deg) translate(0, -56px);
+			}
+
+			50% {
+				transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
+			}
+
+			52.5% {
+				transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1, 0);
+			}
+
+			55%,
+			70% {
+				animation-timing-function: cubic-bezier(0, 0, 0.28, 1);
+				transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
+			}
+
+			to {
+				transform: rotate(150deg) translate(0, -56px) scale(0.4);
+			}
+		}
+
+		@keyframes eyeBlink {
+
+			from,
+			25%,
+			75%,
+			to {
+				transform: scaleY(1);
+			}
+
+			50% {
+				transform: scaleY(0);
+			}
+		}
+
+		@keyframes mouth1 {
+			from {
+				animation-timing-function: ease-in;
+				stroke-dasharray: 0 351.86;
+				stroke-dashoffset: 0;
+			}
+
+			25% {
+				animation-timing-function: ease-out;
+				stroke-dasharray: 175.93 351.86;
+				stroke-dashoffset: 0;
+			}
+
+			50% {
+				animation-timing-function: steps(1, start);
+				stroke-dasharray: 175.93 351.86;
+				stroke-dashoffset: -175.93;
+				visibility: visible;
+			}
+
+			75%,
+			to {
+				visibility: hidden;
+			}
+		}
+
+		@keyframes mouth2 {
+			from {
+				animation-timing-function: steps(1, end);
+				visibility: hidden;
+			}
+
+			50% {
+				animation-timing-function: ease-in-out;
+				visibility: visible;
+				stroke-dashoffset: 0;
+			}
+
+			to {
+				stroke-dashoffset: -351.86;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="loader" id="loader">
+		<svg role="img" aria-label="Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00" class="smiley" viewBox="0 0 128 128" width="128px" height="128px">
+			<defs>
+				<clipPath id="smiley-eyes">
+					<circle class="smiley__eye1" cx="64" cy="64" r="8" transform="rotate(-40,64,64) translate(0,-56)" />
+					<circle class="smiley__eye2" cx="64" cy="64" r="8" transform="rotate(40,64,64) translate(0,-56)" />
+				</clipPath>
+				<linearGradient id="smiley-grad" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stop-color="#000" />
+					<stop offset="100%" stop-color="#fff" />
+				</linearGradient>
+				<mask id="smiley-mask">
+					<rect x="0" y="0" width="128" height="128" fill="url(#smiley-grad)" />
+				</mask>
+			</defs>
+			<g stroke-linecap="round" stroke-width="12" stroke-dasharray="175.93 351.86">
+				<g>
+					<rect fill="hsl(45,100%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+					<g fill="none" stroke="hsl(40,100%,50%)">
+						<circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+						<circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+					</g>
+				</g>
+				<g mask="url(#smiley-mask)">
+					<rect fill="hsl(7,80%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+					<g fill="none" stroke="hsl(7,85%,50%)">
+						<circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+						<circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+					</g>
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="wrapper">
+		<header class="header undefined">
+			<div class="header__container">
+				<a href="index.html" class="header__logo"><img src="img/logo.svg" alt="logo"></a>
+				<div class="header__menu menu">
+					<nav class="menu__body catalog-menu" data-da=".more-menu, 767.98, 1">
+						<ul class="catalog-menu__list menu-spoller" data-spollers="767.98" data-one-spoller>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Trade In</a>
+							</li>
+							<li class="catalog-menu__item menu-spoller__item">
+								<a href="#" class="catalog-menu__link">Велосипеды</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_bikes">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Горные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велосипеды для триатлона</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Городские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Двухподвесные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Шоссейные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Электровелосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Гравийные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Женские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Трековые велосипеды</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Детские велосипеды</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Запчасти</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_things">
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Группы оборудования</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Рамы</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Вилки</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Запчасти для электронных&#160;групп</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Каретки</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Камеры</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Кассеты</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Колёса</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Манетки/Шифтеры</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Педали</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Переключатели скоростей</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Покрышки</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Сёдла и штыри</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Системы шатунов</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Тормоза</a></li>
+										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Цепи</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Экипировка</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_equipment">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велокуртки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велошлемы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велотрусы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велоперчатки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Термобелье</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Очки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велообувь</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Аксессуары</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Аксессуары</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_accessories">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велокомпьютеры</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Инструменты</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Вилки</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велочехлы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Крылья</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Насосы</a></li>
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Фляги, держатели</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-menu__item">
+								<a href="#" class="catalog-menu__link">Велостанки</a>
+								<button type="button" data-spoller class="menu-spoller__button">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+									</svg>
+								</button>
+								<div class="catalog-sub-menu sub-menu">
+									<ul class="sub-menu__list sub-menu__list_switch">
+										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Аксессуары для&#160;велостанков</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<div class="menu__actions actions-header">
+						<div class="actions-header__search search-header">
+							<button class="search-header__button" type="button">
+								<svg class="search-header__icon actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-search"></use>
+								</svg>
+							</button>
+							<form class="search-header__form" action="#">
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="search-header__input input" tabindex="-1">
+								<button class="search-header__form-button" type="submit" tabindex="-1">
+									<svg class="search-header__icon actions-header__icon">
+										<use xlink:href="img/icons/icons.svg#svg-search"></use>
+									</svg>
+								</button>
+							</form>
+						</div>
+						<div class="actions-header__user">
+							<a href="#" class="actions-header__link">
+								<svg class="actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-user"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="actions-header__favorites">
+							<a href="#" class="actions-header__link">
+								<svg class="actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="actions-header__cart">
+							<a href="#" class="actions-header__link">
+								<svg class="actions-header__icon">
+									<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<button class="menu__icon icon-menu" type="button"><span></span></button>
+				</div>
+			</div>
+		</header>
+		<nav class="menu__body more-menu">
+			<button class="more-menu__close-btn icon-menu" type="button">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<h3 class="more-menu__title">Доп. Информация</h3>
+			<ul class="more-menu__list">
+				<li class="more-menu__item"><a href="#" class="more-menu__link">О нас</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Веломастерская</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Хранение</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Гарантии</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Пользовательское соглашение</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Доставка и оплата</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Блог</a></li>
+				<li class="more-menu__item"><a href="#" class="more-menu__link">Контакты</a></li>
+			</ul>
+			<div class="more-menu__logo"></div>
+		</nav>
+		<main class="page">
+
+			<div class="page__container">
+				<nav class="breadcrambs breadcrambs-dark">
+					<ul class="breadcrambs__list">
+						<li class="breadcrambs__item">
+							<a href="#" class="breadcrambs__link">Главная</a>
+						</li>
+						<li class="breadcrambs__item">
+							<a href="#" class="breadcrambs__link">Горные велосипеды</a>
+						</li>
+						<li class="breadcrambs__item">
+							<span href="#" class="breadcrambs__current">Scott Scale 700 RS 2016 </span>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="merchandise">
+				<div class="merchandise__container">
+					<div class="merchandise__main main-merchandise">
+						<div class="main-merchandise__images images-merchandise" data-da=".details-merchandise, 767.98, 1">
+							<div class="images-merchandise__slider swiper">
+								<div class="images-merchandise__swiper swiper-wrapper">
+									<div class="images-merchandise__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-2.webp" type="image/webp"><img src="img/bikes/bike-2.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-3.webp" type="image/webp"><img src="img/bikes/bike-3.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+								</div>
+							</div>
+							<div class="images-merchandise__thumbs thumbs-images swiper">
+								<div class="thumbs-images__swiper swiper-wrapper">
+									<div class="thumbs-images__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-2.webp" type="image/webp"><img src="img/bikes/bike-2.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<picture><source srcset="img/bikes/bike-3.webp" type="image/webp"><img src="img/bikes/bike-3.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку"></picture>
+									</div>
+								</div>
+								<button type="button" class="swiper-button-prev thumbs-images__button-prev">
+									<svg class="thumbs-images__button-image">
+										<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+									</svg>
+								</button>
+								<button type="button" class="swiper-button-next thumbs-images__button-next">
+									<svg class="thumbs-images__button-image">
+										<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="main-merchandise__details details-merchandise">
+							<div class="details-merchandise__header header-merchandise">
+								<h1 class="header-merchandise__title title title-small">Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018</h1>
+								<div class="header-merchandise__wrapper">
+									<div class="header-merchandise__brand">Scott</div>
+									<div class="header-merchandise__inner">
+										<div class="header-merchandise__article">Артикул: <button id="articleElement">7655-188</button>
+										</div>
+										<ul class="header-merchandise__socials-list">
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-ok"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-vk"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-tg"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-whatsup"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-viber"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header-merchandise__status">В наличии</div>
+								</div>
+							</div>
+							<div class="details-merchandise__body body-merchandise">
+								<div class="body-merchandise__price merchandise-price">
+									<span class="merchandise-price__current">435 000 ₽</span>
+									<span class="merchandise-price__old">522 000 ₽</span>
+								</div>
+								<div class="body-merchandise__description">
+									<p>Профессиональный гоночный хардтейл для кросс-кантри уровня Чемпионата и Кубка Мира. Одна из самых
+										легких рам среди гоночных хардтейлов для кросс-кантри.</p>
+								</div>
+								<div class="body-merchandise__size merchandise-size">
+									<h2 class="merchandise-size__title merchandise-title">Размер:</h2>
+									<ul class="merchandise-size__list">
+										<li class="merchandise-size__item">
+											<input hidden id="size-s" class="merchandise-size__input" checked type="radio" value="1" name="size" tabindex="0">
+											<label for="size-s" class="merchandise-size__label">
+												<span class="merchandise-size__text">S</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-m-l" class="merchandise-size__input" type="radio" value="2" name="size" tabindex="0">
+											<label for="size-m-l" class="merchandise-size__label">
+												<span class="merchandise-size__text">M-L</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-m" class="merchandise-size__input" type="radio" value="2" name="size" tabindex="0">
+											<label for="size-m" class="merchandise-size__label">
+												<span class="merchandise-size__text">M</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-l" class="merchandise-size__input" type="radio" value="2" name="size" tabindex="0">
+											<label for="size-l" class="merchandise-size__label">
+												<span class="merchandise-size__text">L</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-xl" class="merchandise-size__input" type="radio" value="2" name="size" tabindex="0" disabled>
+											<label for="size-xl" class="merchandise-size__label">
+												<span class="merchandise-size__text">XL</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="body-merchandise__colors merchandise-colors">
+									<h2 class="merchandise-colors__title merchandise-title">Цвет:</h2>
+									<ul class="merchandise-colors__list">
+										<li class="merchandise-colors__item">
+											<label class="merchandise-colors__label" style="background-color: #fef95f;">
+												<input hidden class="merchandise-colors__input" checked type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Кукурузный</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #0d7f19;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Зеленый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #ffd536;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Блестящий зеленовато-желтый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #fe7e56;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Коралловый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #ac632c;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Оранжево-коричневый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #fd0012;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Красный</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="body-merchandise__actions">
+									<div class="body-merchandise__quantity quantity">
+										<div class="quantity__button quantity__button_minus _icon-minus"></div>
+										<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="1"></div>
+										<div class="quantity__button quantity__button_plus _icon-plus"></div>
+
+									</div>
+									<button class="body-merchandise__button button" data-da=".body-merchandise, 479.98, last">В корзину</button>
+									<button class="body-merchandise__favorite">
+										<svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M2.67757 13.34L14.5 25.4464L26.3224 13.34C27.6367 11.9941 28.375 10.1688 28.375 8.26553C28.375 4.30217 25.2374 1.08923 21.367 1.08923C19.5084 1.08923 17.7259 1.84531 16.4117 3.19112L14.5 5.14876L12.5883 3.19112C11.274 1.84531 9.49156 1.08923 7.63294 1.08923C3.76255 1.08923 0.625 4.30217 0.625 8.26553C0.625 10.1688 1.36333 11.9941 2.67757 13.34Z" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<section class="merchandise__description description-merchandise">
+						<h2 class="description-merchandise__title title title-small">
+							Описание
+						</h2>
+						<div class="description-merchandise__text">
+							<p>Профессиональный гоночный хардтейл для кросс-кантри уровня Чемпионата и Кубка Мира. Одна из самых лёгких рам среди гоночных хардтейлов для кросс-кантри. Scott Scale 700 RC — это рама из композитного волокна HMX, гоночная трансмиссия Sram XX1/X01 1×11, дисковые тормоза Shimano XTR M9000 и гоночные колеса Syncros XR RC. Байк Нино Шуртера для шорт-трек кросс-кантри.</p>
+						</div>
+					</section>
+
+					<section class="merchandise__characteristics characteristics-merchandise">
+						<h2 class="characteristics-merchandise__title title title-small">
+							Характеристика
+						</h2>
+						<dl class="characteristics-merchandise__tabel">
+							<div class="characteristics-merchandise__row">
+								<dt>Цвет</dt>
+								<dd>Жёлтый</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Год</dt>
+								<dd>2016</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Диаметр колеса</dt>
+								<dd>27.5</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Материал рамы</dt>
+								<dd>Карбон</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Размер</dt>
+								<dd>L</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Страна</dt>
+								<dd>Швейцария</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Производитель</dt>
+								<dd>Scott</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Покрышки</dt>
+								<dd>Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead Tubeless Easy / PaceStar compound</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Рама</dt>
+								<dd>Scale Carbon / HMX-технология / технология IMP / Коническая рулевая труба / BB92 / Технология SDS / Дропауты IDS SL</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Подседельный Штырь</dt>
+								<dd>Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm 900 Series: Carbon 2B SDS / 34.9mm</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Седло</dt>
+								<dd>Ritchey WCS Streem V3 Titanium rails</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Вилка</dt>
+								<dd>Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle / коническая рулевая труба / Удалённая блокировка, регулировка отскока / ход 100mm</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Вынос</dt>
+								<dd>Ritchey WCS C–260 700 Series: +6° / 900 Series: -6° / 31.8mm / 1 1/8»</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Колеса</dt>
+								<dd>Syncros XR RC</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Руль</dt>
+								<dd>Ritchey Carbon WCS / 9° / 720mm / грипсы с замком</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Тип тормозов</dt>
+								<dd>Дисковый гидравлический</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Тормозная система</dt>
+								<dd>Shimano XTR M9000 Disc 180/F and 160/Rmm SM-RT81 IceTech CL диски</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Манетки</dt>
+								<dd>SRAM XO1 Trigger</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Система шатунов</dt>
+								<dd>SRAM XX1 GXP PF DM Carbon crankarm / QF 156 700 Series: 34T / 900 Series: 32T</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Задний переключатель</dt>
+								<dd>SRAM XX1</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Цепь</dt>
+								<dd>SRAM PCX1</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Количество скоростей</dt>
+								<dd>11</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Гарантия</dt>
+								<dd>1 год</dd>
+							</div>
+						</dl>
+					</section>
+
+					<section class="merchandise__delivery delivery-merchandise">
+						<h2 class="delivery-merchandise__title title title-small">
+							Доставка
+						</h2>
+						<div class="delivery-merchandise__image-wrapper" style="background-image: url('img/delivery-merchandise.jpg');"></div>
+						<div class="delivery-merchandise__info">
+							<h3 class="delivery-merchandise__info-title">
+								Для удобства покупателей действует несколько способов доставки товаров
+							</h3>
+							<ul class="delivery-merchandise__list">
+								<li class="delivery-merchandise__item">Доставка по Москве, в пределах МКАД</li>
+								<li class="delivery-merchandise__item">Доставка по Московской Области</li>
+								<li class="delivery-merchandise__item">Доставка в другие регионы России</li>
+							</ul>
+						</div>
+						<p class="note">
+							Любой из способов доступен при оформление заказа через сайт или у операторов
+						</p>
+						<div class="delivery-merchandise__text">
+							<p>Велосипеды и вело-станки доставляются в собранном и настроенном виде.</p>
+							<p>На любые вопросы по правилам и стоимости доставки ответят оператор: <a href="tel:+74950557586">+7 (495) 055-75-86</a></p>
+						</div>
+						<p class="pickup">Для любого заказа возможен самовывоз из магазина</p>
+					</section>
+				</div>
+				<section class="similar">
+					<div class="similar__container">
+						<h2 class="similar__title title title-small">Похожие товары</h2>
+
+						<div class="similar__slider swiper">
+							<div class="similar__wrapper swiper-wrapper">
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+								<div class="similar__slide swiper-slide">
+									<!-- добавить класс sm для маленького размера -->
+									<article class="product sm ">
+										<div class="product__status _out-in-stock">Распродано</div>
+										<div class="product__country">
+											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
+										</div>
+										<a href="#" class="product__image">
+											<div class="product__switch image-switch">
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+												</div>
+
+												<!-- Есть возможность добавлять несколько картинок: -->
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1.webp" type="image/webp"><img src="img/bikes/bike-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/bike-1-2.webp" type="image/webp"><img src="img/bikes/bike-1-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-2.webp" type="image/webp"><img src="img/bikes/new-2.jpg" alt="Лисапед"></picture></div>
+												</div>
+												<div class="image-switch__item">
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Лисапед"></picture></div>
+												</div>
+
+											</div>
+											<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
+										</a>
+										<div class="product__content">
+											<h3 class="product__title">
+												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+											</h3>
+											<div class="product__price product-price">
+												<span class="product-price__current">351 890 ₽</span>
+												<span class="product-price__old"></span>
+											</div>
+											<div class="product-id visually-hidden">123456789</div>
+										</div>
+										<button class="product__btn button-hover" data-popup="#quick">
+											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+												<path d="M9.875 2.5C10.0408 2.5 10.1997 2.56585 10.3169 2.68306C10.4342 2.80027 10.5 2.95924 10.5 3.125V5.625C10.5 5.79076 10.4342 5.94973 10.3169 6.06694C10.1997 6.18415 10.0408 6.25 9.875 6.25C9.70924 6.25 9.55027 6.18415 9.43306 6.06694C9.31585 5.94973 9.25 5.79076 9.25 5.625V3.125C9.25 2.95924 9.31585 2.80027 9.43306 2.68306C9.55027 2.56585 9.70924 2.5 9.875 2.5ZM5.0125 4.5125C5.07056 4.4543 5.13953 4.40812 5.21546 4.37661C5.29139 4.3451 5.37279 4.32888 5.455 4.32888C5.53721 4.32888 5.61861 4.3451 5.69454 4.37661C5.77047 4.40812 5.83944 4.4543 5.8975 4.5125L7.665 6.28125C7.72469 6.3389 7.77231 6.40787 7.80506 6.48412C7.83782 6.56037 7.85506 6.64239 7.85578 6.72537C7.8565 6.80836 7.84069 6.89066 7.80926 6.96747C7.77784 7.04428 7.73143 7.11406 7.67275 7.17275C7.61406 7.23143 7.54428 7.27784 7.46747 7.30926C7.39066 7.34069 7.30836 7.3565 7.22537 7.35578C7.14239 7.35506 7.06037 7.33782 6.98412 7.30506C6.90787 7.27231 6.8389 7.22469 6.78125 7.165L5.01375 5.3975C4.89658 5.28029 4.83076 5.12135 4.83076 4.95563C4.83076 4.7899 4.89658 4.63095 5.01375 4.51375L5.0125 4.5125ZM14.7375 4.5125C14.7957 4.57056 14.8419 4.63953 14.8734 4.71546C14.9049 4.79139 14.9211 4.87279 14.9211 4.955C14.9211 5.03721 14.9049 5.11861 14.8734 5.19454C14.8419 5.27047 14.7957 5.33944 14.7375 5.3975L12.9675 7.165C12.9098 7.22469 12.8409 7.27231 12.7646 7.30506C12.6884 7.33782 12.6064 7.35506 12.5234 7.35578C12.4404 7.3565 12.3581 7.34069 12.2813 7.30926C12.2045 7.27784 12.1347 7.23143 12.076 7.17275C12.0173 7.11406 11.9709 7.04428 11.9395 6.96747C11.9081 6.89066 11.8922 6.80836 11.893 6.72537C11.8937 6.64239 11.9109 6.56037 11.9437 6.48412C11.9764 6.40787 12.0241 6.3389 12.0837 6.28125L13.8512 4.51375C13.9685 4.39658 14.1274 4.33076 14.2931 4.33076C14.4589 4.33076 14.6178 4.39658 14.735 4.51375L14.7375 4.5125ZM3 9.375C3 9.20924 3.06585 9.05027 3.18306 8.93306C3.30027 8.81585 3.45924 8.75 3.625 8.75H6.125C6.29076 8.75 6.44973 8.81585 6.56694 8.93306C6.68415 9.05027 6.75 9.20924 6.75 9.375C6.75 9.54076 6.68415 9.69973 6.56694 9.81694C6.44973 9.93415 6.29076 10 6.125 10H3.625C3.45924 10 3.30027 9.93415 3.18306 9.81694C3.06585 9.69973 3 9.54076 3 9.375ZM11.3 9.125C11.1176 8.97306 10.8957 8.8762 10.6602 8.84578C10.4248 8.81535 10.1855 8.8526 9.97045 8.95318C9.75539 9.05376 9.57343 9.2135 9.44584 9.41371C9.31826 9.61393 9.25033 9.84634 9.25 10.0838V21.46C9.25 22.615 10.6813 23.1525 11.4412 22.2837L13.9738 19.3888C14.1499 19.1879 14.3669 19.027 14.6103 18.9168C14.8537 18.8067 15.1178 18.7498 15.385 18.75H19.3988C20.5675 18.75 21.0975 17.2875 20.1987 16.54L11.3 9.12375V9.125ZM10.5 21.4625V10.0838L19.3988 17.5H15.385C14.9394 17.4999 14.499 17.5952 14.0933 17.7793C13.6875 17.9634 13.3259 18.2321 13.0325 18.5675L10.5 21.4625Z" fill="white" />
+											</svg>
+											<span>В 1 клик</span>
+										</button>
+									</article>
+								</div>
+
+							</div>
+							<button type="button" class="swiper-button-prev similar__button-prev">
+								<svg class="similar__button-image">
+									<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+								</svg>
+							</button>
+							<button type="button" class="swiper-button-next similar__button-next">
+								<svg class="similar__button-image">
+									<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</section>
+			</div>
+
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		<footer class="footer">
+			<div class="footer-banner">
+				<div class="footer__container">
+					<div class="footer__form-section">
+						<h2 class="footer__form-title title">Подпишитесь на наши новости</h2>
+						<form action="#" class="footer__form footer-form" data-dev data-popup-message="#thankfulness">
+							<div class="footer-form__inner">
+								<div class="footer-form__input-wrapper">
+									<input class="footer-form__input light input" autocomplete="off" type="text" name="form[]" data-error="Введен не верный E-mail" placeholder="E-mail" required data-required="email" data-validate>
+								</div>
+								<button class="footer-form__button button" type="submit">Подписаться</button>
+							</div>
+							<div class="checkbox light footer-form__checkbox">
+								<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]" data-required data-validate data-error="Обязательно">
+								<label for="c_1" class="checkbox__label"><span class="checkbox__text">Согласен(на) на обработку персональных
+										данных </span></label>
+							</div>
+						</form>
+						<div class="footer__form-section-bg"></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__container  footer__container_main">
+				<div class="footer__main main-footer">
+					<div class="main-footer__about footer-about">
+						<a href="#" class="footer-about__logo"><img src="img/logo.svg" alt="logo"></a>
+						<div class="footer-about__text">
+							<p>Компания World-bikes специализируется на продаже товаров для велосипедного спорта.</p>
+						</div>
+					</div>
+					<div class="main-footer__navigations navigations-footer" data-spollers="479.98,max">
+						<nav class="navigations-footer__body navigations-footer__body_catalog">
+							<button class="navigations-footer__title footer-title" data-spoller>
+								<span>Каталог</span>
+								<svg class="navigations-footer__spoiler-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<ul class="navigations-footer__list">
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Trade-in</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Велосипеды</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Экипировка</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Запчасти</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Велостанки</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Аксессуары</a>
+								</li>
+							</ul>
+						</nav>
+
+						<nav class="navigations-footer__body navigations-footer__body_for-clients">
+							<button class="navigations-footer__title footer-title" data-spoller>
+								<span>Для клиента</span>
+								<svg class="navigations-footer__spoiler-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<ul class="navigations-footer__list">
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">О нас</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Доставка и
+										оплата</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Блог</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Контакты</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Веломастерская</a></li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Хранение</a>
+								</li>
+								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Гарантии</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="navigations-footer__contacts footer-contacts" data-da=".footer__container_main, 767.98, 1">
+							<h3 class="navigations-footer__contacts-title footer-title">Контакты</h3>
+							<ul class="footer-contacts__list">
+								<li class="footer-contacts__item">
+									<svg class="footer-contacts__icon">
+										<use xlink:href="img/icons/icons.svg#svg-phone"></use>
+									</svg>
+									<div class="footer-contacts__links-group">
+										<a href="tel:+74950557586" class="footer-contacts__link footer-link">+7(495)055-75-86</a>
+										<a href="tel:+79651422299" class="footer-contacts__link footer-link">+7(965)142-22-99</a>
+									</div>
+								</li>
+								<li class="footer-contacts__item">
+									<svg class="footer-contacts__icon">
+										<use xlink:href="img/icons/icons.svg#svg-navigation"></use>
+									</svg>
+									<a href="#" class="footer-contacts__link footer-link">г. Москва, ул. Доватора, 7/8 с1</a>
+								</li>
+								<li class="footer-contacts__item">
+									<svg class="footer-contacts__icon">
+										<use xlink:href="img/icons/icons.svg#svg-mail"></use>
+									</svg>
+									<a href="mailto:order@world-bike.ru" class="footer-contacts__link footer-link">order@world-bike.ru</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bot bot-footer">
+					<p class="bot-footer__text">© 2023 world bike</p>
+					<a href="#" class="bot-footer__link">Пользовательское соглашение</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="thankfulness" aria-hidden="true" class="popup thankfulness">
+		<div class="popup__wrapper popup-quick__wrapper">
+			<div class="popup__content thankfulness__content">
+				<button data-close type="button" class="popup__close thankfulness__close">
+					<svg class="close">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<svg class="thankfulness__img" width="98" height="99" viewBox="0 0 98 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect y="0.5" width="98" height="98" rx="49" fill="#F57520" />
+					<path d="M21 51.9091L38.6897 69.5L78 26.5" stroke="white" stroke-width="8.16667" />
+				</svg>
+				<div class="thankfulness__text title">
+					<p>
+						Благодарим за подписку!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="quick" aria-hidden="true" class="popup popup-quick">
+		<div class="popup__wrapper popup-quick__wrapper">
+			<div class="popup__content popup-quick__content">
+				<button data-close type="button" class="popup__close">
+					<svg class="close">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<h2 class="popup-quick__title">Заказ в один клик</h2>
+				<div class="popup-quick__inner">
+					<div class="popup-quick__product product-popup-quick">
+						<div class="product-popup-quick__image-wrapper"></div>
+						<h3 class="product-popup-quick__name"></h3>
+					</div>
+
+					<form class="popup-quick__form form-quick" method="POST" data-dev data-popup-message="#thankfulness">
+						<!-- action="https://jsonplaceholder.typicode.com/posts" -->
+						<h3 class="form-quick__title">
+							Укажите ваше имя и телефон, и наш менеджер свяжется с вами для оформления заказа.
+						</h3>
+						<input autocomplete="off" type="number" name="id товара" data-error="Ошибка" placeholder="id товара" class="input product-id visually-hidden">
+						<input autocomplete="off" type="text" name="Имя" data-error="Ошибка" placeholder="Имя" class="input">
+						<input autocomplete="off" type="tel" name="Телефон" data-error="Ошибка" placeholder="Телефон" class="input">
+						<p class="form-quick__messege">
+							Нажимая на кнопку «Заказать» я даю своё согласие на обработку персональных данных и принимаю <a href="#">условия соглашения</a>
+						</p>
+						<button type="submit" class="button form-quick__button">Заказать</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+					текст
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/app.min.js?_v=20240216173952"></script>
+</body>
+
+</html>
