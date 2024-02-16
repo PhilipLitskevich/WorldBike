@@ -5,7 +5,7 @@
 	color: $lightColor;
 
 	/* desk h1 */
-	font-family: BebasNeueCyrillic;
+	font-family: $second-family;
 	font-size: rem(110);
 	@include adaptiveValue("font-size", 110, 60, 1800, 479.98, 1);
 	@include adaptiveValue("margin-bottom", 48, 24, 1800, 767.98, 1);

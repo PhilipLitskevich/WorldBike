@@ -1,0 +1,68 @@
+.delivery-page {
+	.page-header {
+		background-position: center right 35%
+	}
+	.page-header__title{
+		@media (max-width:$mobileSmall){
+			 max-width: rem(300); 
+		}
+	}
+}
+.delivery {
+	@include adaptiveValue("margin-top", 48, 32);
+	@include adaptiveValue("margin-bottom", 80, 48);
+
+	// .delivery__container
+	&__container {}
+
+	// .delivery__title
+	&__title {}
+
+	// .delivery__info
+	&__info {}
+}
+
+// .delivery__title
+.delivery__title,
+.payment__title {
+	@include adaptiveValue("margin-bottom", 32, 24);
+}
+
+.delivery__info,
+.payment__info {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 160%;
+	color: $mainColor;
+
+	@include adaptiveValue("margin-bottom", 40, 24);
+
+	p {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 24, 16);
+		}
+	}
+
+	a {
+		color: $accentColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.payment {
+	@include adaptiveValue("margin-bottom", 160, 48);
+
+	// .payment__container
+	&__container {}
+
+	// .payment__title
+	&__title {}
+
+	// .payment__info
+	&__info {}
+}

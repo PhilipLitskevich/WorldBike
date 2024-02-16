@@ -1,18 +1,29 @@
 // Заголовки, общие БЄМ блоки и проче...
 .title {
-	font-family: BebasNeueCyrillic;
+	font-family: $second-family;
+
 	font-size: rem(64);
 	font-style: normal;
 	font-weight: 400;
 	line-height: 123%;
 	/* 78.72px */
-	letter-spacing: 3.2px;
-	@include adaptiveValue("letter-spacing", 3.2, 2.5, $containerWidth, 479.98, 1);
+	letter-spacing: 0.05em;
 
-	&:not(.home-catalog__cell-title, .contact-us__title) {
+	&:not(.home-catalog__cell-title, .contact-us__title, .title-small) {
 		@include adaptiveValue("font-size", 64, 50, $containerWidth, 479.98, 1);
 	}
+
+	&.title-small {
+		font-weight: 400;
+		font-size: 40px;
+		@include adaptiveValue("font-size", 40, 32, $containerWidth, 479.98, 1);
+		line-height: 123%;
+		letter-spacing: 0.05em;
+		color: $mainColor;
+	}
 }
+
+
 
 .link {
 	transition: color .3s ease;
@@ -20,6 +31,20 @@
 	@media (any-hover: hover) {
 		&:hover {
 			color: $accentColor;
+		}
+	}
+}
+
+.close {
+	width: rem(25);
+	height: rem(25);
+	fill: $light-grey;
+
+	@media (any-hover: hover) {
+		transition: fill .3s ease;
+
+		&:hover {
+			fill: $accentColor;
 		}
 	}
 }
@@ -119,12 +144,9 @@
 	font-weight: 400;
 	line-height: 160%;
 	z-index: 25;
+	color: #4D932C;
 
-	&_in-stock {
-		color: #4D932C;
-	}
-
-	&_out-in-stock {
+	&._out-in-stock {
 		color: #F53A20;
 	}
 }
@@ -214,6 +236,10 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+
+	.touch & {
+		display: none;
+	}
 }
 
 .image-pagination__item {
@@ -312,7 +338,9 @@
 }
 
 .product {
-	.catalog & {
+
+	.catalog &,
+	&.sm {
 		max-width: none;
 		padding: rem(16) rem(19) rem(22) rem(16);
 
@@ -667,6 +695,45 @@
 	}
 }
 
+.spollers {
+
+	// .spollers__tabel
+	&__tabel {}
+
+	// .spollers__tabel-row
+	&__tabel-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: rem(24);
+		padding-bottom: rem(24);
+		gap: rem(40);
+
+		&:first-child {
+			padding-top: rem(4);
+		}
+
+		&:not(:last-child) {
+			border-bottom: rem(1) solid $grey-3;
+		}
+
+		dt {
+			flex-grow: 1;
+		}
+
+		dd {
+			font-weight: 300;
+			font-size: rem(18);
+			line-height: 160%;
+			letter-spacing: 0.01em;
+			text-align: right;
+			color: $grey-1;
+
+			text-align: end;
+		}
+	}
+}
+
 //========================================================================================================================================================
 // Spollers End
 //========================================================================================================================================================
@@ -690,6 +757,7 @@
 
 		&:disabled {
 			cursor: default;
+
 			svg {
 				fill: $light-grey;
 			}
@@ -805,3 +873,65 @@
 //========================================================================================================================================================
 // Pagging End
 //========================================================================================================================================================
+
+//========================================================================================================================================================
+//similar
+//========================================================================================================================================================
+
+.similar {
+
+	// .similar__container
+	&__container {}
+
+	// .similar__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 80, 32);
+	}
+
+	// .similar__slider
+	&__slider {
+		position: relative;
+		z-index: 1;
+		margin: 0 rem(-39) rem(-200);
+		padding: 0 rem(39) rem(200);
+
+		@media (max-width:$mobile) {
+			margin: 0;
+			padding: 0 0 rem(89);
+		}
+	}
+
+	// .similar__wrapper
+	&__wrapper {}
+
+	// .similar__slide
+	&__slide {}
+
+	&__button-next,
+	&__button-prev {
+		position: absolute;
+		z-index: 100;
+		top: rem(165);
+	}
+
+	// .similar__button-prev
+	&__button-prev {
+		left: rem(40);
+
+		@media (max-width:$mobile) {
+			left: rem(8);
+		}
+	}
+
+	// .similar__button-image
+	&__button-image {}
+
+	// .similar__button-next
+	&__button-next {
+		right: rem(40);
+
+		@media (max-width:$mobile) {
+			right: rem(8);
+		}
+	}
+}

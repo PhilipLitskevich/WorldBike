@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"О нас"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			@@include('html/_page-header.htm',{
+			"image":"about.jpg",
+			"title":"О нас"
+			})
+
+			<section class="bike">
+				<div class="bike__container">
+					<h2 class="bike__title">
+						<span class="accent">Велосипед</span> – это не просто средство передвижения!
+					</h2>
+					<div class="bike__wrapper">
+						<div class="bike__card">
+							<h3 class="bike__card-title">Хранение</h3>
+							<div class="bike__card-text">
+								<p>Любишь кататься — люби и велосипед в квартире на зиму парковать или сдавай к нам на хранение и
+									обслуживание.</p>
+							</div>
+							<a href="#" class="bike__card-link">Подробнее</a>
+						</div>
+						<div class="bike__card">
+							<h3 class="bike__card-title">Веломастерская </h3>
+							<div class="bike__card-text">
+								<p>Если вы купили велосипед в нашем магазине, то то можете не волноваться о настройке и проверке, так
+									как мы это выполняем в рамках предпродажной подготовки.</p>
+							</div>
+							<a href="#" class="bike__card-link">Подробнее</a>
+						</div>
+						<div class="bike__card bike__card_accent">
+							<h3 class="bike__card-title">Гарантия</h3>
+							<div class="bike__card-text">
+								<p>Также, для удобства покупателей, наш магазин помогает (участвует) в формирование гарантийных запросов
+									по всем нижеперечисленным брендам. При любом гарантийном случае можно обращаться напрямую к нам</p>
+							</div>
+							<a href="#" class="bike__card-link">Подробнее</a>
+						</div>
+					</div>
+				</div>
+				<div class="bike__slider bike-slider swiper">
+					<div class="bike-slide__wrapper swiper-wrapper">
+					</div>
+				</div>
+
+			</section>
+
+			<section class="about-gallery">
+				<div class="about-gallery__container">
+					<h2 class="about-gallery__title title">
+						Фотогалерея
+					</h2>
+				</div>
+
+				<div class="about-gallery__slider swiper">
+					<div data-gallery class="about-gallery__wrapper swiper-wrapper">
+						<a href="@img/gallery/1.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/1.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/2.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/2.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/3.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/3.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/4.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/4.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/5.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/5.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/1.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/1.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/2.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/2.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/3.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/3.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/4.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/4.jpg" class="gallery__preview">
+						</a>
+						<a href="@img/gallery/5.jpg" class="gallery__image about-gallery__slide swiper-slide">
+							<img alt="Превью" src="@img/gallery/5.jpg" class="gallery__preview">
+						</a>
+					</div>
+				</div>
+				<!-- 
+				<div data-gallery class="gallery">
+					<a href="@img/gallery/1.jpg" class="gallery__image">
+						<img alt="Превью" src="@img/gallery/1.jpg" class="gallery__preview">
+					</a>
+					<a href="@img/gallery/2.jpg" class="gallery__image">
+						<img alt="Превью" src="@img/gallery/2.jpg" class="gallery__preview">
+					</a>
+					<a href="@img/gallery/3.jpg" class="gallery__image">
+						<img alt="Превью" src="@img/gallery/3.jpg" class="gallery__preview">
+					</a>
+					<a href="@img/gallery/4.jpg" class="gallery__image">
+						<img alt="Превью" src="@img/gallery/4.jpg" class="gallery__preview">
+					</a>
+					<a href="@img/gallery/5.jpg" class="gallery__image">
+						<img alt="Превью" src="@img/gallery/5.jpg" class="gallery__preview">
+					</a>
+				</div> -->
+			</section>
+
+			<section class="contacts">
+				<div class="contacts__container">
+					<h2 class="contacts__title title">
+						Контакты
+					</h2>
+				</div>
+
+				<div class="map about__map" id="map"></div>
+
+				<div class="contacts__container">
+					<div class="contacts__col">
+						<div class="contacts__field">
+							<h3>Адрес магазина:</h3>
+							<p><a href="#">Россия, Москва, ул. Доватора, дом 7/8 с1</a></p>
+						</div>
+						<div class="contacts__field">
+							<h3>График работы:</h3>
+							<p>Понедельник — Воскресение с 10:00 до 20:00 часа</p>
+							<p>БЕЗ ВЫХОДНЫХ</p>
+						</div>
+						<div class="contacts__field">
+							<h3>Телефоны:</h3>
+							<p><a href="tel:+74950557586">+7 (495) 055-75-86</a></p>
+							<p><a href="tel:+7 9651422299">+7 (965) 142-22-99</a></p>
+						</div>
+						<div class="contacts__field">
+							<h3>E-mail:</h3>
+							<p><a href="mailto:order@world-bike.ru">order@world-bike.ru</a> — заказы</p>
+							<p><a href="mailto:info@world-bike.ru">info@world-bike.ru</a> — информация</p>
+							<p><a href="mailto:opt@world-bike.ru">opt@world-bike.ru</a> — опт</p>
+						</div>
+					</div>
+					<div class="contacts__col">
+						<div class="contacts__field">
+							<h3>Юридическая информация:</h3>
+							<dl class="information">
+								<div class="information__item">
+									<dt class="information__term">Наименование: </dt>
+									<dd class="information__val">ИП НЕТРЕБИН ВЛАДИСЛАВ ВЯЧЕСЛАВОВИЧ</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">ИНН:</dt>
+									<dd class="information__val">402573939444</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">ОГРН: </dt>
+									<dd class="information__val">317402700004683</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Фактический адрес: </dt>
+									<dd class="information__val">Москва, ул. Доватора, дом 7/8 с1</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Юридический адрес: </dt>
+									<dd class="information__val">Москва, ул. Доватора, дом 7/8 с1</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Расчетный счет: </dt>
+									<dd class="information__val">40802810800000085888</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Банк: </dt>
+									<dd class="information__val">АО «ТИНЬКОФФ БАНК»</dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">Корр.счет: </dt>
+									<dd class="information__val">30101810145250000974 </dd>
+								</div>
+								<div class="information__item">
+									<dt class="information__term">БИК: </dt>
+									<dd class="information__val">044525974</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+				</div>
+				</s>
+				@@include('html/_partners.htm',{})
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -182,6 +182,19 @@
 	&__button-close {
 		padding: rem(10);
 		margin: rem(-10);
+
+		svg {
+			width: rem(25);
+			height: rem(25);
+			fill: $light-grey;
+			
+			@media (any-hover: hover) {
+				transition: fill .3s ease;
+				&:hover {
+					fill: $accentColor;
+				}
+			}
+		}
 	}
 
 	&__button-show {
@@ -445,7 +458,7 @@
 
 	h3 {
 		margin-bottom: rem(24);
-		font-family: BebasNeueCyrillic;
+		font-family: $second-family;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 123%;
@@ -461,7 +474,7 @@
 	}
 
 	p {
-		font-family: BebasNeueCyrillic;
+		font-family: $second-family;
 		font-weight: 400;
 		@include adaptiveValue("font-size", 40, 20);
 		line-height: 123%;

@@ -1,54 +1,76 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-	width: 88px;
-	height: 40px;
 	display: flex;
 	border: 1px solid rgba(166, 166, 166, 0.45);
+
+	border: 1px solid $grey-3;
+	border-radius: 10px;
+	padding: 10px 16px;
+	width: 123px;
+	height: 52px;
+
 	// .quantity__button
 	&__button {
-		flex: 0 0 30px;
-		position: relative;
+		flex: 0 0 50px;
+		margin: rem(-10) 0;
+		padding: rem(10) 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transition: all 0.3s ease 0s;
-			margin: 0px 0px 0px -4.5px;
-			background-color: #a6a6a6;
-			width: 9px;
-			height: 1px;
+
+		&::before {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 123%;
+			text-align: right;
+			color: $mainColor;
+
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
-				&::before,
-				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
+				&::before {
+					color: $accentColor;
 				}
 			}
 		}
+
 		// .quantity__button_plus
 		&_plus {
+			margin-right: rem(-16);
+			padding-left: rem(10);
+
+			// justify-content: flex-end;
 			&::before {
-				transform: rotate(-90deg);
+				content: "+";
 			}
 		}
+
 		// .quantity__button_minus
 		&_minus {
+			margin-left: rem(-16);
+			padding-right: rem(10);
+
+			&::before {
+				content: "-";
+			}
 		}
 	}
+
 	// .quantity__input
 	&__input {
 		flex: 1 1 auto;
+
 		input {
 			height: 100%;
-			color: #a6a6a6;
-			font-size: 12px;
 			width: 100%;
 			text-align: center;
+			font-weight: 500;
+			font-size: rem(16);
+			line-height: 123%;
+			color: $mainColor;
 		}
 	}
 }

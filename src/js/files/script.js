@@ -253,3 +253,87 @@ filterInit()
 
 // // Добавляем слушателя событий, чтобы функция выполнилась каждый раз, когда размер вьюпорта проходит брейкпоинт
 // mql.addEventListener('change', handleViewportChange);
+
+//========================================================================================================================================================
+//pop-up Quick
+//========================================================================================================================================================
+
+function popupQuickInit() {
+	const popup = document.getElementById('quick')
+	const products = document.querySelectorAll('.product')
+
+	if (popup && products) {
+		products.forEach((product) => {
+			const button = product.querySelector('.product__btn');
+			const productTitle = product.querySelector('.product__title');
+			const productImage = product.querySelector('.image-switch__img img');
+			const productId = product.querySelector('.product-id');
+
+
+			const popupProductTitle = popup.querySelector('.product-popup-quick__name');
+			const popupProductImageWrapper = popup.querySelector('.product-popup-quick__image-wrapper');
+			const popupProductId = popup.querySelector('.product-id');
+
+
+			function resetPopup() {
+				popupProductTitle.textContent = '';
+				popupProductImageWrapper.innerHTML = '';
+				popupProductId.value = '';
+			}
+			button.addEventListener('click', () => {
+				resetPopup()
+
+				popupProductTitle.textContent = productTitle.textContent
+				popupProductImageWrapper.appendChild(productImage.cloneNode(true))
+				popupProductId.value = productId.textContent
+			})
+
+			// document.addEventListener("beforePopupOpen", function (e) {
+			// 	const currentPopup = e.detail.popup;
+			// 	if (document.querySelector(currentPopup.targetOpen.selector).id === popup.id){
+			// 		resetPopup()
+			// 	}
+			// });
+		})
+
+	}
+
+
+}
+popupQuickInit()
+
+//========================================================================================================================================================
+// Получаем элемент артикула товара по идентификатору
+var articleElement = document.getElementById('articleElement');
+
+if (articleElement) {
+	// При щелчке на элементе
+	articleElement.addEventListener('click', function () {
+		// Получаем текст из элемента
+		var articleText = articleElement.textContent;
+
+		// Удаляем символ "-" из текста артикула
+		var cleanText = articleText.replace('-', '');
+
+		// Создаем временный элемент textarea
+		var tempTextArea = document.createElement('textarea');
+
+		// Устанавливаем в текстовое поле значение текста артикула без символа "-"
+		tempTextArea.value = cleanText;
+
+		// Добавляем временный элемент textarea в документ
+		document.body.appendChild(tempTextArea);
+
+		// Выделяем текст в textarea
+		tempTextArea.select();
+
+		// Копируем выделенный текст в буфер обмена
+		document.execCommand('copy');
+
+		// Удаляем временный элемент textarea
+		document.body.removeChild(tempTextArea);
+
+		// Выводим сообщение об успешном копировании
+		alert('Номер артикула товара скопирован в буфер обмена: ' + cleanText);
+	});
+}

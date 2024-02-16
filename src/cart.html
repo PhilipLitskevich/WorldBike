@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Пользовательское соглашение"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page-cart">
+			<div class="page__container">
+				<nav class="breadcrambs breadcrambs-dark">
+					<ul class="breadcrambs__list">
+						<li class="breadcrambs__item">
+							<a href="#" class="breadcrambs__link">Главная</a>
+						</li>
+						<li class="breadcrambs__item">
+							<span href="#" class="breadcrambs__current">Корзина</span>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<section class="cart">
+				<div class="cart__container">
+					<h1 class="cart__title title">Корзина</h1>
+
+					<div class="cart__wrapper">
+						<div class="cart__content content-cart">
+							<div class="content-cart__actions">
+								<a href="#" class="content-cart__actions-link">Вернуться к покупкам</a>
+								<button class="content-cart__actions-button">Очистить корзину</button>
+							</div>
+							<ul class="content-cart__list">
+								<li class="content-cart__item">
+									<article class="content-cart__product cart-product">
+										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
+										<h3 class="cart-product__name">
+											Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018
+										</h3>
+										<div class="cart-product__quantity quantity">
+											<button type="button" class="quantity__button quantity__button_minus"></button>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<button type="button" class="quantity__button quantity__button_plus"></button>
+										</div>
+										<div class="cart-product__price">
+											<span class="cart-product__current-price">435 000 ₽</span>
+											<span class="cart-product__old-price">522 000 ₽</span>
+										</div>
+										<button class="cart-product__delete-button">
+											<svg class="cart-product__delete-icon">
+												<use xlink:href="img/icons/icons.svg#svg-close"></use>
+											</svg>
+										</button>
+									</article>
+								</li>
+								<li class="content-cart__item">
+									<article class="content-cart__product cart-product">
+										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
+										<h3 class="cart-product__name">
+											Trek Fx 3 Disc Dnister Black HYBD 2022
+										</h3>
+										<div class="cart-product__quantity quantity">
+											<button type="button" class="quantity__button quantity__button_minus"></button>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<button type="button" class="quantity__button quantity__button_plus"></button>
+										</div>
+										<div class="cart-product__price">
+											<span class="cart-product__current-price">97 070 ₽</span>
+										</div>
+										<button class="cart-product__delete-button">
+											<svg class="cart-product__delete-icon">
+												<use xlink:href="img/icons/icons.svg#svg-close"></use>
+											</svg>
+										</button>
+
+									</article>
+								</li>
+								<li class="content-cart__item">
+									<article class="content-cart__product cart-product">
+										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
+										<h3 class="cart-product__name">
+											Trek Marlin 4 Aloha ATB 27.5 2022
+										</h3>
+										<div class="cart-product__quantity quantity">
+											<button type="button" class="quantity__button quantity__button_minus"></button>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<button type="button" class="quantity__button quantity__button_plus"></button>
+										</div>
+										<div class="cart-product__price">
+											<span class="cart-product__current-price">435 000 ₽</span>
+											<span class="cart-product__old-price">522 000 ₽</span>
+										</div>
+										<button class="cart-product__delete-button">
+											<svg class="cart-product__delete-icon">
+												<use xlink:href="img/icons/icons.svg#svg-close"></use>
+											</svg>
+										</button>
+									</article>
+								</li>
+							</ul>
+						</div>
+						<div class="cart__result cart-result">
+							<dl class="cart-result__list">
+								<div class="cart-result__row">
+									<dt>Номер заказа</dt>
+									<dd>789563678</dd>
+								</div>
+								<div class="cart-result__row">
+									<dt>Сумма заказа (без скидки)</dt>
+									<dd>692 370 ₽ </dd>
+								</div>
+								<div class="cart-result__row">
+									<dt>Скидка</dt>
+									<dd>87 000 ₽</dd>
+								</div>
+								<div class="cart-result__row cart-result__row_full-price">
+									<dt>Итого</dt>
+									<dd>605 370 ₽</dd>
+								</div>
+							</dl>
+							<button class="cart-result__button button">Оформить заказ</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			@@include('html/_similar.htm',{})
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

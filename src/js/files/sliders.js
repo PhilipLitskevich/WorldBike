@@ -8,7 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Pagination, Autoplay, Controller, Navigation, FreeMode } from 'swiper/modules';
+import { Pagination, Autoplay, Controller, Navigation, FreeMode, Thumbs } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -99,7 +99,6 @@ function initSliders() {
 		});
 		// end
 	}
-
 	if (document.querySelector('.offers-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		new Swiper('.offers-slider', { // Указываем скласс нужного слайдера
@@ -142,6 +141,54 @@ function initSliders() {
 				991.98: {
 					slidesPerView: 3,
 				},
+			},
+		});
+		// end
+	}
+	if (document.querySelector('.similar__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.similar__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+
+			observer: true,
+			observeParents: true,
+			// allowTouchMove: false,
+			autoHeight: false,
+			speed: 800,
+			// loop: true,
+			// loopAdditionalSlides: 7,
+			freeMode: {
+				enabled: false,
+			},
+
+			navigation: {
+				nextEl: '.similar__button-next',
+				prevEl: '.similar__button-prev',
+			},
+
+			a11y: {
+				prevSlideMessage: 'Previous slide',
+				nextSlideMessage: 'Next slide',
+			},
+			spaceBetween: 40,
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					centeredSlides: true,
+				},
+				// when window width is >= 480px
+				650: {
+					slidesPerView: 2,
+					centeredSlides: false,
+				},
+				929.98: {
+					slidesPerView: 3,
+				},
+				1200: {
+					slidesPerView: 4,
+				}
 			},
 		});
 		// end
@@ -247,6 +294,116 @@ function initSliders() {
 				635: {
 					slidesPerView: 1.5,
 					spaceBetween: 25,
+				}
+			},
+		});
+		// end
+	}
+	copyChildrenAndAddClasses('.bike__wrapper', '.bike-slide__wrapper', ['bike__slide', 'swiper-slide']);
+	if (document.querySelector('.bike-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.bike-slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [FreeMode],
+			observer: true,
+			observeParents: true,
+			autoHeight: false,
+			speed: 800,
+			freeMode: {
+				enabled: true,
+				sticky: true,
+				momentumVelocityRatio: 0.4,
+			},
+			spaceBetween: 40,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.1,
+					spaceBetween: 8,
+				},
+				450: {
+					slidesPerView: 1.2,
+					spaceBetween: 16,
+				},
+				635: {
+					slidesPerView: 1.5,
+					spaceBetween: 40,
+				}
+			},
+		});
+		// end
+	}
+	if (document.querySelector('.thumbs-images')) {
+		const thumbsSwiper = new Swiper('.thumbs-images', {
+			modules: [Navigation, Thumbs],
+			observer: true,
+			observeParents: true,
+			autoHeight: false,
+			speed: 800,
+			spaceBetween: 28,
+			slidesPerView: 3,
+		});
+	
+		new Swiper('.images-merchandise__slider', {
+			modules: [Navigation, Thumbs],
+			thumbs: {
+				swiper: thumbsSwiper,
+			},
+			observer: true,
+			observeParents: true,
+			autoHeight: false,
+			speed: 800,
+			navigation: {
+				nextEl: '.thumbs-images__button-next',
+				prevEl: '.thumbs-images__button-prev',
+			},
+			spaceBetween: 40,
+			slidesPerView: 1,
+		});
+	}
+
+	if (document.querySelector('.about-gallery__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.about-gallery__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [FreeMode, Autoplay],
+			observer: true,
+			observeParents: true,
+			autoHeight: false,
+			speed: 3000,
+			loop: true,
+			freeMode: {
+				enabled: true,
+				// sticky: true,
+				disableOnInteraction: true,
+				momentum: false,
+				// momentumVelocityRatio: 0.4,
+			},
+
+			autoplay: {
+				delay: 1,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
+
+			spaceBetween: 40,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.5,
+					spaceBetween: 8,
+				},
+				635: {
+					slidesPerView: 2.5,
+					spaceBetween: 16,
+				},
+				935: {
+					slidesPerView: 3.5,
+					spaceBetween: 25,
+				},
+				1300: {
+					slidesPerView: 4.5,
+					spaceBetween: 40,
 				}
 			},
 		});

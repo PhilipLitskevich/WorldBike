@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Доставка и оплата"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page delivery-page">
+			@@include('html/_page-header.htm',{
+			"image":"delivery.jpg",
+			"title":"Доставка и оплата"
+			})
+
+			<section class="delivery">
+				<div class="delivery__container">
+					<h2 class="delivery__title title">
+						Информация о доставке
+					</h2>
+					<div class="delivery__info">
+						<p>Для удобства покупателей действует несколько способов доставки товаров. Существует доставка по Москве
+							и М.О., доставка по регионам России и самовывоз. Любой из способов доступен при оформление заказа
+							через сайт или у операторов.</p>
+						<p>Велосипеды и вело-станки доставляются в собранном и настроенном виде.</p>
+						<p>На любые вопросы по правилам и стоимости доставки ответят оператор: <a
+								href="tel:+74950557586">+7(495)055-75-86</a></p>
+					</div>
+					<div data-spollers class="spollers" data-one-spoller>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Доставка по Москве, в пределах МКАД
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Заказы стоимостью до 20 тыс. ₽ — 1 000 ₽</p>
+								<p>Заказы стоимостью более 20 тыс. ₽ — Бесплатно.</p>
+								<p>Доставка негабаритных товаров рассчитывается отдельно.</p>
+								<p>Срок доставки не более 2 дней с момента согласования заказа. При доставке по Москве оплату товара
+									можно произвести курьеру.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Доставка по Московской Области
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Заказы стоимостью до 20 тыс. ₽ — 1 000 ₽</p>
+								<p>Заказы стоимостью более 20 тыс. ₽ — Бесплатно.</p>
+								<p>Доставка негабаритных товаров рассчитывается отдельно.</p>
+								<p>Срок доставки не более 2 дней с момента согласования заказа. При доставке по Москве оплату товара
+									можно произвести курьеру.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Доставка в другие регионы России
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Заказы стоимостью до 20 тыс. ₽ — 1 000 ₽</p>
+								<p>Заказы стоимостью более 20 тыс. ₽ — Бесплатно.</p>
+								<p>Доставка негабаритных товаров рассчитывается отдельно.</p>
+								<p>Срок доставки не более 2 дней с момента согласования заказа. При доставке по Москве оплату товара
+									можно произвести курьеру.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Магазин — пункт самовывоза в Москве
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Заказы стоимостью до 20 тыс. ₽ — 1 000 ₽</p>
+								<p>Заказы стоимостью более 20 тыс. ₽ — Бесплатно.</p>
+								<p>Доставка негабаритных товаров рассчитывается отдельно.</p>
+								<p>Срок доставки не более 2 дней с момента согласования заказа. При доставке по Москве оплату товара
+									можно произвести курьеру.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="payment">
+				<div class="payment__container">
+					<h2 class="payment__title title">
+						ИНФОРМАЦИЯ ОБ ОПЛАТЕ
+					</h2>
+					<div class="payment__info">
+						<p>Для удобства покупателей, действует несколько способов отплаты. Ниже, вы можете ознакомится
+							с подробностями и выбрать наиболее подходящий. Любой из способов доступен при оформление заказа
+							через корзину или операторов.</p>
+					</div>
+
+					<div data-spollers class="spollers" data-one-spoller>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Оплата наличными
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Оплата банковскими картами
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Оплата через сайт
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Безопасность электронных платежей
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Оплата в рассрочку картой «Халва»
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Оплата заказов при доставке по России
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Покупка в кредит
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<p>Оплата наличными производится при непосредственной доставки курьеру или заранее в нашем магазине.
+									Адреса: Москва, ул. Доватора, дом 7/8 с1</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

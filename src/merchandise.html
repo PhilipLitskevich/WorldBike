@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Карточка товара"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+
+			<div class="page__container">
+				<nav class="breadcrambs breadcrambs-dark">
+					<ul class="breadcrambs__list">
+						<li class="breadcrambs__item">
+							<a href="#" class="breadcrambs__link">Главная</a>
+						</li>
+						<li class="breadcrambs__item">
+							<a href="#" class="breadcrambs__link">Горные велосипеды</a>
+						</li>
+						<li class="breadcrambs__item">
+							<span href="#" class="breadcrambs__current">Scott Scale 700 RS 2016 </span>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="merchandise">
+				<div class="merchandise__container">
+					<div class="merchandise__main main-merchandise">
+						<div class="main-merchandise__images images-merchandise" data-da=".details-merchandise, 767.98, 1">
+							<div class="images-merchandise__slider swiper">
+								<div class="images-merchandise__swiper swiper-wrapper">
+									<div class="images-merchandise__slide swiper-slide">
+										<img src="@img/bikes/bike-1.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<img src="@img/bikes/bike-1-2.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<img src="@img/bikes/bike-2.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<img src="@img/bikes/bike-3.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="images-merchandise__slide swiper-slide">
+										<img src="@img/bikes/new-1.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+								</div>
+							</div>
+							<div class="images-merchandise__thumbs thumbs-images swiper">
+								<div class="thumbs-images__swiper swiper-wrapper">
+									<div class="thumbs-images__slide swiper-slide">
+										<img src="@img/bikes/bike-1.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<img src="@img/bikes/bike-1-2.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<img src="@img/bikes/bike-2.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<img src="@img/bikes/bike-3.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+									<div class="thumbs-images__slide swiper-slide">
+										<img src="@img/bikes/new-1.jpg"
+											alt="Велосипед Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018 вид сбоку">
+									</div>
+								</div>
+								<button type="button" class="swiper-button-prev thumbs-images__button-prev">
+									<svg class="thumbs-images__button-image">
+										<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+									</svg>
+								</button>
+								<button type="button" class="swiper-button-next thumbs-images__button-next">
+									<svg class="thumbs-images__button-image">
+										<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="main-merchandise__details details-merchandise">
+							<div class="details-merchandise__header header-merchandise">
+								<h1 class="header-merchandise__title title title-small">Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018</h1>
+								<div class="header-merchandise__wrapper">
+									<div class="header-merchandise__brand">Scott</div>
+									<div class="header-merchandise__inner">
+										<div class="header-merchandise__article">Артикул: <button id="articleElement">7655-188</button>
+										</div>
+										<ul class="header-merchandise__socials-list">
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-ok"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-vk"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-tg"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-whatsup"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="header-merchandise__socials-item">
+												<a href="#" class="header-merchandise__socials-link">
+													<svg class="header-merchandise__socials-icon">
+														<use xlink:href="img/icons/icons.svg#svg-viber"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header-merchandise__status">В наличии</div>
+								</div>
+							</div>
+							<div class="details-merchandise__body body-merchandise">
+								<div class="body-merchandise__price merchandise-price">
+									<span class="merchandise-price__current">435 000 ₽</span>
+									<span class="merchandise-price__old">522 000 ₽</span>
+								</div>
+								<div class="body-merchandise__description">
+									<p>Профессиональный гоночный хардтейл для кросс-кантри уровня Чемпионата и Кубка Мира. Одна из самых
+										легких рам среди гоночных хардтейлов для кросс-кантри.</p>
+								</div>
+								<div class="body-merchandise__size merchandise-size">
+									<h2 class="merchandise-size__title merchandise-title">Размер:</h2>
+									<ul class="merchandise-size__list">
+										<li class="merchandise-size__item">
+											<input hidden id="size-s" class="merchandise-size__input" checked type="radio" value="1"
+												name="size" tabindex="0">
+											<label for="size-s" class="merchandise-size__label">
+												<span class="merchandise-size__text">S</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-m-l" class="merchandise-size__input" type="radio" value="2" name="size"
+												tabindex="0">
+											<label for="size-m-l" class="merchandise-size__label">
+												<span class="merchandise-size__text">M-L</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-m" class="merchandise-size__input" type="radio" value="2" name="size"
+												tabindex="0">
+											<label for="size-m" class="merchandise-size__label">
+												<span class="merchandise-size__text">M</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-l" class="merchandise-size__input" type="radio" value="2" name="size"
+												tabindex="0">
+											<label for="size-l" class="merchandise-size__label">
+												<span class="merchandise-size__text">L</span>
+											</label>
+										</li>
+										<li class="merchandise-size__item">
+											<input hidden id="size-xl" class="merchandise-size__input" type="radio" value="2" name="size"
+												tabindex="0" disabled>
+											<label for="size-xl" class="merchandise-size__label">
+												<span class="merchandise-size__text">XL</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="body-merchandise__colors merchandise-colors">
+									<h2 class="merchandise-colors__title merchandise-title">Цвет:</h2>
+									<ul class="merchandise-colors__list">
+										<li class="merchandise-colors__item">
+											<label class="merchandise-colors__label" style="background-color: #fef95f;">
+												<input hidden class="merchandise-colors__input" checked type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Кукурузный</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #0d7f19;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Зеленый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #ffd536;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Блестящий зеленовато-желтый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #fe7e56;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Коралловый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #ac632c;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Оранжево-коричневый</span>
+											</label>
+										</li>
+										<li class="merchandise-colors">
+											<label class="merchandise-colors__label" style="background-color: #fd0012;">
+												<input hidden class="merchandise-colors__input" type="radio" value="1" name="color">
+												<span class="color-name visually-hidden">Красный</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="body-merchandise__actions">
+									<div class="body-merchandise__quantity quantity">
+										<div class="quantity__button quantity__button_minus _icon-minus"></div>
+										<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="1"></div>
+										<div class="quantity__button quantity__button_plus _icon-plus"></div>
+
+									</div>
+									<button class="body-merchandise__button button" data-da=".body-merchandise, 479.98, last">В корзину</button>
+									<button class="body-merchandise__favorite">
+										<svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2.67757 13.34L14.5 25.4464L26.3224 13.34C27.6367 11.9941 28.375 10.1688 28.375 8.26553C28.375 4.30217 25.2374 1.08923 21.367 1.08923C19.5084 1.08923 17.7259 1.84531 16.4117 3.19112L14.5 5.14876L12.5883 3.19112C11.274 1.84531 9.49156 1.08923 7.63294 1.08923C3.76255 1.08923 0.625 4.30217 0.625 8.26553C0.625 10.1688 1.36333 11.9941 2.67757 13.34Z"
+												stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<section class="merchandise__description description-merchandise">
+						<h2 class="description-merchandise__title title title-small">
+							Описание
+						</h2>
+						<div class="description-merchandise__text">
+							<p>Профессиональный гоночный хардтейл для кросс-кантри уровня Чемпионата и Кубка Мира. Одна из самых лёгких рам среди гоночных хардтейлов для кросс-кантри. Scott Scale 700 RC — это рама из композитного волокна HMX, гоночная трансмиссия Sram XX1/X01 1×11, дисковые тормоза Shimano XTR M9000 и гоночные колеса Syncros XR RC. Байк Нино Шуртера для шорт-трек кросс-кантри.</p>
+						</div>
+					</section>
+
+					<section class="merchandise__characteristics characteristics-merchandise">
+						<h2 class="characteristics-merchandise__title title title-small">
+							Характеристика
+						</h2>
+						<dl class="characteristics-merchandise__tabel">
+							<div class="characteristics-merchandise__row">
+								<dt>Цвет</dt>
+								<dd>Жёлтый</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Год</dt>
+								<dd>2016</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Диаметр колеса</dt>
+								<dd>27.5</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Материал рамы</dt>
+								<dd>Карбон</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Размер</dt>
+								<dd>L</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Страна</dt>
+								<dd>Швейцария</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Производитель</dt>
+								<dd>Scott</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Покрышки</dt>
+								<dd>Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead Tubeless Easy / PaceStar compound</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Рама</dt>
+								<dd>Scale Carbon / HMX-технология / технология IMP / Коническая рулевая труба / BB92 / Технология SDS / Дропауты IDS SL</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Подседельный Штырь</dt>
+								<dd>Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm 900 Series: Carbon 2B SDS / 34.9mm</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Седло</dt>
+								<dd>Ritchey WCS Streem V3 Titanium rails</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Вилка</dt>
+								<dd>Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle / коническая рулевая труба / Удалённая блокировка, регулировка отскока / ход 100mm</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Вынос</dt>
+								<dd>Ritchey WCS C–260 700 Series: +6° / 900 Series: -6° / 31.8mm / 1 1/8»</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Колеса</dt>
+								<dd>Syncros XR RC</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Руль</dt>
+								<dd>Ritchey Carbon WCS / 9° / 720mm / грипсы с замком</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Тип тормозов</dt>
+								<dd>Дисковый гидравлический</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Тормозная система</dt>
+								<dd>Shimano XTR M9000 Disc 180/F and 160/Rmm SM-RT81 IceTech CL диски</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Манетки</dt>
+								<dd>SRAM XO1 Trigger</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Система шатунов</dt>
+								<dd>SRAM XX1 GXP PF DM Carbon crankarm / QF 156 700 Series: 34T / 900 Series: 32T</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Задний переключатель</dt>
+								<dd>SRAM XX1</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Цепь</dt>
+								<dd>SRAM PCX1</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Количество скоростей</dt>
+								<dd>11</dd>
+							</div>
+							<div class="characteristics-merchandise__row">
+								<dt>Гарантия</dt>
+								<dd>1 год</dd>
+							</div>
+						</dl>
+					</section>
+
+					<section class="merchandise__delivery delivery-merchandise">
+						<h2 class="delivery-merchandise__title title title-small">
+							Доставка
+						</h2>
+						<div class="delivery-merchandise__image-wrapper" style="background-image: url('@img/delivery-merchandise.jpg');"></div>
+						<div class="delivery-merchandise__info">
+							<h3 class="delivery-merchandise__info-title">
+								Для удобства покупателей действует несколько способов доставки товаров
+							</h3>
+							<ul class="delivery-merchandise__list">
+								<li class="delivery-merchandise__item">Доставка по Москве, в пределах МКАД</li>
+								<li class="delivery-merchandise__item">Доставка по Московской Области</li>
+								<li class="delivery-merchandise__item">Доставка в другие регионы России</li>
+							</ul>
+						</div>
+						<p class="note">
+							Любой из способов доступен при оформление заказа через сайт или у операторов
+						</p>
+						<div class="delivery-merchandise__text">
+							<p>Велосипеды и вело-станки доставляются в собранном и настроенном виде.</p>
+							<p>На любые вопросы по правилам и стоимости доставки ответят оператор: <a href="tel:+74950557586">+7 (495) 055-75-86</a></p>
+						</div>
+						<p class="pickup">Для любого заказа возможен самовывоз из магазина</p>
+					</section>
+				</div>
+				@@include('html/_similar.htm',{})
+			</div>
+
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

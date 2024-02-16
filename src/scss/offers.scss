@@ -13,12 +13,12 @@
 	display: flex;
 	justify-content: center;
 }
-
-.offers__button-prev {
+.offers__button-prev, .offers__button-next {
 	position: absolute;
 	z-index: 200;
-	top: calc(50% - (rem(43) / 2));
 	@include adaptiveValue("top", 226, 221, $containerWidth, 479.98, 1);
+}
+.offers__button-prev {
 	left: rem(47);
 	@media (max-width:$mobile){
 		 left: rem(8); 
@@ -26,11 +26,7 @@
 }
 
 .offers__button-next {
-	position: absolute;
-	z-index: 200;
-	@include adaptiveValue("top", 226, 221, $containerWidth, 479.98, 1);
 	right: rem(47);
-
 	@media (max-width:$mobile){
 		 right: rem(8); 
 	}
@@ -40,6 +36,12 @@
 	margin-top: rem(48);
 	@include adaptiveValue("margin-top", 48, 24, $containerWidth, 479.98, 1);
 	text-align: center;
+
+	.touch &{
+		@media (min-width:$mobile){
+			 margin-top: rem(124); 
+		}
+	}
 }
 
 .offers__link {

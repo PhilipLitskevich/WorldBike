@@ -1,19 +1,24 @@
 //<FORM>
 // Снипет (HTML):
 .form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
+	&__row {}
+
+	&__column {}
+
+	&__line {}
+
+	&__input {}
+
+	&__button {}
+
 	&__error {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 160%;
+		color: $red;
 	}
 }
+
 //</FORM>
 
 // <BUTTONS>
@@ -30,7 +35,7 @@
 
 // <RADIO>
 // Снипет (HTML): opt
-// @import "radio";
+@import "radio";
 
 // <SELECT>
 // Снипет (HTML): sel
@@ -42,7 +47,7 @@
 
 // <QUANTITY>
 // Снипет (HTML): qa
-// @import "quantity";
+@import "quantity";
 
 // <RANGE>
 // Снипет (HTML):

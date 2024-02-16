@@ -639,7 +639,7 @@ body[style*="padding-right: 17px"] {
 		color: #000;
 		margin-bottom: rem(48);
 		/* desk h3 */
-		font-family: BebasNeueCyrillic;
+		font-family: $second-family;
 		font-size: rem(40);
 		font-weight: 400;
 		line-height: 123%;
@@ -689,17 +689,6 @@ body[style*="padding-right: 17px"] {
 		@media (max-width:$mobile) {
 			right: rem(20);
 		}
-
-		svg {
-			transition: stroke .3s ease;
-
-			@media (any-hover: hover) {
-				&:hover {
-					stroke: $accentColor;
-				}
-			}
-		}
-
 	}
 }
 

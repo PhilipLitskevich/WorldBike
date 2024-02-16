@@ -1,9 +1,63 @@
+<div id="thankfulness" aria-hidden="true" class="popup thankfulness">
+	<div class="popup__wrapper popup-quick__wrapper">
+		<div class="popup__content thankfulness__content">
+			<button data-close type="button" class="popup__close thankfulness__close">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<svg class="thankfulness__img" width="98" height="99" viewBox="0 0 98 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect y="0.5" width="98" height="98" rx="49" fill="#F57520" />
+				<path d="M21 51.9091L38.6897 69.5L78 26.5" stroke="white" stroke-width="8.16667" />
+			</svg>
+			<div class="thankfulness__text title">
+				<p>
+					Благодарим за подписку!
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="quick" aria-hidden="true" class="popup popup-quick">
+	<div class="popup__wrapper popup-quick__wrapper">
+		<div class="popup__content popup-quick__content">
+			<button data-close type="button" class="popup__close">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<h2 class="popup-quick__title">Заказ в один клик</h2>
+			<div class="popup-quick__inner">
+				<div class="popup-quick__product product-popup-quick">
+					<div class="product-popup-quick__image-wrapper"></div>
+					<h3 class="product-popup-quick__name"></h3>
+				</div>
+
+				<form class="popup-quick__form form-quick" method="POST" data-dev data-popup-message="#thankfulness">
+					<!-- action="https://jsonplaceholder.typicode.com/posts" -->
+					<h3 class="form-quick__title">
+						Укажите ваше имя и телефон, и наш менеджер свяжется с вами для оформления заказа.
+					</h3>
+					<input autocomplete="off" type="number" name="id товара" data-error="Ошибка" placeholder="id товара" class="input product-id visually-hidden">
+					<input autocomplete="off" type="text" name="Имя" data-error="Ошибка" placeholder="Имя" class="input">
+					<input autocomplete="off" type="tel" name="Телефон" data-error="Ошибка" placeholder="Телефон" class="input">
+					<p class="form-quick__messege">
+						Нажимая на кнопку «Заказать» я даю своё согласие на обработку персональных данных и принимаю <a href="#">условия соглашения</a>
+					</p>
+					<button type="submit" class="button form-quick__button">Заказать</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close">Закрыть</button>
 			<div class="popup__text">
+				текст
 			</div>
 		</div>
 	</div>

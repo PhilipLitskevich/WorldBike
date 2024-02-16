@@ -28,6 +28,7 @@
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
 $fontFamily: "Inter";
+$second-family: BebasNeueCyrillic, sans-serif;
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
@@ -42,6 +43,7 @@ $bg: #F8F8F8;
 $lightColor: #fff;
 $light-grey: #B3B3B3;
 $dark-grey: #2E2E2E;
+$dark: #34312D;
 $grey-1: #4C4C4C;
 $grey-2: #777;
 $grey-3: #E5E5E5;
@@ -171,7 +173,12 @@ body {
 // Подключение стилей отдельных страниц
 @import "home";
 @import "catalog";
+@import "merchandise";
+@import "cart";
 @import "blog";
 @import "storage";
+@import "about";
+@import "delivery";
+@import "workshop";
 @import "contacts";
 @import "agreement";

@@ -3,14 +3,17 @@
 		<div class="footer__container">
 			<div class="footer__form-section">
 				<h2 class="footer__form-title title">Подпишитесь на наши новости</h2>
-				<form action="#" class="footer__form footer-form">
+				<form action="#" class="footer__form footer-form" data-dev data-popup-message="#thankfulness">
 					<div class="footer-form__inner">
-						<input class="footer-form__input light input" autocomplete="off" type="email" name="form[]"
-							data-error="Ошибка" placeholder="E-mail" required>
+						<div class="footer-form__input-wrapper">
+							<input class="footer-form__input light input" autocomplete="off" type="text" name="form[]"
+								data-error="Введен не верный E-mail" placeholder="E-mail" required data-required="email" data-validate>
+						</div>
 						<button class="footer-form__button button" type="submit">Подписаться</button>
 					</div>
-					<div class="checkbox light">
-						<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+					<div class="checkbox light footer-form__checkbox">
+						<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]" data-required data-validate
+							data-error="Обязательно">
 						<label for="c_1" class="checkbox__label"><span class="checkbox__text">Согласен(на) на обработку персональных
 								данных </span></label>
 					</div>

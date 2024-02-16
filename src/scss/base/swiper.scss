@@ -63,11 +63,13 @@
 		transition: fill .3s ease;
 	}
 
-	&:hover{
-		background-color: #000;
+	@media (any-hover: hover){
+		&:hover{
+			background-color: #000;
 
 		svg	{
 			fill: #fff;
+		}
 		}
 	}
 }
@@ -86,7 +88,10 @@
 	svg {
 		fill: #B3B3B3 !important;
 	}
-	&:hover{
-		cursor: not-allowed !important;
+
+	@media (any-hover: hover){
+		&:hover{
+			cursor: not-allowed !important;
+		}
 	}
 }

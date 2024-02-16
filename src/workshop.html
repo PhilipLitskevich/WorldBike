@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Веломастерская"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page workshop-page">
+			@@include('html/_page-header.htm',{
+			"image":"workshop.jpg",
+			"title":"Веломастерская"
+			})
+			<div class="workshop-text">
+				<div class="workshop-text__container">
+					<div class="workshop-text__wrapper">
+						<p>Если вы купили велосипед в нашем магазине, то то можете не волноваться о настройке и проверке, так как мы
+							это выполняем в рамках предпродажной подготовки. Но если вы откатались уже сезон и ваш железный конь
+							уже выглядит и ведёт себя потрёпанно, мы с удовольствием приведём его в порядок. Наша веломастерская
+							работает ежедневно и выполняет не только периодическое обслуживание, но и ремонт велосипеда любой
+							сложности</p>
+						<p>Отличное оснащение и опытные специалисты обеспечат максимально короткий срок ремонта. Какой бы ни была
+							поломка, наличие большого количества узлов и деталей на складе позволит быстро вернуть технике
+							работоспособность. Мы берём в работу горные модели, шоссейные и городские велосипеды</p>
+						<p>Являясь профессиональными велосипедистами, мастера нашей компании быстро и чётко выявят неисправность
+							и предложат максимально эффективный способ ремонта. Очень скоро ваш байк будет вновь на ходу</p>
+					</div>
+				</div>
+			</div>
+
+			<section class="main-services">
+				<div class="main-services__container">
+					<h2 class="main-services__title title">Стоимость Основных услуг</h2>
+
+					<dl class="main-services__tabel">
+						<div class="main-services__row">
+							<dt>Диагностика</dt>
+							<dd>Бесплатно</dd>
+						</div>
+						<div class="main-services__row">
+							<dt>Тех обслуживание</dt>
+							<dd>2 500 ₽</dd>
+						</div>
+						<div class="main-services__row">
+							<dt>Мойка</dt>
+							<dd>1500 ₽</dd>
+						</div>
+						<div class="main-services__row">
+							<dt>Комплексное тех. обслуживание</dt>
+							<dd>5 000 ₽</dd>
+						</div>
+						<div class="main-services__row">
+							<dt>Сборка велосипеда индивидуальная</dt>
+							<dd>5 000 - 12 000 ₽</dd>
+						</div>
+					</dl>
+				</div>
+			</section>
+
+			<section class="optional-services">
+				<div class="optional-services__container">
+					<h2 class="optional-services__title title">Дополнительные услуги</h2>
+
+					<div data-spollers class="spollers" data-one-spoller>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Ремонт привода
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<dl class="spollers__tabel">
+									<div class="spollers__tabel-row">
+										<dt>Укорачивание штока вилки</dt>
+										<dd>600 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь одноразовый установить</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь демонтаж</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка воздушной вилки</dt>
+										<dd>100 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Вилка однокоронная снять / установить</dt>
+										<dd>800 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка заднего амортизатора</dt>
+										<dd>100 ₽</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Рулевое управление
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<dl class="spollers__tabel">
+									<div class="spollers__tabel-row">
+										<dt>Укорачивание штока вилки</dt>
+										<dd>600 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь одноразовый установить</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь демонтаж</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка воздушной вилки</dt>
+										<dd>100 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Вилка однокоронная снять / установить</dt>
+										<dd>800 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка заднего амортизатора</dt>
+										<dd>100 ₽</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Колеса
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<dl class="spollers__tabel">
+									<div class="spollers__tabel-row">
+										<dt>Укорачивание штока вилки</dt>
+										<dd>600 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь одноразовый установить</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь демонтаж</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка воздушной вилки</dt>
+										<dd>100 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Вилка однокоронная снять / установить</dt>
+										<dd>800 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка заднего амортизатора</dt>
+										<dd>100 ₽</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Рама
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<dl class="spollers__tabel">
+									<div class="spollers__tabel-row">
+										<dt>Укорачивание штока вилки</dt>
+										<dd>600 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь одноразовый установить</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь демонтаж</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка воздушной вилки</dt>
+										<dd>100 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Вилка однокоронная снять / установить</dt>
+										<dd>800 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка заднего амортизатора</dt>
+										<dd>100 ₽</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Вилка
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<dl class="spollers__tabel">
+									<div class="spollers__tabel-row">
+										<dt>Укорачивание штока вилки</dt>
+										<dd>600 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь одноразовый установить</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь демонтаж</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка воздушной вилки</dt>
+										<dd>100 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Вилка однокоронная снять / установить</dt>
+										<dd>800 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка заднего амортизатора</dt>
+										<dd>100 ₽</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Дополнительное оборудование (аксессуары)
+								<svg class="spollers-icon">
+									<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+								</svg>
+							</button>
+							<div class="spollers__body">
+								<dl class="spollers__tabel">
+									<div class="spollers__tabel-row">
+										<dt>Укорачивание штока вилки</dt>
+										<dd>600 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь одноразовый установить</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Якорь демонтаж</dt>
+										<dd>300 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка воздушной вилки</dt>
+										<dd>100 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Вилка однокоронная снять / установить</dt>
+										<dd>800 ₽</dd>
+									</div>
+									<div class="spollers__tabel-row">
+										<dt>Подкачка заднего амортизатора</dt>
+										<dd>100 ₽</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			@@include('html/_partners.htm',{})
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

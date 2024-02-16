@@ -11,9 +11,11 @@ body::after {
 	pointer-events: none;
 	z-index: 149;
 }
+
 .popup-show body::after {
 	opacity: 1;
 }
+
 .popup {
 	position: fixed;
 	top: 0;
@@ -25,16 +27,19 @@ body::after {
 	visibility: hidden;
 	pointer-events: none;
 }
+
 .popup_show {
 	z-index: 150;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
 }
+
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
 }
+
 .popup__wrapper {
 	display: flex;
 	flex-direction: column;
@@ -46,6 +51,7 @@ body::after {
 	justify-content: center;
 	align-items: center;
 }
+
 .popup__content {
 	visibility: hidden;
 	transform: scale(0);
@@ -53,9 +59,208 @@ body::after {
 	background-color: #eee;
 	padding: 20px;
 	width: 100%;
-	max-width: 900px;
+	max-width: rem(921);
 	border-radius: 20px;
+
 	.lock & {
 		visibility: visible;
 	}
 }
+
+.popup {
+	overflow: auto;
+	max-height: 100vh;
+
+	// .popup__wrapper
+	&__wrapper {}
+
+	// .popup__content
+	&__content {
+		position: relative;
+		background-color: $lightColor;
+		border-radius: rem(10);
+
+		@media (max-width: em(650)) {
+			max-width: rem(450);
+		}
+
+		@media (max-width:$mobileSmall) {
+			margin: 0 rem(-10);
+			width: calc(100% + rem(20));
+		}
+	}
+
+	// .popup__close
+	&__close {
+		position: absolute;
+		@include adaptiveValue("top", 32, 24);
+		@include adaptiveValue("right", 32, 20);
+	}
+}
+
+.popup-quick {
+
+	// .popup-quick__wrapper
+	&__wrapper {}
+
+	// .popup-quick__content
+	&__content {
+		@include adaptiveValue("padding-top", 56, 64, $containerWidth, 400, 1);
+		@include adaptiveValue("padding-right", 56, 20, $containerWidth, 400, 1);
+		@include adaptiveValue("padding-bottom", 56, 40, $containerWidth, 400, 1);
+		@include adaptiveValue("padding-left", 56, 20, $containerWidth, 400, 1);
+	}
+
+	// .popup-quick__inner
+	&__inner {
+		display: flex;
+		gap: rem(40);
+
+		@media (max-width: em(650)) {
+			flex-direction: column;
+		}
+	}
+
+	// .popup-quick__title
+	&__title {
+		font-family: BebasNeueCyrillic;
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 123%;
+		letter-spacing: 0.05em;
+		color: #101010;
+		@include adaptiveValue("font-size", 40, 32, $containerWidth, 479.98, 1);
+		@include adaptiveValue("margin-bottom", 13, 24);
+	}
+
+	// .popup-quick__product
+	&__product {
+		flex-basis: rem(340);
+		@include adaptiveValue("flex-basis", 340, 250, 767.98, 650, 2);
+		flex-shrink: 0;
+
+		@media (max-width: em(650)) {
+			flex-basis: auto;
+			flex-shrink: 1;
+			max-width: rem(340);
+
+			margin: 0 auto;
+		}
+	}
+
+	// .popup-quick__form
+	&__form {}
+}
+
+.product-popup-quick {
+
+	// .product-popup-quick__image-wrapper
+	&__image-wrapper {
+		width: 100%;
+		aspect-ratio: 1/1;
+		display: flex;
+		align-items: center;
+
+		img {
+			max-width: 100%;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .product-popup-quick__name
+	&__name {
+		font-weight: 500;
+		font-size: rem(18);
+		line-height: 160%;
+		letter-spacing: 0.01em;
+		text-align: center;
+		color: $mainColor;
+	}
+}
+
+.form-quick {
+
+	// .form-quick__title
+	&__title {
+		font-weight: 300;
+		font-size: rem(18);
+		line-height: 160%;
+		letter-spacing: 0.01em;
+		color: $grey-1;
+
+		margin-bottom: rem(24);
+	}
+
+	// .form-quick__messege
+	&__messege {
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: 160%;
+		color: $grey-2;
+		@include adaptiveValue("margin-bottom", 32, 24);
+
+		a {
+			color: $accentColor;
+
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	// .form-quick__button
+	&__button {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.input {
+		&:not(:last-child) {
+			margin-bottom: rem(8);
+		}
+
+		&:last-child {
+			margin-bottom: rem(16);
+		}
+	}
+}
+
+.thankfulness {
+
+	// .thankfulness__content
+	&__content {
+		max-width: rem(525);
+
+		@include adaptiveValue("padding-top", 104, 80, $containerWidth, 479.98, 1);
+		@include adaptiveValue("padding-right", 60, 46, $containerWidth, 479.98, 1);
+		@include adaptiveValue("padding-bottom", 55, 40, $containerWidth, 479.98, 1);
+		@include adaptiveValue("padding-left", 60, 46, $containerWidth, 479.98, 1);
+	}
+
+	// .thankfulness__close
+	&__close {
+		position: absolute;
+		@include adaptiveValue("top", 40, 24);
+		@include adaptiveValue("right", 40, 24);
+	}
+
+	// .thankfulness__img
+	&__img {
+		margin: 0 auto ;
+		@include adaptiveValue("margin-bottom", 32, 24, $containerWidth, 479.98, 1);
+		@include adaptiveValue("width", 98, 72, $containerWidth, 479.98, 1);
+		height: auto;
+		aspect-ratio: 1/1;
+		display: block;
+	}
+
+	// .thankfulness__text
+	&__text {
+		text-align: center;
+	}
+}
+
+.close {}

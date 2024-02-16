@@ -1,0 +1,184 @@
+.bike {
+	@include adaptiveValue("margin-top", 64, 32);
+	@include adaptiveValue("padding-bottom", 160, 48);
+
+	// .bike__container
+	&__container {}
+
+	// .bike__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 80, 24);
+		font-family: $second-family;
+		font-weight: 400;
+		@include adaptiveValue("font-size", 110, 50);
+		line-height: 123%;
+		letter-spacing: 0.02em;
+
+		@media (max-width:$mobileSmall) {
+			line-height: 105%;
+			letter-spacing: 0.05em;
+		}
+
+		.accent {
+			color: $accentColor;
+		}
+	}
+
+	// .bike__wrapper
+	&__wrapper {
+		display: flex;
+		gap: rem(40);
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+	}
+
+	// .bike__card
+	&__card {
+		overflow: hidden;
+		padding-top: rem(32);
+
+		@include adaptiveValue("padding-right", 40, 22);
+		@include adaptiveValue("padding-bottom", 40, 34);
+		@include adaptiveValue("padding-left", 32, 24);
+
+		@media (min-width:$tablet) {
+			flex: 1 1 50%;
+		}
+
+		position: relative;
+		background: $dark;
+		color: $lightColor;
+		border-radius: rem(10);
+
+		&>* {
+			position: relative;
+			z-index: 2;
+		}
+
+		// .bike__card_accent
+		&_accent {
+			background: $accentColor;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 0;
+
+			bottom: rem(0);
+			right: rem(0);
+
+			width: rem(420);
+			aspect-ratio: 420/122;
+
+			background-image: url("data:image/svg+xml,%3Csvg width='420' height='122' viewBox='0 0 420 122' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_4923_5772)'%3E%3Cpath d='M467.522 92.7003C467.522 138.639 414.798 175.88 349.759 175.88C284.721 175.88 -122 186.743 -122 140.804C134.807 126.273 380.264 53.6159 441.274 0C506.312 0 467.522 46.7614 467.522 92.7003Z' fill='%23101010' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_4923_5772'%3E%3Crect width='420' height='122' fill='white' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	// .bike__card-title
+	&__card-title {
+		margin-bottom: rem(16);
+
+		font-weight: 500;
+		font-size: rem(24);
+		line-height: 160%;
+		letter-spacing: 0.01em;
+	}
+
+	// .bike__card-text
+	&__card-text {
+		margin-bottom: rem(32);
+
+		font-weight: 300;
+		font-size: rem(16);
+		line-height: 160%;
+		color: $grey-3;
+	}
+
+	// .bike__card-link
+	&__card-link {
+
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: 123%;
+	}
+}
+
+.bike {
+
+	// .bike__slider
+	&__slider {
+		overflow: visible;
+		padding: 0 rem(20);
+
+		@media (min-width:$tablet) {
+			display: none;
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.about-gallery {
+
+	// .about-gallery__container
+	&__container {}
+
+	// .about-gallery__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 80, 32);
+	}
+}
+
+.about-gallery__slider {
+	height: rem(228);
+
+	.swiper-wrapper {
+		-webkit-transition-timing-function:linear!important; 
+		-o-transition-timing-function:linear!important;
+		transition-timing-function:linear!important; 
+	}
+}
+.about-gallery__slide {
+	display: block;
+	border-radius: rem(10);
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover
+	}
+}
+
+
+
+//========================================================================================================================================================
+
+
+.contacts {
+
+	// .contacts__container
+	&__container {}
+
+	// .contacts__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 80, 32);
+	}
+}
+
+.about {
+
+	// .about__map
+	&__map {
+		@include adaptiveValue("margin-bottom", 40, 27);
+	}
+}
+
+//========================================================================================================================================================
