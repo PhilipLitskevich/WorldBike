@@ -133,6 +133,11 @@
 	@media (max-width:$mobile) {
 		max-width: auto;
 	}
+
+	.input-wrapper.textarea-wrapper {
+		@include adaptiveValue("margin-top", 16, 8);
+		margin-bottom: rem(24);
+	}
 }
 
 .contact-us__form-grid {
@@ -148,8 +153,6 @@
 
 .contact-us__textarea {
 	height: rem(154);
-	@include adaptiveValue("margin-top", 16, 8);
-	margin-bottom: rem(24);
 }
 
 .contact-us__button {

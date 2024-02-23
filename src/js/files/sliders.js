@@ -409,6 +409,43 @@ function initSliders() {
 		});
 		// end
 	}
+
+	if (document.querySelector('.best__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.best__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [FreeMode],
+
+			observer: true,
+			observeParents: true,
+			autoHeight: false,
+			speed: 800,
+			freeMode: {
+				enabled: true,
+				sticky: true,
+				momentumVelocityRatio: 0.4,
+			},
+			spaceBetween: 40,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.15,
+					spaceBetween: 8,
+				},
+				650: {
+					spaceBetween: 20,
+				},
+				991.98: {
+					slidesPerView:  2.2,
+					spaceBetween: 40,
+				},
+				1800: {
+					slidesPerView: 1.8,
+				},
+			},
+		});
+		// end
+	}
 }
 
 window.addEventListener("load", function (e) {

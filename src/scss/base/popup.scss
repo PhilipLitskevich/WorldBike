@@ -217,11 +217,11 @@ body::after {
 		justify-content: center;
 	}
 
-	.input {
+	.input-wrapper {
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
-
+	
 		&:last-child {
 			margin-bottom: rem(16);
 		}

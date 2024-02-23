@@ -16,6 +16,45 @@
 		font-size: 16px;
 		line-height: 160%;
 		color: $red;
+
+		.contact-us__form & {
+
+			// background-color: rgba($red, $alpha: .6);
+			background-color: $lightColor;
+			font-weight: 500;
+			// background-color: rgba($lightColor, $alpha: .6);
+			// color: $red;
+			color: #000;
+			padding: rem(5) rem(10);
+			border-radius: rem(3);
+			position: relative;
+			padding-left: rem(35);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: rem(8);
+				left: rem(5);
+
+				width: rem(20);
+				height: rem(20);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='16' rx='3' fill='%23F57520' /%3E%3Cpath d='M7.31934 3.36816H8.86719V8.22168H7.31934V3.36816ZM6.93359 10.1553C6.93359 10.0251 6.95964 9.90299 7.01172 9.78906C7.06706 9.67188 7.14518 9.57096 7.24609 9.48633C7.34701 9.39844 7.46908 9.33008 7.6123 9.28125C7.75553 9.23242 7.91667 9.20801 8.0957 9.20801C8.27474 9.20801 8.43587 9.23242 8.5791 9.28125C8.72233 9.33008 8.84277 9.39844 8.94043 9.48633C9.04134 9.57096 9.11784 9.67188 9.16992 9.78906C9.22526 9.90299 9.25293 10.0251 9.25293 10.1553C9.25293 10.2855 9.22526 10.4092 9.16992 10.5264C9.11784 10.6403 9.04134 10.7396 8.94043 10.8242C8.84277 10.9089 8.72233 10.9756 8.5791 11.0244C8.43587 11.0765 8.27474 11.1025 8.0957 11.1025C7.91667 11.1025 7.75553 11.0765 7.6123 11.0244C7.46908 10.9756 7.34701 10.9089 7.24609 10.8242C7.14518 10.7396 7.06706 10.6403 7.01172 10.5264C6.95964 10.4092 6.93359 10.2855 6.93359 10.1553Z' fill='white' /%3E%3C/svg%3E");
+			}
+			&::after{
+				content:'';
+				position: absolute;
+				bottom: rem(-10);
+				left: calc(50% - rem(20) / 2);
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 12px solid $lightColor;
+			}
+		}
 	}
 }
 

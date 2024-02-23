@@ -9,7 +9,7 @@
 	/* 78.72px */
 	letter-spacing: 0.05em;
 
-	&:not(.home-catalog__cell-title, .contact-us__title, .title-small) {
+	&:not(.home-catalog__cell-title, .contact-us__title, .title-small, .best__title) {
 		@include adaptiveValue("font-size", 64, 50, $containerWidth, 479.98, 1);
 	}
 
@@ -272,15 +272,15 @@
 	letter-spacing: 0.18px;
 	color: $mainColor;
 	// max-height: rem(58);
-	overflow: hidden;
-	text-overflow: ellipsis;
-
+	
 	a {
-		transition: color .3s ease;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
-
+		
+		transition: color .3s ease;
 		@media (any-hover: hover) {
 			&:hover {
 				color: $accentColor;
@@ -646,18 +646,20 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: $accentHoverColor;
-			color: $lightColor;
+			// background-color: $accentHoverColor;
+			// color: $lightColor;
+			color: $accentColor;
 
 			.spollers-icon {
-				fill: $lightColor;
+				// fill: $lightColor;
+				fill: $accentColor;
 			}
 		}
 	}
 
 
 	&._spoller-active {
-		background-color: $accentActiveColor;
+		background-color: $accentColor;
 		color: $lightColor;
 
 		.spollers-icon {

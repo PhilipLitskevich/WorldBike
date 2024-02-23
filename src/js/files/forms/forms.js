@@ -100,11 +100,18 @@ export let formValidate = {
 			} else {
 				this.removeError(formRequiredItem);
 			}
-		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
+		} else if (formRequiredItem.dataset.required === "tel"){
+			if(formRequiredItem.inputmask.unmaskedvalue().length < 10){
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}	
+		}else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
 		} else {
-			if (!formRequiredItem.value) {
+			if (/^\s*$/.test(formRequiredItem.value)) {
 				this.addError(formRequiredItem);
 				error++;
 			} else {

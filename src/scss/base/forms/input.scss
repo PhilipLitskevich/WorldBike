@@ -17,7 +17,8 @@ textarea {
 	border: 1px solid $bg;
 	background-color: $bg;
 
-	&._focus, &:focus {
+	&._focus,
+	&:focus {
 		// outline: 2px double $accentColor;
 		// border-style: double;
 		// border: 1px solid $bg;
@@ -44,9 +45,21 @@ textarea {
 		border: 1px solid $red;
 	}
 
+	.contact-us__form &._form-error {
+		// box-sizing: content-box;
+		// background-color: rgba($color: $red, $alpha: .3);
+		// border: 4px double $red;
+	}
 }
 
 textarea.input {
 	resize: none;
 	// padding: 0px 0px;
+}
+
+.input-wrapper {
+	display: flex;
+	gap: rem(10);
+	align-items: start;
+	flex-direction: column-reverse;
 }

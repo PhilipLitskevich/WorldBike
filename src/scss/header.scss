@@ -13,9 +13,10 @@ body[style*="padding-right: 17px"] {
 //====================================================================================================
 .header {
 	position: relative;
-	background-color: $mainColor;
-	z-index: 1;
+	// position: fixed;
+	z-index: 100;
 	inset: 0 0 auto 0;
+	background-color: $mainColor;
 	@include adaptiveValue("padding-top", 28, 33, $containerWidth, 360, 1);
 	@include adaptiveValue("padding-bottom", 28, 32, $containerWidth, 360, 1);
 
@@ -26,6 +27,8 @@ body[style*="padding-right: 17px"] {
 
 	// .header__container
 	&__container {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -464,7 +467,7 @@ body[style*="padding-right: 17px"] {
 
 	// .actions-header__link
 	&__link {
-		display: inline-block; 	
+		display: inline-block;
 		height: fit-content;
 		padding: rem(5);
 		margin: rem(-5);
@@ -488,7 +491,7 @@ body[style*="padding-right: 17px"] {
 }
 
 .search-header {
-	@media (min-width:$mobileSmall){
+	@media (min-width:$mobileSmall) {
 		position: relative;
 	}
 
@@ -516,7 +519,7 @@ body[style*="padding-right: 17px"] {
 
 	}
 
-	@media (max-width:$mobileSmall){
+	@media (max-width:$mobileSmall) {
 		//  position: ; 
 		right: rem(20);
 		left: rem(20);
@@ -719,7 +722,8 @@ body[style*="padding-right: 17px"] {
 
 	span,
 	&::after {
-		width: 75%;/* 24/32 */
+		width: 75%;
+		/* 24/32 */
 	}
 
 	&::before {
@@ -728,6 +732,7 @@ body[style*="padding-right: 17px"] {
 
 	@media (any-hover: hover) {
 		&:hover {
+
 			span,
 			&::before,
 			&::after {
@@ -737,6 +742,7 @@ body[style*="padding-right: 17px"] {
 	}
 
 	&:active {
+
 		span,
 		&::before,
 		&::after {

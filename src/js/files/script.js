@@ -337,3 +337,19 @@ if (articleElement) {
 		alert('Номер артикула товара скопирован в буфер обмена: ' + cleanText);
 	});
 }
+
+//========================================================================================================================================================
+// Действия после отправки форм
+//========================================================================================================================================================
+
+document.addEventListener("formSent", function (e) {
+	const currentForm = e.detail.form;
+	if (currentForm.classList.contains('form-quick')){
+		flsModules.popup.close()
+		setTimeout(()=>{
+			flsModules.popup.open('#thankfulness')
+		}, 500)
+	} else if (currentForm.classList.contains('contact-us__form')){
+		alert('Сообщение успешно отправлено')
+	}
+});
