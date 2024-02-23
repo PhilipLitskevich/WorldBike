@@ -6,30 +6,29 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240216173952">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240223124156">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		:root {
-			--bg: hsl(0, 0%, 7%);
-			;
-			--trans-dur: 0.3s;
+		html:not(.loaded) body {
+			margin: 0;
+			background-color: hsl(0, 0%, 7%);
 		}
 
 		.loader {
 			position: fixed;
 			z-index: 2000;
-			background-color: var(--bg);
+			background-color: hsl(0, 0%, 7%);
 			font: 1em/1.5 sans-serif;
 			height: 100vh;
 			width: 100vw;
 			display: grid;
 			place-items: center;
 			transition:
-				background-color var(--trans-dur) ease,
-				opacity var(--trans-dur) ease,
-				z-index var(--trans-dur) ease,
+				background-color 0.3s ease,
+				opacity 0.3s ease,
+				z-index 0.3s ease,
 				transform 1.2s cubic-bezier(0.87, 0, 0.13, 1);
 		}
 
@@ -487,56 +486,56 @@
 										<input id="cfb_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_1" class="checkbox__label">
 											<span class="checkbox__text">Bianci</span>
-											<span class="quantity">(24)</span>
+											<span class="filter-quantity">(24)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_2" class="checkbox__label">
 											<span class="checkbox__text">BMC</span>
-											<span class="quantity">(118)</span>
+											<span class="filter-quantity">(118)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_3" class="checkbox__label">
 											<span class="checkbox__text">Ciclistino</span>
-											<span class="quantity">(2)</span>
+											<span class="filter-quantity">(2)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_4" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_4" class="checkbox__label">
 											<span class="checkbox__text">Cipollini</span>
-											<span class="quantity">(38)</span>
+											<span class="filter-quantity">(38)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_5" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_5" class="checkbox__label">
 											<span class="checkbox__text">Colnago</span>
-											<span class="quantity">(19)</span>
+											<span class="filter-quantity">(19)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_6" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_6" class="checkbox__label">
 											<span class="checkbox__text">Aist</span>
-											<span class="quantity">(24)</span>
+											<span class="filter-quantity">(24)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_7" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_7" class="checkbox__label">
 											<span class="checkbox__text">Spirit</span>
-											<span class="quantity">(20)</span>
+											<span class="filter-quantity">(20)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfb_8" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfb_8" class="checkbox__label">
 											<span class="checkbox__text">Trek</span>
-											<span class="quantity">(14)</span>
+											<span class="filter-quantity">(14)</span>
 										</label>
 									</div>
 									<!-- <button class="filter__more-btn">Показать ещё</button> -->
@@ -554,21 +553,21 @@
 										<input id="cfm_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfm_1" class="checkbox__label">
 											<span class="checkbox__text">Алюминий</span>
-											<span class="quantity">(56)</span>
+											<span class="filter-quantity">(56)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfm_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfm_2" class="checkbox__label">
 											<span class="checkbox__text">Карбон</span>
-											<span class="quantity">(74)</span>
+											<span class="filter-quantity">(74)</span>
 										</label>
 									</div>
 									<div class="checkbox">
 										<input id="cfm_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 										<label for="cfm_3" class="checkbox__label">
 											<span class="checkbox__text">Сталь</span>
-											<span class="quantity">(2)</span>
+											<span class="filter-quantity">(2)</span>
 										</label>
 									</div>
 								</div>
@@ -1360,14 +1359,19 @@
 						<h3 class="product-popup-quick__name"></h3>
 					</div>
 
-					<form class="popup-quick__form form-quick" method="POST" data-dev data-popup-message="#thankfulness">
+					<form class="popup-quick__form form-quick" method="POST" data-dev>
 						<!-- action="https://jsonplaceholder.typicode.com/posts" -->
+						<!-- data-popup-message="#thankfulness" -->
 						<h3 class="form-quick__title">
 							Укажите ваше имя и телефон, и наш менеджер свяжется с вами для оформления заказа.
 						</h3>
-						<input autocomplete="off" type="number" name="id товара" data-error="Ошибка" placeholder="id товара" class="input product-id visually-hidden">
-						<input autocomplete="off" type="text" name="Имя" data-error="Ошибка" placeholder="Имя" class="input">
-						<input autocomplete="off" type="tel" name="Телефон" data-error="Ошибка" placeholder="Телефон" class="input">
+						<input autocomplete="off" type="number" name="id товара" data-error="Товар не выбран" placeholder="id товара" class="input product-id visually-hidden" data-required>
+						<div class="input-wrapper">
+							<input autocomplete="off" type="text" name="Имя" data-error="Необходимо ввести ваше имя" placeholder="Имя" class="input" maxlength="20" minlength="2" data-validate data-required>
+						</div>
+						<div class="input-wrapper">
+							<input autocomplete="off" type="tel" name="Телефон" data-error="Телефон введен не верно" placeholder="Телефон" class="input" data-validate data-required="tel">
+						</div>
 						<p class="form-quick__messege">
 							Нажимая на кнопку «Заказать» я даю своё согласие на обработку персональных данных и принимаю <a href="#">условия соглашения</a>
 						</p>
@@ -1390,7 +1394,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20240216173952"></script>
+	<script src="js/app.min.js?_v=20240223124156"></script>
 </body>
 
 </html>

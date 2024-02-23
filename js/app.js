@@ -4476,10 +4476,13 @@
                         this.addError(formRequiredItem);
                         error++;
                     } else this.removeError(formRequiredItem);
-                } else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
+                } else if (formRequiredItem.dataset.required === "tel") if (formRequiredItem.inputmask.unmaskedvalue().length < 10) {
                     this.addError(formRequiredItem);
                     error++;
-                } else if (!formRequiredItem.value) {
+                } else this.removeError(formRequiredItem); else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
+                    this.addError(formRequiredItem);
+                    error++;
+                } else if (/^\s*$/.test(formRequiredItem.value)) {
                     this.addError(formRequiredItem);
                     error++;
                 } else this.removeError(formRequiredItem);
@@ -4918,8 +4921,8 @@
         }
         flsModules.select = new SelectConstructor({});
         __webpack_require__(125);
-        const inputMasks = document.querySelectorAll("input");
-        if (inputMasks.length) flsModules.inputmask = Inputmask().mask(inputMasks);
+        const inputMasks = document.querySelectorAll('input[type="tel"]');
+        if (inputMasks.length) flsModules.inputmask = Inputmask("+7 (999) 999-99-99").mask(inputMasks);
         var PipsMode;
         (function(PipsMode) {
             PipsMode["Range"] = "range";
@@ -10862,6 +10865,35 @@
                     }
                 }
             });
+            if (document.querySelector(".best__slider")) new Swiper(".best__slider", {
+                modules: [ freeMode ],
+                observer: true,
+                observeParents: true,
+                autoHeight: false,
+                speed: 800,
+                freeMode: {
+                    enabled: true,
+                    sticky: true,
+                    momentumVelocityRatio: .4
+                },
+                spaceBetween: 40,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.15,
+                        spaceBetween: 8
+                    },
+                    650: {
+                        spaceBetween: 20
+                    },
+                    991.98: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 40
+                    },
+                    1800: {
+                        slidesPerView: 1.8
+                    }
+                }
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -12985,6 +13017,15 @@ PERFORMANCE OF THIS SOFTWARE.
             document.execCommand("copy");
             document.body.removeChild(tempTextArea);
             alert("Номер артикула товара скопирован в буфер обмена: " + cleanText);
+        }));
+        document.addEventListener("formSent", (function(e) {
+            const currentForm = e.detail.form;
+            if (currentForm.classList.contains("form-quick")) {
+                flsModules.popup.close();
+                setTimeout((() => {
+                    flsModules.popup.open("#thankfulness");
+                }), 500);
+            } else if (currentForm.classList.contains("contact-us__form")) alert("Сообщение успешно отправлено");
         }));
         window["FLS"] = true;
         isWebp();
