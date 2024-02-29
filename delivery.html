@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240223124156">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240301003738">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +35,10 @@
 		.smiley {
 			width: 8em;
 			height: 8em;
+		}
+
+		.loader-show .smiley {
+			display: none;
 		}
 
 		.smiley__eye1,
@@ -199,15 +203,15 @@
 	<div class="wrapper">
 		<header class="header undefined">
 			<div class="header__container">
-				<a href="index.html" class="header__logo"><img src="img/logo.svg" alt="logo"></a>
+				<a href="home.html" class="header__logo"><img src="img/logo.svg" alt="logo"></a>
 				<div class="header__menu menu">
 					<nav class="menu__body catalog-menu" data-da=".more-menu, 767.98, 1">
 						<ul class="catalog-menu__list menu-spoller" data-spollers="767.98" data-one-spoller>
 							<li class="catalog-menu__item">
-								<a href="#" class="catalog-menu__link">Trade In</a>
+								<a href="catalog.html" class="catalog-menu__link">Trade In</a>
 							</li>
 							<li class="catalog-menu__item menu-spoller__item">
-								<a href="#" class="catalog-menu__link">Велосипеды</a>
+								<a href="catalog.html" class="catalog-menu__link">Велосипеды</a>
 								<button type="button" data-spoller class="menu-spoller__button">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
@@ -215,21 +219,23 @@
 								</button>
 								<div class="catalog-sub-menu sub-menu">
 									<ul class="sub-menu__list sub-menu__list_bikes">
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Горные велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велосипеды для триатлона</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Городские велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Двухподвесные велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Шоссейные велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Электровелосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Гравийные велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Женские велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Трековые велосипеды</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Детские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Горные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велосипеды для триатлона</a>
+										</li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Городские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Двухподвесные велосипеды</a>
+										</li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Шоссейные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Электровелосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Гравийные велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Женские велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Трековые велосипеды</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Детские велосипеды</a></li>
 									</ul>
 								</div>
 							</li>
 							<li class="catalog-menu__item">
-								<a href="#" class="catalog-menu__link">Запчасти</a>
+								<a href="catalog.html" class="catalog-menu__link">Запчасти</a>
 								<button type="button" data-spoller class="menu-spoller__button">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
@@ -237,27 +243,29 @@
 								</button>
 								<div class="catalog-sub-menu sub-menu">
 									<ul class="sub-menu__list sub-menu__list_things">
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Группы оборудования</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Рамы</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Вилки</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Запчасти для электронных&#160;групп</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Каретки</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Камеры</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Кассеты</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Колёса</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Манетки/Шифтеры</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Педали</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Переключатели скоростей</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Покрышки</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Сёдла и штыри</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Системы шатунов</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Тормоза</a></li>
-										<li class="sub-menu__item "><a href="#" class="sub-menu__link">Цепи</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Группы оборудования</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Рамы</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Вилки</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Запчасти для
+												электронных&#160;групп</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Каретки</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Камеры</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Кассеты</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Колёса</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Манетки/Шифтеры</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Педали</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Переключатели скоростей</a>
+										</li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Покрышки</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Сёдла и штыри</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Системы шатунов</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Тормоза</a></li>
+										<li class="sub-menu__item "><a href="catalog.html" class="sub-menu__link">Цепи</a></li>
 									</ul>
 								</div>
 							</li>
 							<li class="catalog-menu__item">
-								<a href="#" class="catalog-menu__link">Экипировка</a>
+								<a href="catalog.html" class="catalog-menu__link">Экипировка</a>
 								<button type="button" data-spoller class="menu-spoller__button">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
@@ -265,19 +273,19 @@
 								</button>
 								<div class="catalog-sub-menu sub-menu">
 									<ul class="sub-menu__list sub-menu__list_equipment">
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велокуртки</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велошлемы</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велотрусы</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велоперчатки</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Термобелье</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Очки</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велообувь</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Аксессуары</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велокуртки</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велошлемы</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велотрусы</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велоперчатки</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Термобелье</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Очки</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велообувь</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Аксессуары</a></li>
 									</ul>
 								</div>
 							</li>
 							<li class="catalog-menu__item">
-								<a href="#" class="catalog-menu__link">Аксессуары</a>
+								<a href="catalog.html" class="catalog-menu__link">Аксессуары</a>
 								<button type="button" data-spoller class="menu-spoller__button">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
@@ -285,18 +293,18 @@
 								</button>
 								<div class="catalog-sub-menu sub-menu">
 									<ul class="sub-menu__list sub-menu__list_accessories">
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велокомпьютеры</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Инструменты</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Вилки</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Велочехлы</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Крылья</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Насосы</a></li>
-										<li class="sub-menu__item"><a href="#" class="sub-menu__link">Фляги, держатели</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велокомпьютеры</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Инструменты</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Вилки</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Велочехлы</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Крылья</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Насосы</a></li>
+										<li class="sub-menu__item"><a href="catalog.html" class="sub-menu__link">Фляги, держатели</a></li>
 									</ul>
 								</div>
 							</li>
 							<li class="catalog-menu__item">
-								<a href="#" class="catalog-menu__link">Велостанки</a>
+								<a href="catalog.html" class="catalog-menu__link">Велостанки</a>
 								<button type="button" data-spoller class="menu-spoller__button">
 									<svg>
 										<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
@@ -327,21 +335,21 @@
 							</form>
 						</div>
 						<div class="actions-header__user">
-							<a href="#" class="actions-header__link">
+							<button class="actions-header__link icon-account-menu">
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-user"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 						<div class="actions-header__favorites">
-							<a href="#" class="actions-header__link">
+							<a href="account.html#tab-1-3" class="actions-header__link">
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-heart"></use>
 								</svg>
 							</a>
 						</div>
 						<div class="actions-header__cart">
-							<a href="#" class="actions-header__link">
+							<a href="cart.html" class="actions-header__link">
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-cart"></use>
 								</svg>
@@ -360,27 +368,186 @@
 			</button>
 			<h3 class="more-menu__title">Доп. Информация</h3>
 			<ul class="more-menu__list">
-				<li class="more-menu__item"><a href="#" class="more-menu__link">О нас</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Веломастерская</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Хранение</a></li>
+				<li class="more-menu__item"><a href="about.html" class="more-menu__link">О нас</a></li>
+				<li class="more-menu__item"><a href="workshop.html" class="more-menu__link">Веломастерская</a></li>
+				<li class="more-menu__item"><a href="storage.html" class="more-menu__link">Хранение</a></li>
 				<li class="more-menu__item"><a href="#" class="more-menu__link">Гарантии</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Пользовательское соглашение</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Доставка и оплата</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Блог</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Контакты</a></li>
+				<li class="more-menu__item"><a href="agreement.html" class="more-menu__link">Пользовательское соглашение</a></li>
+				<li class="more-menu__item"><a href="delivery.html" class="more-menu__link">Доставка и оплата</a></li>
+				<li class="more-menu__item"><a href="blog.html" class="more-menu__link">Блог</a></li>
+				<li class="more-menu__item"><a href="contacts.html" class="more-menu__link">Контакты</a></li>
 			</ul>
 			<div class="more-menu__logo"></div>
 		</nav>
+		<nav class="menu__body account-menu">
+			<button class="account-menu__close-btn icon-account-menu" type="button">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<h3 class="account-menu__title">Мой аккаунт</h3>
+			<ul class="account-menu__list">
+				<li class="account-menu__item"><a href="account.html#tab-1-0" class="account-menu__link">История заказов</a></li>
+				<li class="account-menu__item"><a href="account.html#tab-1-1" class="account-menu__link">Персональные данные</a>
+				</li>
+				<li class="account-menu__item"><a href="account.html#tab-1-2" class="account-menu__link">Смена пароля</a></li>
+				<li class="account-menu__item"><a href="account.html#tab-1-3" class="account-menu__link">Список желаний</a></li>
+				<li class="account-menu__item"><button class="account-menu__link account-menu__link_exit icon-log-in-menu">Выйти</button></li>
+			</ul>
+		</nav>
+
+		<div class="menu__body log-in-menu">
+			<button class="log-in-menu__close-btn icon-log-in-menu" type="button">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<div data-tabs class="log-in-menu__tabs">
+				<nav data-tabs-titles class="log-in-menu__tab-navigation">
+					<button type="button" class="log-in-menu__tab-title _tab-active">Войти</button>
+					<button type="button" class="log-in-menu__tab-title">Регистрация</button>
+				</nav>
+				<div data-tabs-body class="log-in-menu__tab-content">
+					<div class="log-in-menu__tab-body">
+						<form action="#" class="log-in-menu__form log-in-form" data-dev method="POST">
+							<label class="log-in-form__input-label">
+								<span>Имя пользователя</span>
+								<div class="input-wrapper">
+									<input autocomplete="off" type="text" name="Имя" data-error="Введите ваше имя" class="input input-high" maxlength="20" minlength="2" data-validate data-required>
+								</div>
+							</label>
+							<label class="log-in-form__input-label">
+								<span>Пароль</span>
+								<div class="input-wrapper">
+									<input autocomplete="off" type="password" required name="Имя" data-error="Введите пароль" class="input input-high" maxlength="20" minlength="5" data-required>
+									<button class="form__viewpass" type="button">
+										<svg class="view-pass">
+											<use xlink:href="img/icons/icons.svg#svg-view-pass"></use>
+										</svg>
+										<svg class="hide-pass">
+											<use xlink:href="img/icons/icons.svg#svg-hide-pass"></use>
+										</svg>
+									</button>
+								</div>
+							</label>
+							<button type="submit" class="log-in-form__button button">Войти</button>
+							<div class="log-in-form__row">
+								<div class="log-in-form__checkbox checkbox">
+									<input id="remember" data-error="Ошибка" class="checkbox__input checkbox__input_sm" type="checkbox" value="1" name="form[]">
+									<label for="remember" class="checkbox__label"><span class="checkbox__text">Запомнить меня</span></label>
+								</div>
+								<button class="icon-forgot-menu" type="button">Забыли пароль?</button>
+							</div>
+						</form>
+					</div>
+					<div class="log-in-menu__tab-body">
+						<form action="#" class="log-in-menu__form log-in-form" data-dev method="POST">
+
+							<label class="log-in-form__input-label">
+								<span>Имя пользователя</span>
+								<div class="input-wrapper">
+									<input autocomplete="off" type="text" name="Имя" data-error="Введите ваше имя" class="input input-high" maxlength="20" minlength="2" data-validate data-required>
+								</div>
+							</label>
+
+							<label class="log-in-form__input-label">
+								<span>E-mail</span>
+								<div class="input-wrapper">
+									<input autocomplete="off" type="email" name="Отображаемое имя" data-error="E-mail введен не корректно" class="input input-high" maxlength="50" data-validate data-required="email">
+								</div>
+							</label>
+
+							<label class="log-in-form__input-label">
+								<span>Пароль</span>
+								<div class="input-wrapper">
+									<input autocomplete="off" type="password" required name="Имя" data-error="Введите пароль" class="input input-high" maxlength="20" minlength="5" data-required data-password="new">
+									<button class="form__viewpass" type="button">
+										<svg class="view-pass">
+											<use xlink:href="img/icons/icons.svg#svg-view-pass"></use>
+										</svg>
+										<svg class="hide-pass">
+											<use xlink:href="img/icons/icons.svg#svg-hide-pass"></use>
+										</svg>
+									</button>
+								</div>
+							</label>
+
+							<label class="log-in-form__input-label">
+								<span>Подтвердите пароль</span>
+								<div class="input-wrapper">
+									<input autocomplete="off" type="password" required name="Имя" data-error="Пароли не совпадают" class="input input-high" maxlength="20" minlength="5" data-required="password">
+									<button class="form__viewpass" type="button">
+										<svg class="view-pass">
+											<use xlink:href="img/icons/icons.svg#svg-view-pass"></use>
+										</svg>
+										<svg class="hide-pass">
+											<use xlink:href="img/icons/icons.svg#svg-hide-pass"></use>
+										</svg>
+									</button>
+								</div>
+							</label>
+
+							<button type="submit" class="log-in-form__button button">Регистрация</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu__body forgot-menu">
+			<button class="forgot-menu__close-btn icon-forgot-menu" type="button">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<h2 class="forgot-menu__title">
+				Забыли пароль?
+			</h2>
+			<p class="forgot-menu__description">
+				Укажите свой email или имя пользователя. Ссылку на создание нового пароля вы получите по электронной почте.
+			</p>
+
+			<form action="#" class="forgot-menu__form forgot-form" data-dev method="POST">
+				<label class="forgot-form__input-label">
+					<span>E-mail</span>
+					<div class="input-wrapper">
+						<input autocomplete="off" type="email" name="Отображаемое имя" data-error="E-mail введен не корректно" class="input input-high" maxlength="50" data-validate data-required="email">
+					</div>
+				</label>
+
+				<button type="submit" class="forgot-form__button button">Сброс пароля</button>
+			</form>
+		</div>
+
+		<div class="menu__body message-menu">
+			<button class="message-menu__close-btn message-menu__button" type="button">
+				<svg class="close">
+					<use xlink:href="img/icons/icons.svg#svg-close"></use>
+				</svg>
+			</button>
+			<h2 class="message-menu__title">
+				Письмо отправлено
+			</h2>
+			<p class="message-menu__description">
+				Письмо со ссылкой для сброса пароля было направлено на адрес электронной почты, привязанный к вашей учетной записи,
+				доставка сообщения может занять несколько минут. Пожалуйста, подождите не менее 10 минут, прежде чем инициировать
+				ещё один запрос.
+			</p>
+
+			<button type="button" class="message-menu__button-reset button icon-log-in-menu">Войти</button>
+
+		</div>
 		<main class="page delivery-page">
 			<div class="page-header" style="background-image: url('img/page-header/delivery.jpg');">
 				<div class="page-header__container">
 					<nav class="breadcrambs">
 						<ul class="breadcrambs__list">
 							<li class="breadcrambs__item">
-								<a href="#" class="breadcrambs__link">Главная</a>
+								<a href="home.html" class="breadcrambs__link">Главная</a>
 							</li>
 							<li class="breadcrambs__item">
-								<span href="#" class="breadcrambs__current">Доставка и оплата</span>
+								<span class="breadcrambs__current">Доставка и оплата</span>
 							</li>
 						</ul>
 					</nav>
@@ -598,7 +765,7 @@
 			<div class="footer__container  footer__container_main">
 				<div class="footer__main main-footer">
 					<div class="main-footer__about footer-about">
-						<a href="#" class="footer-about__logo"><img src="img/logo.svg" alt="logo"></a>
+						<a href="home.html" class="footer-about__logo"><img src="img/logo.svg" alt="logo"></a>
 						<div class="footer-about__text">
 							<p>Компания World-bikes специализируется на продаже товаров для велосипедного спорта.</p>
 						</div>
@@ -612,17 +779,17 @@
 								</svg>
 							</button>
 							<ul class="navigations-footer__list">
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Trade-in</a>
+								<li class="navigations-footer__item"><a href="catalog.html" class="navigations-footer__link footer-link">Trade-in</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Велосипеды</a>
+								<li class="navigations-footer__item"><a href="catalog.html" class="navigations-footer__link footer-link">Велосипеды</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Экипировка</a>
+								<li class="navigations-footer__item"><a href="catalog.html" class="navigations-footer__link footer-link">Экипировка</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Запчасти</a>
+								<li class="navigations-footer__item"><a href="catalog.html" class="navigations-footer__link footer-link">Запчасти</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Велостанки</a>
+								<li class="navigations-footer__item"><a href="catalog.html" class="navigations-footer__link footer-link">Велостанки</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Аксессуары</a>
+								<li class="navigations-footer__item"><a href="catalog.html" class="navigations-footer__link footer-link">Аксессуары</a>
 								</li>
 							</ul>
 						</nav>
@@ -635,14 +802,16 @@
 								</svg>
 							</button>
 							<ul class="navigations-footer__list">
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">О нас</a></li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Доставка и
+								<li class="navigations-footer__item"><a href="about.html" class="navigations-footer__link footer-link">О нас</a></li>
+								<li class="navigations-footer__item"><a href="delivery.html" class="navigations-footer__link footer-link">Доставка и
 										оплата</a></li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Блог</a></li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Контакты</a>
+								<li class="navigations-footer__item"><a href="blog.html" class="navigations-footer__link footer-link">Блог</a></li>
+								<li class="navigations-footer__item"><a href="contacts.html" class="navigations-footer__link footer-link">Контакты</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Веломастерская</a></li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Хранение</a>
+								<li class="navigations-footer__item">
+									<a href="workshop.html" class="navigations-footer__link footer-link"> Веломастерская </a>
+								</li>
+								<li class="navigations-footer__item"><a href="storage.html" class="navigations-footer__link footer-link">Хранение</a>
 								</li>
 								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Гарантии</a>
 								</li>
@@ -719,18 +888,18 @@
 						<h3 class="product-popup-quick__name"></h3>
 					</div>
 
-					<form class="popup-quick__form form-quick" method="POST" data-dev>
+					<form class="popup-quick__form form-quick" method="POST" data-dev action="#">
 						<!-- action="https://jsonplaceholder.typicode.com/posts" -->
 						<!-- data-popup-message="#thankfulness" -->
 						<h3 class="form-quick__title">
 							Укажите ваше имя и телефон, и наш менеджер свяжется с вами для оформления заказа.
 						</h3>
-						<input autocomplete="off" type="number" name="id товара" data-error="Товар не выбран" placeholder="id товара" class="input product-id visually-hidden" data-required>
+						<input autocomplete="off" type="number" name="id товара" data-error="Товар не выбран" placeholder="id товара" class="input product-id visually-hidden" data-required required>
 						<div class="input-wrapper">
-							<input autocomplete="off" type="text" name="Имя" data-error="Необходимо ввести ваше имя" placeholder="Имя" class="input" maxlength="20" minlength="2" data-validate data-required>
+							<input autocomplete="off" type="text" name="Имя" data-error="Необходимо ввести ваше имя" placeholder="Имя" class="input" maxlength="20" minlength="2" data-validate required data-required>
 						</div>
 						<div class="input-wrapper">
-							<input autocomplete="off" type="tel" name="Телефон" data-error="Телефон введен не верно" placeholder="Телефон" class="input" data-validate data-required="tel">
+							<input autocomplete="off" type="tel" name="Телефон" data-error="Телефон введен не верно" placeholder="Телефон" class="input" data-validate required data-required="tel">
 						</div>
 						<p class="form-quick__messege">
 							Нажимая на кнопку «Заказать» я даю своё согласие на обработку персональных данных и принимаю <a href="#">условия соглашения</a>
@@ -754,7 +923,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20240223124156"></script>
+	<script src="js/app.min.js?_v=20240301003738"></script>
 </body>
 
 </html>
