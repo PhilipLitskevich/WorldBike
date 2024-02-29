@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Пользовательское соглашение"
+})
+
+<body>
+	@@include('html/_loader.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<div class="account">
+				<div data-tabs data-tabs-hash data-tabs-animate="1000" class="account__container">
+					<aside class="account__aside">
+						<h1 class="account__title">Мой аккаунт</h1>
+						<nav data-tabs-titles class="account__navigation">
+							<button type="button" class="account__tab-title _tab-active">История заказов</button>
+							<button type="button" class="account__tab-title">Персональные данные</button>
+							<button type="button" class="account__tab-title">Смена пароля</button>
+							<button type="button" class="account__tab-title">Список желаний</button>
+						</nav>
+						<button class="account__exit">Выйти</button>
+					</aside>
+					<div data-tabs-body class="account__content">
+						<div class="account__body account-history">
+							<h2 class="account__body-title title title-small">История заказов</h2>
+							<div class="account-history__wrapper" data-simplebar>
+								<div class="account-history__tabel">
+									<div class="account-history__header">
+										<h3 class="account-history__column-title">Дата</h3>
+										<h3 class="account-history__column-title">Номер заказа</h3>
+										<h3 class="account-history__column-title">Сумма заказа</h3>
+										<h3 class="account-history__column-title">Статус</h3>
+									</div>
+									<div data-spollers data-one-spoller class="account-history__body history-spollers">
+										<div class="history-spollers__item">
+											<button type="button" data-spoller class="history-spollers__title">
+												<time class="history-spollers__date" datetime="2023-01-22">22.01.2023</time>
+												<span class="history-spollers__number">789563678</span>
+												<span class="history-spollers__price">605 370 ₽</span>
+												<span class="history-spollers__status">Новый заказ</span>
+												<svg class="history-spollers-icon">
+													<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+												</svg>
+											</button>
+											<div class="history-spollers__body history-content">
+												<ul class="history-content__list">
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="history-spollers__item">
+											<button type="button" data-spoller class="history-spollers__title">
+												<time class="history-spollers__date" datetime="2023-01-22">22.01.2023</time>
+												<span class="history-spollers__number">789563678</span>
+												<span class="history-spollers__price">605 370 ₽</span>
+												<span class="history-spollers__status">Новый заказ</span>
+												<svg class="history-spollers-icon">
+													<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+												</svg>
+											</button>
+											<div class="history-spollers__body history-content">
+												<ul class="history-content__list">
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="history-spollers__item">
+											<button type="button" data-spoller class="history-spollers__title">
+												<time class="history-spollers__date" datetime="2023-01-22">22.01.2023</time>
+												<span class="history-spollers__number">789563678</span>
+												<span class="history-spollers__price">605 370 ₽</span>
+												<span class="history-spollers__status">Новый заказ</span>
+												<svg class="history-spollers-icon">
+													<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+												</svg>
+											</button>
+											<div class="history-spollers__body history-content">
+												<ul class="history-content__list">
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="history-spollers__item">
+											<button type="button" data-spoller class="history-spollers__title">
+												<time class="history-spollers__date" datetime="2023-01-22">22.01.2023</time>
+												<span class="history-spollers__number">789563678</span>
+												<span class="history-spollers__price">605 370 ₽</span>
+												<span class="history-spollers__status">Новый заказ</span>
+												<svg class="history-spollers-icon">
+													<use xlink:href="img/icons/icons.svg#svg-menu-arrow"></use>
+												</svg>
+											</button>
+											<div class="history-spollers__body history-content">
+												<ul class="history-content__list">
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+													<li class="history-content__item">
+														<article class="history-content__product history-product">
+															<img src="@img/bikes/bike-1.jpg" alt="продукт" class="history-product__image">
+															<h4 class="history-product__name">
+																Trek Fx 3 Disc Dnister Black HYBD 2022
+															</h4>
+															<div class="history-product__price">
+																<span class="history-product__current-price">435 000 ₽</span>
+																<span class="history-product__old-price">522 000 ₽</span>
+															</div>
+
+														</article>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="account__body personal-information">
+							<h2 class="account__body-title title title-small">Персональные данные</h2>
+
+							<form action="#" class="account__personal-information personal-information__form account-form" data-dev
+								method="POST">
+								<div class="account-form__row account-form__row_name">
+									<label class="account-form__input-label">
+										<span>Имя</span>
+										<div class="input-wrapper">
+											<input autocomplete="off" type="text" name="Имя" data-error="Введите ваше имя"
+												class="input input-high" maxlength="20" minlength="2" data-validate data-required>
+										</div>
+									</label>
+
+									<label class="account-form__input-label">
+										<span>Фамилия</span>
+										<div class="input-wrapper">
+											<input autocomplete="off" type="text" name="Фамилия" data-error="Введите вашу фамилию"
+												class="input input-high" maxlength="20" minlength="2" data-validate data-required>
+										</div>
+									</label>
+								</div>
+
+								<label class="account-form__input-label">
+									<span>Отображаемое имя</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="text" name="Отображаемое имя" data-error="Введите отображаемое имя"
+											class="input input-high" maxlength="20" minlength="2" data-validate data-required>
+									</div>
+								</label>
+
+								<label class="account-form__input-label">
+									<span>E-mail</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="email" name="Отображаемое имя"
+											data-error="E-mail введен не корректно" class="input input-high" maxlength="50" data-validate
+											data-required="email">
+									</div>
+								</label>
+
+								<label class="account-form__input-label">
+									<span>Телефон</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="tel" name="Телефон" data-error="Телефон введен не верно"
+											class="input input-high" data-validate data-required="tel">
+									</div>
+								</label>
+
+								<label class="account-form__input-label">
+									<span>Город</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="text" name="Город" data-error="Введите ваш город"
+											class="input input-high" maxlength="50" minlength="2" data-validate data-required>
+									</div>
+								</label>
+
+								<label class="account-form__input-label">
+									<span>Улица</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="text" name="Улица" data-error="Введите вашу улицу"
+											class="input input-high" maxlength="50" minlength="2" data-validate data-required>
+									</div>
+								</label>
+
+								<div class="account-form__row">
+									<label class="account-form__input-label">
+										<span>Дом</span>
+										<div class="input-wrapper">
+											<input autocomplete="off" type="text" name="Дом" data-error="Введите ваш дом"
+												class="input input-high" data-validate data-required>
+										</div>
+									</label>
+									<label class="account-form__input-label">
+										<span>Этаж</span>
+										<div class="input-wrapper">
+											<input autocomplete="off" type="number" name="Этаж" class="input input-high">
+										</div>
+									</label>
+									<label class="account-form__input-label">
+										<span>Квартира</span>
+										<div class="input-wrapper">
+											<input autocomplete="off" type="text" name="Квартира" class="input input-high">
+										</div>
+									</label>
+								</div>
+
+								<button type="submit" class="account-form__submit-button button">Изменить</button>
+							</form>
+						</div>
+						<div class="account__body">
+							<h2 class="account__body-title title title-small account-password">Смена Пароля</h2>
+							<form action="#" class="account-password__form account-form" data-dev>
+								<label class="account-form__input-label">
+									<span>Старый пароль</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="password" required name="password-old" data-error="Введите старый пароль"
+											class="input input-high" maxlength="20" minlength="5" data-required>
+										<button class="form__viewpass" type="button">
+											<svg class="view-pass">
+												<use xlink:href="img/icons/icons.svg#svg-view-pass"></use>
+											</svg>
+											<svg class="hide-pass">
+												<use xlink:href="img/icons/icons.svg#svg-hide-pass"></use>
+											</svg>
+										</button>
+									</div>
+								</label>
+								<label class="account-form__input-label">
+									<span>Новый пароль</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="password" name="Новый пароль" data-error="Введите новый пароль"
+											data-password="new" class="input input-high" maxlength="20" minlength="5" data-required
+										 required>
+										<button class="form__viewpass" type="button">
+											<svg class="view-pass">
+												<use xlink:href="img/icons/icons.svg#svg-view-pass"></use>
+											</svg>
+											<svg class="hide-pass">
+												<use xlink:href="img/icons/icons.svg#svg-hide-pass"></use>
+											</svg>
+										</button>
+									</div>
+								</label>
+								<label class="account-form__input-label">
+									<span>Повторите новый пароль</span>
+									<div class="input-wrapper">
+										<input autocomplete="off" type="password" name="Новый пароль повтор"
+											data-error="Пароли не совпадают" class="input input-high" maxlength="20" minlength="5"
+											data-required="password" required>
+										<button class="form__viewpass" type="button">
+											<svg class="view-pass">
+												<use xlink:href="img/icons/icons.svg#svg-view-pass"></use>
+											</svg>
+											<svg class="hide-pass">
+												<use xlink:href="img/icons/icons.svg#svg-hide-pass"></use>
+											</svg>
+										</button>
+									</div>
+								</label>
+								<button type="submit" class="account-form__submit-button button">Изменить</button>
+							</form>
+
+						</div>
+						<div class="account__body account-favorites">
+							<h2 class="account__body-title title title-small">Список желаний</h2>
+
+							<div class="account-favorites__cards">
+								@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+									"img":"img/bikes/new-3.jpg",
+									"alt":"Велосипед",
+									"title":"Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022",
+									"price":"115 000 ₽",
+									"oldPrice":""
+									},
+									"status":{
+									"text":"В наличии",
+									"class":""
+									}
+									})
+									@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/italy.jpg",
+									"alt":"Италия",
+									"have":""
+									},
+									"product":{
+									"img":"img/bikes/new-1.jpg",
+									"alt":"Велосипед",
+									"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+									"price":"684 840 ₽",
+									"oldPrice":""
+									},
+									"status":{
+									"text":"Распродано",
+									"class":"_out-in-stock"
+									}
+									})
+	
+									@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+									"img":"img/bikes/winter-3.jpg",
+									"alt":"Велосипед",
+									"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
+									"price":"78 000 ₽",
+									"oldPrice":""
+									},
+									"status":{
+									"text":"Распродано",
+									"class":"_out-in-stock"
+									}
+									})
+									@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/usa.jpg",
+									"alt":"США",
+									"have":""
+									},
+									"product":{
+									"img":"img/bikes/winter-2.jpg",
+									"alt":"Велосипед",
+									"title":"Trek Verve 1 Disc Low Step Era White HYBD 2022",
+									"price":"77 300 ₽",
+									"oldPrice":""
+									},
+									"status":{
+									"text":"Распродано",
+									"class":"_out-in-stock"
+									}
+									})
+									@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/italy.jpg",
+									"alt":"Италия",
+									"have":""
+									},
+									"product":{
+									"img":"img/bikes/new-1.jpg",
+									"alt":"Велосипед",
+									"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+									"price":"684 840 ₽",
+									"oldPrice":""
+									},
+									"status":{
+									"text":"Распродано",
+									"class":"_out-in-stock"
+									}
+									})
+									@@include('html/_card-product.htm',{
+									"size":"",
+									"country":{
+									"url":"img/countries/france.jpg",
+									"alt":"Франция",
+									"have":""
+									},
+									"product":{
+									"img":"img/bikes/new-5.jpg",
+									"alt":"Велосипед",
+									"title":"Orbea ALMA H30 2021",
+									"price":"153 400 ₽",
+									"oldPrice":"163 211 ₽"
+									},
+									"status":{
+									"text":"Распродано",
+									"class":"_out-in-stock"
+									}
+									})
+							</div>
+							<div class="account-favorites__empty">
+								<svg width="282" height="244" viewBox="0 0 282 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M226.239 136.707L141.5 224.897L56.7611 136.707C56.7611 136.707 56.761 136.707 56.761 136.707C48.0599 127.651 43.125 115.312 43.125 102.39C43.125 75.399 64.0802 54 89.3475 54C101.514 54 113.242 59.0274 121.934 68.0733C121.934 68.0733 121.934 68.0734 121.934 68.0734L136.452 83.1833C137.772 84.557 139.595 85.3334 141.5 85.3334C143.405 85.3334 145.228 84.557 146.548 83.1833L161.066 68.0734C161.066 68.0734 161.066 68.0733 161.066 68.0733C169.758 59.0274 181.486 54 193.652 54C218.919 54 239.875 75.399 239.875 102.39C239.875 115.312 234.94 127.651 226.239 136.707Z" stroke="#F57520" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								<p class="account-favorites__empty-message">
+									В списке пока нет ни одного избранного товара
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<button class="scroll-up" tabindex="0" aria-label="Наверх">
+			<svg class="scroll-up__arrow">
+				<use xlink:href="img/icons/icons.svg#svg-button-arrow"></use>
+			</svg>
+		</button>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -310,12 +310,15 @@ class Popup {
 		}
 	}
 	_openToHash() {
-		let classInHash = document.querySelector(`.${window.location.hash.replace('#', '')}`) ? `.${window.location.hash.replace('#', '')}` :
-			document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` :
-				null;
+		let elem = document.getElementById(window.location.hash.replace('#', ''))
+		if (elem && elem.classList.contains('popup')) {
+			let classInHash = document.querySelector(`.${window.location.hash.replace('#', '')}`) ? `.${window.location.hash.replace('#', '')}` :
+				document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` :
+					null;
 
-		const buttons = document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton}="${classInHash.replace('.', "#")}"]`);
-		if (buttons && classInHash) this.open(classInHash);
+			const buttons = document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton}="${classInHash.replace('.', "#")}"]`);
+			if (buttons && classInHash) this.open(classInHash);
+		}
 	}
 	// Утсановка хэша
 	_setHash() {

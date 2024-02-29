@@ -33,6 +33,14 @@ flsFunctions.addLoadedClass();
 flsFunctions.menuInit();
 /* Модуль для работы с меню (Фильтр) */
 flsFunctions.filterInit();
+/* Модуль для работы с меню (Аккаунт) */
+flsFunctions.accountMenuInit();
+/* Модуль для работы с меню (Логин) */
+flsFunctions.logInMenuInit();
+/* Модуль для работы с меню (Забыли пароль) */
+flsFunctions.forgotMenuInit();
+/* Модуль для работы с меню (Сообщение успешно оправлено) */
+flsFunctions.messageMenuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 // flsFunctions.fullVHfix();
 
@@ -48,7 +56,7 @@ flsFunctions.spollers();
 Документация:
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
@@ -78,7 +86,7 @@ import * as flsForms from "./files/forms/forms.js";
 
 /* Работа с полями формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-flsForms.formFieldsInit({ viewPass: false });
+flsForms.formFieldsInit({ viewPass: true });
 
 /* Oтправка формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
@@ -141,7 +149,7 @@ import "./files/sliders.js";
 Документация плагина: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
 Сниппет(HTML): 
 */
-// import './files/scroll/simplebar.js';
+import './files/scroll/simplebar.js';
 
 // Ленивая (отложенная) загрузка картинок
 // Документация по работе в шаблоне: В HTML добавляем img, video, audio, iframe но вместо src пишем data-src

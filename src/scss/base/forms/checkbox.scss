@@ -59,6 +59,14 @@
 			transition: background-color .3s ease, border-color .3s ease;
 		}
 
+		.checkbox__input_sm + &{
+			&:before {
+				flex: 0 0 16px;
+				width: 16px;
+				height: 16px;
+			}
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				&::before {

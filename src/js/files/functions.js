@@ -28,14 +28,49 @@ export function addTouchClass() {
 }
 // Добавление loaded для HTML после полной загрузки страницы
 export function addLoadedClass() {
-	window.addEventListener("load", function () {
-		setTimeout(function () {
+	window.addEventListener("load", function() {
+		const loader = document.getElementById('loader');
+		const parent = loader.parentNode;
+	
+		setTimeout(function() {
 			document.documentElement.classList.add('loaded');
-			setTimeout(function () {
-				const loader = document.getElementById('loader');
-				loader.parentNode.removeChild(loader);
+			setTimeout(function() {
+				parent.removeChild(loader);
 			}, 1210);
 		}, 1500);
+	
+		let links = document.querySelectorAll('a');
+	
+		links.forEach(function(link) {
+			function checkLink() {
+				if (!/^#/.test(link.getAttribute("href")) && !/^tel:/.test(link.getAttribute("href")) && !/^mailto:/.test(link.getAttribute("href"))) {
+					if (link.href.indexOf(window.location.href) < 0) {
+						link.addEventListener('click', onLinkClicked);
+					} 
+				}
+			}
+	
+			function onLinkClicked(event) {
+				event.preventDefault();
+				checkLink();
+	
+				parent.insertBefore(loader, parent.firstChild);
+				setTimeout(function() {
+					document.documentElement.classList.add('loader-show');
+				}, 1);
+				setTimeout(onAnimationComplete, 1250);
+			}
+	
+			function onAnimationComplete() {
+				window.location = link.href;
+				setTimeout(function() {
+					document.documentElement.classList.remove('loader-show');
+				}, 10);
+			}
+	
+			checkLink();
+		});
+	
 	});
 }
 // Получение хеша в адресе сайта
@@ -424,6 +459,20 @@ export function tabs() {
 	}
 }
 // Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
+
+export function menuOpen(menu, openClass, focusClasss) {
+	bodyLock();
+	menu.removeAttribute('style');
+	setTimeout(() => { document.documentElement.classList.add(openClass) }, 10);
+	document.querySelector(focusClasss).focus();
+}
+export function menuClose(menu, openClass, focusClasss) {
+	// bodyUnlock();
+	document.documentElement.classList.remove(openClass);
+	setTimeout(() => { menu.style.display = 'none' }, 510)
+	document.querySelector(focusClasss).focus();
+}
+
 export function menuInit() {
 	if (document.querySelector(".icon-menu")) {
 		const menu = document.querySelector('.more-menu')
@@ -445,18 +494,121 @@ export function menuInit() {
 		});
 	};
 }
-export function menuOpen(menu, openClass, focusClasss) {
-	bodyLock();
-	menu.removeAttribute('style');
-	setTimeout(()=>{document.documentElement.classList.add(openClass)}, 10);
-	document.querySelector(focusClasss).focus();
+
+export function accountMenuInit() {
+	if (document.querySelector(".icon-account-menu")) {
+		const menu = document.querySelector('.account-menu')
+		if (menu) {
+			menu.style.display = 'none';
+		}
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.icon-account-menu')) {
+				bodyLockToggle();
+				if (!document.documentElement.classList.contains('account-menu-open')) {
+					menuOpen(menu, 'account-menu-open', '.account-menu__close-btn')
+				} else {
+					bodyUnlock();
+					menuClose(menu, 'account-menu-open', '.actions-header__link.icon-account-menu');
+				}
+			}
+			if (bodyLockStatus && !e.target.closest('.account-menu') && document.documentElement.classList.contains('account-menu-open')) {
+				bodyUnlock();
+				menuClose(menu, 'account-menu-open', '.actions-header__link.icon-account-menu');
+			}
+		});
+	};
 }
-export function menuClose(menu, openClass, focusClasss) {
-	bodyUnlock();
-	document.documentElement.classList.remove(openClass);
-	setTimeout(() => {menu.style.display = 'none' }, 510)
-	document.querySelector(focusClasss).focus();
+
+//!!! Для демонстрации
+export function logInMenuInit() {
+	if (document.querySelector(".icon-log-in-menu")) {
+		const menu = document.querySelector('.log-in-menu')
+		if (menu) {
+			menu.style.display = 'none';
+		}
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.icon-log-in-menu')) {
+				if (!document.documentElement.classList.contains('log-in-menu-open')) {
+					menuOpen(menu, 'log-in-menu-open', '.log-in-menu__close-btn')
+					setTimeout(()=>{
+						menuClose(document.querySelector('.account-menu'), 'account-menu-open', '.log-in-menu__close-btn')
+						const messageMenu = document.querySelector('.message-menu')
+						if (messageMenu && messageMenu.style.display !== 'none'){
+							menuClose(messageMenu, 'message-menu-open', '.log-in-menu__close-btn');
+						}
+					}, 500)
+				} else {
+					bodyUnlock();
+					menuClose(menu, 'log-in-menu-open', '.actions-header__link.icon-account-menu')
+				}
+			}
+			if (bodyLockStatus && !e.target.closest('.log-in-menu') && document.documentElement.classList.contains('log-in-menu-open')) {
+				bodyUnlock();
+				menuClose(menu, 'log-in-menu-open', '.actions-header__link.icon-account-menu')
+			}
+		});
+	};
 }
+
+export function forgotMenuInit() {
+	if (document.querySelector(".icon-forgot-menu")) {
+		const menu = document.querySelector('.forgot-menu')
+		if (menu) {
+			menu.style.display = 'none';
+		}
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.icon-forgot-menu')) {
+				if (!document.documentElement.classList.contains('forgot-menu-open')) {
+					menuOpen(menu, 'forgot-menu-open', '.forgot-menu__close-btn');
+					setTimeout(()=>{
+						menuClose(document.querySelector('.log-in-menu'), 'log-in-menu-open', '.forgot-menu__close-btn');
+					}, 500)
+				} else {
+					bodyUnlock();
+					menuClose(menu, 'forgot-menu-open', '.actions-header__link.icon-account-menu');
+				}
+			}
+			if (bodyLockStatus && !e.target.closest('.forgot-menu') && document.documentElement.classList.contains('forgot-menu-open')) {
+				bodyUnlock();
+				menuClose(menu, 'forgot-menu-open', '.actions-header__link.icon-account-menu');
+			}
+		});
+	};
+}
+
+export function messageMenuInit() {
+	if (document.querySelector(".message-menu__button")) {
+		const menu = document.querySelector('.message-menu')
+		if (menu) {
+			menu.style.display = 'none';
+		}
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.message-button-menu')) {
+				if (document.documentElement.classList.contains('message-menu-open')) {
+					bodyUnlock();
+					menuClose(menu, 'message-menu-open', '.actions-header__link.icon-account-menu')
+				}
+			}
+			if (bodyLockStatus && !e.target.closest('.message-menu') && document.documentElement.classList.contains('message-menu-open')) {
+				bodyUnlock();
+				menuClose(menu, 'message-menu-open', '.actions-header__link.icon-account-menu')
+			}
+		});
+	};
+}
+
+document.addEventListener("formSent", function (e) {
+	const currentForm = e.detail.form;
+	if (currentForm.classList.contains('forgot-form')) {
+		const menu = document.querySelector('.message-menu')
+		menuOpen(menu, 'message-menu-open', '.message-menu__close-btn');
+		setTimeout(() => {
+			menuClose(document.querySelector('.forgot-menu'), 'forgot-menu-open', '.message-menu__close-btn');
+		}, 500)
+	}
+})
+
+// Конец демонстрации
 
 export function filterInit() {
 	const filter = document.querySelector('.filter')
@@ -482,10 +634,12 @@ export function filterInit() {
 				if (!document.documentElement.classList.contains('filter-open')) {
 					menuOpen(filter, 'filter-open', '.filter__button-close')
 				} else {
+					bodyUnlock();
 					menuClose(filter, 'filter-open', '.catalog__filter-btn.filter-btn')
 				}
 			}
 			if (bodyLockStatus && !e.target.closest('.filter') && document.documentElement.classList.contains('filter-open')) {
+				bodyUnlock();
 				menuClose(filter, 'filter-open', '.catalog__filter-btn.filter-btn')
 			}
 		})

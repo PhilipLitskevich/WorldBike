@@ -344,12 +344,18 @@ if (articleElement) {
 
 document.addEventListener("formSent", function (e) {
 	const currentForm = e.detail.form;
-	if (currentForm.classList.contains('form-quick')){
+	if (currentForm.classList.contains('form-quick')) {
 		flsModules.popup.close()
-		setTimeout(()=>{
+		setTimeout(() => {
 			flsModules.popup.open('#thankfulness')
 		}, 500)
-	} else if (currentForm.classList.contains('contact-us__form')){
+	} else if (currentForm.classList.contains('contact-us__form')) {
 		alert('Сообщение успешно отправлено')
+	} else if (currentForm.classList.contains('personal-information__form')) {
+		alert('Данные успешно изменены')
+	} else if (currentForm.classList.contains('account-password__form')) {
+		alert('Пароль успешно изменен')
 	}
 });
+
+//========================================================================================================================================================

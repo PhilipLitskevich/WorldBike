@@ -57,9 +57,13 @@ textarea.input {
 	// padding: 0px 0px;
 }
 
+.input-high{
+	height: rem(58);
+}
+
 .input-wrapper {
 	display: flex;
-	gap: rem(10);
+	gap: rem(8);
 	align-items: start;
 	flex-direction: column-reverse;
 }

@@ -101,7 +101,17 @@ export let formValidate = {
 				this.removeError(formRequiredItem);
 			}
 		} else if (formRequiredItem.dataset.required === "tel"){
-			if(formRequiredItem.inputmask.unmaskedvalue().length < 10){
+			if(formRequiredItem.inputmask.unmaskedvalue().length < 9){
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}	
+		} else if (formRequiredItem.dataset.required === "password"){
+			// let newPasswordItem = document.querySelector('[data-password="new"]')
+			// let newPass = newPasswordItem.value
+			// let newPassRepeat = formRequiredItem.value
+			if(formRequiredItem.closest('form').querySelector('[data-password="new"]').value !== formRequiredItem.value || formRequiredItem.value.length<5){
 				this.addError(formRequiredItem);
 				error++;
 			} else {
