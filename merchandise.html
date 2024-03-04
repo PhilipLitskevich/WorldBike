@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240301003738">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240304180148">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -346,6 +346,7 @@
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-heart"></use>
 								</svg>
+								<div class="actions-header__favorites-quantity">0</div>
 							</a>
 						</div>
 						<div class="actions-header__cart">
@@ -353,6 +354,7 @@
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-cart"></use>
 								</svg>
+								<div class="actions-header__cart-quantity">0</div>
 							</a>
 						</div>
 					</div>
@@ -746,12 +748,12 @@
 								<div class="body-merchandise__actions">
 									<div class="body-merchandise__quantity quantity">
 										<div class="quantity__button quantity__button_minus _icon-minus"></div>
-										<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="1" maxlength="4"></div>
+										<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="1" maxlength="4merchendiseСartButton"></div>
 										<div class="quantity__button quantity__button_plus _icon-plus"></div>
 
 									</div>
-									<button class="body-merchandise__button button" data-da=".body-merchandise, 479.98, last">В корзину</button>
-									<button class="body-merchandise__favorite">
+									<button class="body-merchandise__button merchendise-cart-button button" data-da=".body-merchandise, 479.98, last">В корзину</button>
+									<button class="body-merchandise__favorite merchendise-favorite-button">
 										<svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M2.67757 13.34L14.5 25.4464L26.3224 13.34C27.6367 11.9941 28.375 10.1688 28.375 8.26553C28.375 4.30217 25.2374 1.08923 21.367 1.08923C19.5084 1.08923 17.7259 1.84531 16.4117 3.19112L14.5 5.14876L12.5883 3.19112C11.274 1.84531 9.49156 1.08923 7.63294 1.08923C3.76255 1.08923 0.625 4.30217 0.625 8.26553C0.625 10.1688 1.36333 11.9941 2.67757 13.34Z" stroke-linecap="round" stroke-linejoin="round" />
 										</svg>
@@ -797,7 +799,7 @@
 							</div>
 							<div class="characteristics-merchandise__row">
 								<dt>Страна</dt>
-								<dd>Швейцария</dd>
+								<dd data-country-url="img/countries/switzerland.jpg">Швейцария</dd>
 							</div>
 							<div class="characteristics-merchandise__row">
 								<dt>Производитель</dt>
@@ -903,15 +905,15 @@
 							<div class="similar__wrapper swiper-wrapper">
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="01234">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
-													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+													<div class="image-switch__img"><picture><source srcset="img/bikes/new-3.webp" type="image/webp"><img src="img/bikes/new-3.jpg" alt="Велосипед"></picture></div>
 												</div>
 
 												<!-- Есть возможность добавлять несколько картинок: -->
@@ -936,13 +938,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">115 000 ₽</span>
+													<span class="product-price__old"></span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -954,12 +971,12 @@
 								</div>
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="123456">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
 													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
@@ -987,13 +1004,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Bianchi ARCADEX GRX600 40 Синий 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">351 890 ₽</span>
+													<span class="product-price__old">451 890 ₽</span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1005,15 +1037,15 @@
 								</div>
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="234567">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
-													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-2.webp" type="image/webp"><img src="img/bikes/winter-2.jpg" alt="Велосипед"></picture></div>
 												</div>
 
 												<!-- Есть возможность добавлять несколько картинок: -->
@@ -1038,13 +1070,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Bianchi ARCADEX GRX600 40 Синий 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">351 890 ₽</span>
+													<span class="product-price__old"></span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1056,15 +1103,15 @@
 								</div>
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="345678">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
-													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
+													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-3.webp" type="image/webp"><img src="img/bikes/winter-3.jpg" alt="Велосипед"></picture></div>
 												</div>
 
 												<!-- Есть возможность добавлять несколько картинок: -->
@@ -1089,13 +1136,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Bianchi ARCADEX GRX600 40 Синий 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">351 890 ₽</span>
+													<span class="product-price__old"></span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1107,12 +1169,12 @@
 								</div>
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="456789">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
 													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
@@ -1140,13 +1202,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Bianchi ARCADEX GRX600 40 Синий 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">351 890 ₽</span>
+													<span class="product-price__old"></span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1158,12 +1235,12 @@
 								</div>
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="67890">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
 													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
@@ -1191,13 +1268,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Bianchi ARCADEX GRX600 40 Синий 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">351 890 ₽</span>
+													<span class="product-price__old"></span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1209,12 +1301,12 @@
 								</div>
 								<div class="similar__slide swiper-slide">
 									<!-- добавить класс sm для маленького размера -->
-									<article class="product sm ">
+									<article class="product sm " data-product-id="78901">
 										<div class="product__status _out-in-stock">Распродано</div>
 										<div class="product__country">
 											<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 										</div>
-										<a href="#" class="product__image">
+										<a href="merchandise.html" class="product__image product-link">
 											<div class="product__switch image-switch">
 												<div class="image-switch__item">
 													<div class="image-switch__img"><picture><source srcset="img/bikes/winter-1.webp" type="image/webp"><img src="img/bikes/winter-1.jpg" alt="Велосипед"></picture></div>
@@ -1242,13 +1334,28 @@
 										</a>
 										<div class="product__content">
 											<h3 class="product__title">
-												<a href="#">Bianchi ARCADEX GRX600 40 Синий 2022</a>
+												<a href="merchandise.html">Bianchi ARCADEX GRX600 40 Синий 2022</a>
 											</h3>
-											<div class="product__price product-price">
-												<span class="product-price__current">351 890 ₽</span>
-												<span class="product-price__old"></span>
+											<div class="product__content-row">
+												<div class="product__price product-price">
+													<span class="product-price__current">351 890 ₽</span>
+													<span class="product-price__old"></span>
+												</div>
+
+												<div class="product__content-action">
+													<button class="product__action-button favorite-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+														</svg>
+													</button>
+
+													<button class="product__action-button cart-button">
+														<svg class="product__action-icon">
+															<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+														</svg>
+													</button>
+												</div>
 											</div>
-											<div class="product-id visually-hidden">123456789</div>
 										</div>
 										<button class="product__btn button-hover" data-popup="#quick">
 											<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1464,7 +1571,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20240301003738"></script>
+	<script src="js/app.min.js?_v=20240304180148"></script>
 </body>
 
 </html>

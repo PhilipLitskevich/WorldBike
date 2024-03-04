@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240301003738">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240304180148">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -346,6 +346,7 @@
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-heart"></use>
 								</svg>
+								<div class="actions-header__favorites-quantity">0</div>
 							</a>
 						</div>
 						<div class="actions-header__cart">
@@ -353,6 +354,7 @@
 								<svg class="actions-header__icon">
 									<use xlink:href="img/icons/icons.svg#svg-cart"></use>
 								</svg>
+								<div class="actions-header__cart-quantity">0</div>
 							</a>
 						</div>
 					</div>
@@ -933,12 +935,12 @@
 						</div>
 						<div class="catalog__cards">
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12349">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -966,13 +968,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old">784 840 ₽</span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -982,12 +999,12 @@
 								</button>
 							</article>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12348">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1015,13 +1032,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1037,12 +1069,12 @@
 								<div class="catalog__banner-bg" style="background-image: url('img/catalog-banner.png');"></div>
 							</div>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12347">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1070,13 +1102,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1086,12 +1133,12 @@
 								</button>
 							</article>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12346">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1119,13 +1166,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1135,12 +1197,12 @@
 								</button>
 							</article>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="123454">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1168,13 +1230,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1184,12 +1261,12 @@
 								</button>
 							</article>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12343">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1217,13 +1294,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1233,12 +1325,12 @@
 								</button>
 							</article>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12342">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1266,13 +1358,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1282,12 +1389,12 @@
 								</button>
 							</article>
 							<!-- добавить класс sm для маленького размера -->
-							<article class="product  ">
+							<article class="product  " data-product-id="12341">
 								<div class="product__status product__status_out-in-stock">Распродано</div>
 								<div class="product__country">
 									<picture><source srcset="img/countries/italy.webp" type="image/webp"><img src="img/countries/italy.jpg" alt="Италия"></picture>
 								</div>
-								<a href="#" class="product__image">
+								<a href="merchandise.html" class="product__image product-link">
 									<div class="product__switch image-switch">
 										<div class="image-switch__item">
 											<div class="image-switch__img"><picture><source srcset="img/bikes/new-1.webp" type="image/webp"><img src="img/bikes/new-1.jpg" alt="Велосипед"></picture></div>
@@ -1315,13 +1422,28 @@
 								</a>
 								<div class="product__content">
 									<h3 class="product__title">
-										<a href="#">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
+										<a href="merchandise.html">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</a>
 									</h3>
-									<div class="product__price product-price">
-										<span class="product-price__current">684 840 ₽</span>
-										<span class="product-price__old"></span>
+									<div class="product__content-row">
+										<div class="product__price product-price">
+											<span class="product-price__current">684 840 ₽</span>
+											<span class="product-price__old"></span>
+										</div>
+
+										<div class="product__content-action">
+											<button class="product__action-button favorite-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+												</svg>
+											</button>
+
+											<button class="product__action-button cart-button">
+												<svg class="product__action-icon">
+													<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
-									<div class="product-id visually-hidden">123456789</div>
 								</div>
 								<button class="product__btn button-hover" data-popup="#quick">
 									<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -1563,7 +1685,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20240301003738"></script>
+	<script src="js/app.min.js?_v=20240304180148"></script>
 </body>
 
 </html>
