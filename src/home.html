@@ -98,7 +98,8 @@
 								"alt":"Велосипед",
 								"title":"Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
 								"price":"684 840 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"11123"
 								},
 								"status":{
 								"text":"Распродано",
@@ -119,7 +120,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Verve 2 Disc Lithium Grey HYBD 2022",
 								"price":"89 300 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"11132"
 								},
 								"status":{
 								"text":"Распродано",
@@ -140,7 +142,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022",
 								"price":"115 000 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"11122"
 								},
 								"status":{
 								"text":"В наличии",
@@ -161,7 +164,8 @@
 								"alt":"Велосипед",
 								"title":"Scott Scale 700 SL 2016",
 								"price":"629 100 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"11133"
 								},
 								"status":{
 								"text":"Распродано",
@@ -182,7 +186,8 @@
 								"alt":"Велосипед",
 								"title":"Orbea ALMA H30 2021",
 								"price":"153 400 ₽",
-								"oldPrice":"163 211 ₽"
+								"oldPrice":"163 211 ₽",
+								"id":"11112"
 								},
 								"status":{
 								"text":"Распродано",
@@ -332,13 +337,15 @@
 								"alt":"Велосипед",
 								"title":"Bianchi ARCADEX GRX600 40 Синий 2022",
 								"price":"351 890 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"22212"
 								},
 								"status":{
 								"text":"Распродано",
 								"class":"_out-in-stock"
 								}
 								})
+								
 							</div>
 							<div class="offers__slide swiper-slide">
 								@@include('html/_card-product.htm',{
@@ -353,7 +360,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Verve 1 Disc Low Step Era White HYBD 2022",
 								"price":"77 300 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"22221"
 								},
 								"status":{
 								"text":"Распродано",
@@ -374,7 +382,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
 								"price":"78 000 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"22232"
 								},
 								"status":{
 								"text":"Распродано",
@@ -395,7 +404,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
 								"price":"78 000 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"22223"
 								},
 								"status":{
 								"text":"Распродано",
@@ -416,7 +426,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
 								"price":"78 000 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"22234"
 								},
 								"status":{
 								"text":"Распродано",
@@ -437,7 +448,8 @@
 								"alt":"Велосипед",
 								"title":"Trek Dual Sport 1 Quicksilver Hybrid 2022",
 								"price":"78 000 ₽",
-								"oldPrice":""
+								"oldPrice":"",
+								"id":"22243"
 								},
 								"status":{
 								"text":"Распродано",
@@ -603,9 +615,9 @@
 							<!-- Слайд -->
 							<div class="offers__slide swiper-slide">
 
-								<article class="product">
+								<article class="product" data-product-id="98765">
 									<div class="product__status _out-in-stock">Распродано</div>
-									<a href="#" class="product__image">
+									<a href="merchandise.html" class="product__image product-link">
 										<div class="product__switch image-switch">
 											<div class="image-switch__item">
 												<div class="image-switch__img"><img src="@img/equipments/1.jpg" alt="Шлем"></div>
@@ -615,13 +627,29 @@
 									</a>
 									<div class="product__content">
 										<h3 class="product__title">
-											<a href="#">Rudy Project Airstorm Lime Fluo White Shiny</a>
+											<a href="merchandise.html">Rudy Project Airstorm Lime Fluo White Shiny</a>
 										</h3>
-										<div class="product__price product-price">
-											<span class="product-price__current">7 990 ₽</span>
-											<span class="product-price__old">10 627 ₽</span>
+
+										<div class="product__content-row">
+											<div class="product__price product-price">
+												<span class="product-price__current">7 990 ₽</span>
+												<span class="product-price__old">10 627 ₽</span>
+											</div>
+								
+											<div class="product__content-action">
+												<button class="product__action-button favorite-button">
+													<svg class="product__action-icon">
+														<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+													</svg>
+												</button>
+								
+												<button class="product__action-button cart-button">
+													<svg class="product__action-icon">
+														<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+													</svg>
+												</button>
+											</div>
 										</div>
-										<div class="product-id visually-hidden">123456789</div>
 									</div>
 									<button class="product__btn button-hover" data-popup="#quick">
 										<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
@@ -636,9 +664,9 @@
 							</div>
 							<div class="offers__slide swiper-slide">
 
-								<article class="product">
+								<article class="product" data-product-id="88765">
 									<div class="product__status _out-in-stock">Распродано</div>
-									<a href="#" class="product__image">
+									<a href="merchandise.html" class="product__image product-link">
 										<div class="product__switch image-switch">
 											<div class="image-switch__item">
 												<div class="image-switch__img"><img src="@img/equipments/2.jpg" alt="Шлем"></div>
@@ -648,11 +676,27 @@
 									</a>
 									<div class="product__content">
 										<h3 class="product__title">
-											<a href="#">Rudy Project Protera Blue Orange Matt</a>
+											<a href="merchandise.html">Rudy Project Protera Blue Orange Matt</a>
 										</h3>
-										<div class="product__price product-price">
-											<span class="product-price__current">9 420 ₽</span>
-											<span class="product-price__old">12 529 ₽</span>
+										<div class="product__content-row">
+											<div class="product__price product-price">
+												<span class="product-price__current">9 420 ₽</span>
+												<span class="product-price__old">12 529 ₽</span>
+											</div>
+								
+											<div class="product__content-action">
+												<button class="product__action-button favorite-button">
+													<svg class="product__action-icon">
+														<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+													</svg>
+												</button>
+								
+												<button class="product__action-button cart-button">
+													<svg class="product__action-icon">
+														<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+													</svg>
+												</button>
+											</div>
 										</div>
 										<div class="product-id visually-hidden">123456789</div>
 									</div>
@@ -669,9 +713,9 @@
 							</div>
 							<div class="offers__slide swiper-slide">
 
-								<article class="product">
+								<article class="product" data-product-id="77765">
 									<div class="product__status ">В наличии</div>
-									<a href="#" class="product__image">
+									<a href="merchandise.html" class="product__image product-link">
 										<div class="product__switch image-switch">
 											<div class="image-switch__item">
 												<div class="image-switch__img"><img src="@img/equipments/3.jpg" alt="Шлем"></div>
@@ -681,11 +725,27 @@
 									</a>
 									<div class="product__content">
 										<h3 class="product__title">
-											<a href="#">Rudy Project Avenger Titanium Lime Matt</a>
+											<a href="merchandise.html">Rudy Project Avenger Titanium Lime Matt</a>
 										</h3>
-										<div class="product__price product-price">
-											<span class="product-price__current">9 200  ₽</span>
-											<span class="product-price__old">12 236 ₽</span>
+										<div class="product__content-row">
+											<div class="product__price product-price">
+												<span class="product-price__current">9 200  ₽</span>
+												<span class="product-price__old">12 236 ₽</span>
+											</div>
+								
+											<div class="product__content-action">
+												<button class="product__action-button favorite-button">
+													<svg class="product__action-icon">
+														<use xlink:href="img/icons/icons.svg#svg-heart"></use>
+													</svg>
+												</button>
+								
+												<button class="product__action-button cart-button">
+													<svg class="product__action-icon">
+														<use xlink:href="img/icons/icons.svg#svg-cart"></use>
+													</svg>
+												</button>
+											</div>
 										</div>
 										<div class="product-id visually-hidden">123456789</div>
 									</div>

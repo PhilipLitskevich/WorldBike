@@ -30,10 +30,10 @@
 						<div class="cart__content content-cart">
 							<div class="content-cart__actions">
 								<a href="#" class="content-cart__actions-link">Вернуться к покупкам</a>
-								<button class="content-cart__actions-button">Очистить корзину</button>
+								<button class="content-cart__actions-button" id="clean-cart">Очистить корзину</button>
 							</div>
 							<ul class="content-cart__list">
-								<li class="content-cart__item">
+								<!-- <li class="content-cart__item">
 									<article class="content-cart__product cart-product">
 										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
 										<h3 class="cart-product__name">
@@ -56,55 +56,7 @@
 											</svg>
 										</button>
 									</article>
-								</li>
-								<li class="content-cart__item">
-									<article class="content-cart__product cart-product">
-										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
-										<h3 class="cart-product__name">
-											Trek Fx 3 Disc Dnister Black HYBD 2022
-										</h3>
-										<div class="cart-product__quantity quantity">
-											<button type="button" class="quantity__button quantity__button_minus"></button>
-											<div class="quantity__input">
-												<input autocomplete="off" type="text" name="form[]" value="1" maxlength="4">
-											</div>
-											<button type="button" class="quantity__button quantity__button_plus"></button>
-										</div>
-										<div class="cart-product__price">
-											<span class="cart-product__current-price">97 070 ₽</span>
-										</div>
-										<button class="cart-product__delete-button">
-											<svg class="cart-product__delete-icon">
-												<use xlink:href="img/icons/icons.svg#svg-close"></use>
-											</svg>
-										</button>
-
-									</article>
-								</li>
-								<li class="content-cart__item">
-									<article class="content-cart__product cart-product">
-										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
-										<h3 class="cart-product__name">
-											Trek Marlin 4 Aloha ATB 27.5 2022
-										</h3>
-										<div class="cart-product__quantity quantity">
-											<button type="button" class="quantity__button quantity__button_minus"></button>
-											<div class="quantity__input">
-												<input autocomplete="off" type="text" name="form[]" value="1" maxlength="4">
-											</div>
-											<button type="button" class="quantity__button quantity__button_plus"></button>
-										</div>
-										<div class="cart-product__price">
-											<span class="cart-product__current-price">435 000 ₽</span>
-											<span class="cart-product__old-price">522 000 ₽</span>
-										</div>
-										<button class="cart-product__delete-button">
-											<svg class="cart-product__delete-icon">
-												<use xlink:href="img/icons/icons.svg#svg-close"></use>
-											</svg>
-										</button>
-									</article>
-								</li>
+								</li>-->
 							</ul>
 						</div>
 						<div class="cart__result cart-result">
@@ -115,15 +67,15 @@
 								</div>
 								<div class="cart-result__row">
 									<dt>Сумма заказа (без скидки)</dt>
-									<dd>692 370 ₽ </dd>
+									<dd id="full-price">0 ₽ </dd>
 								</div>
 								<div class="cart-result__row">
 									<dt>Скидка</dt>
-									<dd>87 000 ₽</dd>
+									<dd id="discount">0 ₽</dd>
 								</div>
 								<div class="cart-result__row cart-result__row_full-price">
 									<dt>Итого</dt>
-									<dd>605 370 ₽</dd>
+									<dd id="total-price">0 ₽</dd>
 								</div>
 							</dl>
 							<button class="cart-result__button button">Оформить заказ</button>

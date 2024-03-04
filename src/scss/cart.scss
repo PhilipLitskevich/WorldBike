@@ -151,7 +151,7 @@
 
 		font-weight: 300;
 		font-size: rem(18);
-		@include adaptiveValue("font-size", 18, 16, $containerWidth, 991.98, 2);
+		@include adaptiveValue("font-size", 18, 16, );
 
 		@media (max-width:$tablet) {
 			@include adaptiveValue("font-size", 18, 16, 991.98, 600, 2);
@@ -166,6 +166,7 @@
 		-webkit-box-orient: vertical;
 
 		@include adaptiveValue("flex-basis", 350, 125, 600, 320, 1);
+
 		@media (max-width: em(600)) {
 			flex-grow: 1;
 			// flex-shrink: 1;
@@ -185,6 +186,7 @@
 
 	// .cart-product__price
 	&__price {
+		text-align: center;
 		margin-left: rem(-12);
 		flex: 0 0 rem(120);
 		display: flex;
@@ -194,7 +196,7 @@
 
 	// .cart-product__current-price
 	&__current-price {
-		text-align: end;
+		// text-align: end;
 		font-weight: 500;
 		font-size: rem(20);
 		line-height: 160%;
@@ -206,8 +208,9 @@
 
 	// .cart-product__old-price
 	&__old-price {
+		
 		display: inline-block;
-		padding-left: rem(15);
+		// padding-left: rem(15);
 		font-weight: 400;
 		font-size: rem(16);
 		line-height: 160%;
@@ -242,6 +245,7 @@
 
 	// .cart-product__delete-icon
 	&__delete-icon {
+		pointer-events: none;
 		width: rem(16);
 		height: rem(16);
 		fill: $light-grey;
@@ -265,6 +269,7 @@
 	// .cart-result__row
 	&__row {
 		display: flex;
+		justify-content: space-between;
 		gap: rem(20);
 
 		&:not(:last-child) {
@@ -281,9 +286,11 @@
 		}
 
 		dd {
+			// flex-shrink: 1;
+			flex-basis: 45%;
 			display: flex;
 			align-items: center;
-			text-align: end;
+			justify-content: flex-end;
 
 			font-weight: 300;
 			font-size: rem(16);
