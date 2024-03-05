@@ -1,12 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:300,regular,500,700);
 @charset "UTF-8";
 @font-face {
+  font-family: icons;
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: BebasNeueCyrillic;
   font-display: swap;
   src: url("../fonts/BebasNeueCyrillic.woff2") format("woff2"), url("../fonts/BebasNeueCyrillic.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
+[class*=_icon-]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:before {
+  display: block;
+}
+
+._icon-cart:before {
+  content: "\e900";
+}
+
+._icon-filters:before {
+  content: "\e901";
+}
+
+._icon-heart:before {
+  content: "\e902";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -2073,25 +2107,28 @@ body::after {
   width: 1.875rem;
   height: 1.875rem;
 }
+.product__action-button::before {
+  transition: color 0.3s ease;
+}
 @media (any-hover: hover) {
-  .product__action-button:hover .product__action-icon {
-    stroke: #F57520;
+  .product__action-button:hover::before {
+    color: #F57520;
   }
 }
-.product__action-icon {
-  width: 100%;
-  height: 100%;
-  stroke: #777;
-  transition: stroke 0.3s ease;
+.product__action-button::before {
+  color: #777;
+  font-size: 1.625rem;
 }
 
-.cart-button:disabled .product__action-icon {
-  stroke: #B3B3B3;
+.cart-button:disabled {
   cursor: default;
 }
+.cart-button:disabled::before {
+  color: #B3B3B3;
+}
 
-.favorite-button[data-selected=true] .product__action-icon {
-  stroke: #F53A20;
+.favorite-button[data-selected=true]::before {
+  color: #F53A20;
 }
 
 .product__title {
@@ -2192,13 +2229,19 @@ body::after {
     bottom: -3.75rem;
   }
 }
-.touch .catalog .product, .catalog .product .account-favorites, .touch .product.sm, .product.sm .account-favorites {
+.touch .catalog .product,
+.catalog .product .account-favorites, .touch .product.sm,
+.product.sm .account-favorites {
   padding-bottom: 6rem;
 }
-.touch .catalog .product::after, .catalog .product .account-favorites::after, .touch .product.sm::after, .product.sm .account-favorites::after {
+.touch .catalog .product::after,
+.catalog .product .account-favorites::after, .touch .product.sm::after,
+.product.sm .account-favorites::after {
   bottom: 0;
 }
-.touch .catalog .product .product__btn, .catalog .product .account-favorites .product__btn, .touch .product.sm .product__btn, .product.sm .account-favorites .product__btn {
+.touch .catalog .product .product__btn,
+.catalog .product .account-favorites .product__btn, .touch .product.sm .product__btn,
+.product.sm .account-favorites .product__btn {
   bottom: 1rem;
   left: 1rem;
   right: 1rem;
@@ -3391,7 +3434,6 @@ body[style*="padding-right: 17px"] .header {
     top: 100%;
     left: 0;
     padding-top: 1rem;
-    width: fit-content;
     display: none;
   }
   .touch .catalog-sub-menu._sub-menu-open {
@@ -8183,55 +8225,40 @@ body[style*="padding-right: 17px"] .header {
     margin-top: 2rem;
   }
 }
-@media (min-width: 82.5em) {
-  .account-favorites .account-favorites__empty svg {
-    width: 17.5625rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 82.5em) {
-  @supports (width: clamp( 12.375rem , 10.715rem  +  8.3vw , 17.5625rem )) {
-    .account-favorites .account-favorites__empty svg {
-      width: clamp( 12.375rem , 10.715rem  +  8.3vw , 17.5625rem );
-    }
-  }
-  @supports not (width: clamp( 12.375rem , 10.715rem  +  8.3vw , 17.5625rem )) {
-    .account-favorites .account-favorites__empty svg {
-      width: calc(12.375rem + 5.1875 * (100vw - 20rem) / 62.5);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .account-favorites .account-favorites__empty svg {
-    width: 12.375rem;
-  }
-}
-@media (min-width: 82.5em) {
-  .account-favorites .account-favorites__empty svg {
-    height: 15.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 82.5em) {
-  @supports (height: clamp( 10.75rem , 9.31rem  +  7.2vw , 15.25rem )) {
-    .account-favorites .account-favorites__empty svg {
-      height: clamp( 10.75rem , 9.31rem  +  7.2vw , 15.25rem );
-    }
-  }
-  @supports not (height: clamp( 10.75rem , 9.31rem  +  7.2vw , 15.25rem )) {
-    .account-favorites .account-favorites__empty svg {
-      height: calc(10.75rem + 4.5 * (100vw - 20rem) / 62.5);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .account-favorites .account-favorites__empty svg {
-    height: 10.75rem;
-  }
-}
 .account-favorites .account-favorites__empty-message {
   font-weight: 300;
   font-size: 1rem;
   line-height: 160%;
   color: #B3B3B3;
+}
+.account-favorites__bg {
+  aspect-ratio: 281/244;
+  background-image: url("../img/heart.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (min-width: 82.5em) {
+  .account-favorites__bg {
+    width: 17.5625rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 82.5em) {
+  @supports (width: clamp( 12.375rem , 10.715rem  +  8.3vw , 17.5625rem )) {
+    .account-favorites__bg {
+      width: clamp( 12.375rem , 10.715rem  +  8.3vw , 17.5625rem );
+    }
+  }
+  @supports not (width: clamp( 12.375rem , 10.715rem  +  8.3vw , 17.5625rem )) {
+    .account-favorites__bg {
+      width: calc(12.375rem + 5.1875 * (100vw - 20rem) / 62.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .account-favorites__bg {
+    width: 12.375rem;
+  }
 }
 .account-favorites:has(.product) .account-favorites__cards {
   display: grid;
@@ -8354,12 +8381,12 @@ body[style*="padding-right: 17px"] .header {
   border-radius: 10px;
   flex-basis: 64px;
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  background-image: url("../img/filter.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 32px 32px;
+  width: 4rem;
+  height: 4rem;
+  color: #777;
+}
+.catalog__filter-btn::before {
+  font-size: 2rem;
 }
 @media (min-width: 47.99875em) {
   .catalog__filter-btn {
@@ -8368,10 +8395,11 @@ body[style*="padding-right: 17px"] .header {
 }
 @media (any-hover: hover) {
   .catalog__filter-btn {
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, color 0.3s ease;
   }
   .catalog__filter-btn:hover {
     border-color: #F57520;
+    color: #F57520;
   }
 }
 .catalog__cards {
