@@ -77,27 +77,29 @@
 			}
 		}
 	}
-
+	// .catalog__filter-btn
 	&__filter-btn {
 		// padding: rem(16);
 		border: 1px solid #e5e5e5;
 		border-radius: 10px;
 		flex-basis: 64px;
     flex-shrink: 0;
-		width: 64px;
-		height: 64px;
-		background-image: url('@img/filter.png');
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: 32px 32px;
+		width: rem(64);
+		height: rem(64);
+		color: $grey-2;
+		&::before{
+			font-size: rem(32);
+		}
 		@media (min-width:$mobile) {
 			display: none;
 		}
 
 		@media (any-hover: hover){
-			transition: border-color .3s ease;
+			transition: border-color .3s ease, color .3s ease;
+			// transition: ;
 			&:hover{
-				border-color: $accentColor
+				border-color: $accentColor;
+				color: $accentColor;
 			}
 		}
 	}

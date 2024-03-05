@@ -422,8 +422,7 @@
 
 		svg {
 			// aspect-ratio: 281/244;
-			@include adaptiveValue("width", 281, 198);
-			@include adaptiveValue("height", 244, 172);
+		
 		}
 
 		&-message {
@@ -432,6 +431,15 @@
 			line-height: 160%;
 			color: $light-grey;
 		}
+	}
+
+	&__bg {
+		aspect-ratio: 281/244;
+		@include adaptiveValue("width", 281, 198);
+		background-image: url('@img/heart.png');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 	&:has(.product) {

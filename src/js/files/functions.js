@@ -65,7 +65,7 @@ export function addLoadedClass() {
 				window.location = link.href;
 				setTimeout(function() {
 					document.documentElement.classList.remove('loader-show');
-				}, 10);
+				}, 1000);
 			}
 	
 			checkLink();

@@ -1140,8 +1140,6 @@
 
 	// .advantages__body
 	&__body {
-		// padding: 0 rem(80);
-
 		@include adaptiveValue("padding-right", 80, 40, 1500, 991.98, 2);
 		@include adaptiveValue("padding-left", 80, 40, 1500, 991.98, 2);
 		width: fit-content;

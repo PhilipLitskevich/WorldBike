@@ -189,7 +189,7 @@ body[style*="padding-right: 17px"] {
 		left: 0;
 		padding-top: rem(16);
 
-		width: fit-content;
+		// width: fit-content;
 		display: none;
 
 		.touch &._sub-menu-open {
@@ -597,14 +597,7 @@ body[style*="padding-right: 17px"] {
 			font-size: rem(12);
 			padding: rem(2);
 			align-items: center;
-			justify-content: center;
-
-			// right: 2px;
-			// transform: translateY(-50%);
-			// margin-top: -10px;
-			// background-color: #de707b;
-
-			
+			justify-content: center;			
 		}
 	}
 }

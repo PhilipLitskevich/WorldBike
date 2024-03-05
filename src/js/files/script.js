@@ -522,16 +522,10 @@ function favoriteInit() {
 					</div>
 		
 					<div class="product__content-action">
-						<button class="product__action-button favorite-button" data-selected="true">
-							<svg class="product__action-icon">
-								<use xlink:href="img/icons/icons.svg#svg-heart"></use>
-							</svg>
+						<button class="product__action-button favorite-button _icon-heart" data-selected="true">
 						</button>
 		
-						<button class="product__action-button cart-button" ${disabled}>
-							<svg class="product__action-icon">
-								<use xlink:href="img/icons/icons.svg#svg-cart"></use>
-							</svg>
+						<button class="product__action-button cart-button _icon-cart" ${disabled}>
 						</button>
 					</div>
 				</div>
