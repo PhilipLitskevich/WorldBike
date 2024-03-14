@@ -3,31 +3,147 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
+//========================================================================================================================================================
+//Header hide
+//========================================================================================================================================================
 
-const products = document.querySelectorAll('.product');
-
-if (products) {
-	products.forEach(el => {
-		let currentProduct = el;
-		const imageSwitchItems = currentProduct.querySelectorAll('.image-switch__item');
-		const imagePagination = currentProduct.querySelector('.image-pagination');
-		if (imageSwitchItems.length > 1) {
-			imageSwitchItems.forEach((el, index) => {
-				el.setAttribute('data-index', index);
-				imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
-				el.addEventListener('mouseenter', (e) => {
-					currentProduct.querySelectorAll('.image-pagination__item').forEach(el => { el.classList.remove('image-pagination__item--active') });
-					currentProduct.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
-				});
-
-				el.addEventListener('mouseleave', (e) => {
-					currentProduct.querySelectorAll('.image-pagination__item').forEach(el => { el.classList.remove('image-pagination__item--active') });
-					currentProduct.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
-				});
-			});
-		}
-	});
+const wrapper = document.querySelector('.wrapper')
+const header = document.querySelector('header.header');
+if (!header.classList.contains('_transparrent')) {
+	wrapper.style.paddingTop = header.offsetHeight + 'px';
+	window.addEventListener('resize', () => {
+		wrapper.style.paddingTop = header.offsetHeight + 'px';
+	})
 }
+
+const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+let scrollDirection = 0;
+const containHide = () => header.classList.contains('hide');
+const containScroll = () => header.classList.contains('_header-scroll');
+let visible = false;
+
+window.addEventListener('scroll', (e) => {
+
+	const scrollTop = window.scrollY;
+
+	// Проверяем прошли ли стартовую точку
+	if (scrollTop >= startPoint) {
+		if (!containScroll() && !visible) {
+			visible = true;
+			header.style.opacity = 0;
+			header.classList.add('_header-scroll');
+			!containHide() ? header.classList.add('hide') : null;
+			setTimeout(() => {
+				header.removeAttribute('style')
+			}, 300)
+		}
+		if (scrollTop > scrollDirection && !containHide()) {
+			// downscroll code
+			!containHide() ? header.classList.add('hide') : null;
+		} else if (scrollTop < scrollDirection && containHide()) {
+			// upscroll code
+			containHide() ? header.classList.remove('hide') : null;
+		}
+	} else {
+		// if (!containHide() && containScroll()) {
+		// 	header.classList.add('hide');
+		// 	setTimeout(() => {
+		// 		// console.log('прошел')
+		// 		containScroll() ? header.classList.remove('_header-scroll') : null;
+		// 		containHide() ? header.classList.remove('hide') : null;
+		// 		visible = false
+		// 	}, 200)
+		// }
+
+		if (scrollDirection < 15 && containScroll()) {
+			header.classList.remove('_header-scroll');
+			containHide() ? header.classList.remove('hide') : null;
+			visible = false
+		}
+	}
+	scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+})
+
+//========================================================================================================================================================
+
+//========================================================================================================================================================
+//Video Init
+//========================================================================================================================================================
+
+function videoInit() {
+	const videos = document.querySelectorAll('.video')
+	if (videos.length < 1) return;
+
+	videos.forEach(video => {
+		const pictureId = video.dataset.pictureId
+		const videoId = video.dataset.videoId
+		video.insertAdjacentHTML('afterbegin', buildFacade(pictureId))
+
+		const button = video.querySelector('.video-button');
+		button.addEventListener('click', () => {
+			video.querySelector('.video__facade').removeChild(button)
+			video.insertAdjacentHTML('afterbegin', buildIframe(videoId));
+		})
+	})
+
+	function buildFacade(pictureId) {
+		return `
+		<div class="video__facade">
+								<picture>
+									<source srcset="https://img.youtube.com/vi_webp/${pictureId}/maxresdefault.webp" type="image/webp">
+									<img class="video__content" src="https://img.youtube.com/vi/${pictureId}/maxresdefault.jpg" alt="Превью">
+								</picture>
+	
+								<button class="video__button video-button">
+									<svg class="video-button__icon">
+										<use xlink:href="img/icons/icons.svg#svg-video-button"></use>
+									</svg>
+								</button>
+		</div>
+		`
+	}
+
+	function buildIframe(videoId) {
+		return `
+		<iframe class="video__iframe"
+			src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+			title="YouTube video player"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+		</iframe>
+		`
+	}
+}
+videoInit()
+
+//========================================================================================================================================================
+
+function productCardsInit() {
+	const products = document.querySelectorAll('.product');
+
+	if (products) {
+		products.forEach(el => {
+			let currentProduct = el;
+			const imageSwitchItems = currentProduct.querySelectorAll('.image-switch__item');
+			const imagePagination = currentProduct.querySelector('.image-pagination');
+			if (imageSwitchItems.length > 1) {
+				imageSwitchItems.forEach((el, index) => {
+					el.setAttribute('data-index', index);
+					imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
+					el.addEventListener('mouseenter', (e) => {
+						currentProduct.querySelectorAll('.image-pagination__item').forEach(el => { el.classList.remove('image-pagination__item--active') });
+						currentProduct.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
+					});
+
+					el.addEventListener('mouseleave', (e) => {
+						currentProduct.querySelectorAll('.image-pagination__item').forEach(el => { el.classList.remove('image-pagination__item--active') });
+						currentProduct.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
+					});
+				});
+			}
+		});
+	}
+}
+productCardsInit()
 
 //Работа с выпадающим списком
 if (isMobile.any) {
@@ -129,8 +245,6 @@ function partnersInit() {
 			originalSlide.parentNode.insertBefore(cloneSlide, originalSlide.nextSibling);
 			partners.classList.add('_active')
 		})
-	} else {
-		console.log('Ой, кажется на странице нет секции партнеров')
 	}
 }
 partnersInit();
@@ -347,7 +461,7 @@ document.addEventListener("formSent", function (e) {
 	if (currentForm.classList.contains('form-quick')) {
 		flsModules.popup.close()
 		setTimeout(() => {
-			flsModules.popup.open('#thankfulness')
+			flsModules.popup.open('#successful-application')
 		}, 500)
 	} else if (currentForm.classList.contains('contact-us__form')) {
 		alert('Сообщение успешно отправлено')
@@ -444,6 +558,7 @@ function favoriteInit() {
 		let copyProduct = Object.assign({}, product);
 		if (favoriteList) {
 			favoriteList.insertAdjacentHTML('afterbegin', generateFavoriteProduct(copyProduct));
+			productCardsInit()
 		}
 		printQuantity();
 	}
@@ -483,16 +598,6 @@ function favoriteInit() {
 			}
 		}
 
-		//Загрузка данных корзины из localStorage
-		function loadCartItems() {
-			// Получаем данные из localStorage
-			let storedItems = localStorage.getItem('cart-items');
-			// Проверяем, есть ли данные в localStorage
-			if (storedItems) {
-				// Если данные есть, парсим их обратно в массив
-				return JSON.parse(storedItems);
-			} else return [];
-		}
 		let cartItems = loadCartItems();
 		let disabled;
 		if (cartItems.some(item => item.id === copyProduct.id)) {
@@ -709,6 +814,7 @@ function favoriteInit() {
 				addProductToFavorites(product);
 				selecteButton(product.id)
 				printQuantity()
+				productCardsInit()
 
 				if (favoriteItems) {
 					favoriteItems.forEach(item => {
@@ -733,6 +839,23 @@ favoriteInit()
 // Корзина
 //========================================================================================================================================================
 
+//Загрузка данных из localStorage
+function loadCartItems() {
+	// Получаем данные из localStorage
+	let storedItems = localStorage.getItem('cart-items');
+	// Проверяем, есть ли данные в localStorage
+	if (storedItems) {
+		// Если данные есть, парсим их обратно в массив
+		return JSON.parse(storedItems);
+	} else return [];
+}
+
+//Добавление пробелов к цене и символа валюты
+function normalPrice(str) {
+	const formattedNumber = String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1\u00A0');
+	return formattedNumber + ' ₽'; // Добавляем символ рубля
+};
+
 function cartInit() {
 	const cartButton = document.querySelectorAll('.cart-button');
 	const merchendiseСartButton = document.querySelector('.merchendise-cart-button');
@@ -749,16 +872,6 @@ function cartInit() {
 	let discountVar = 0;
 	let totalPriceVar = 0;
 
-	//Загрузка данных из localStorage
-	function loadCartItems() {
-		// Получаем данные из localStorage
-		let storedItems = localStorage.getItem('cart-items');
-		// Проверяем, есть ли данные в localStorage
-		if (storedItems) {
-			// Если данные есть, парсим их обратно в массив
-			return JSON.parse(storedItems);
-		} else return [];
-	}
 	let cartItems = loadCartItems();
 
 	//Удаление элемента по id
@@ -773,19 +886,9 @@ function cartInit() {
 		return str.replace(/\s/g, '');
 	};
 
-	//Добавление пробелов к цене и символа валюты
-	function normalPrice(str) {
-		const formattedNumber = String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1\u00A0');
-		return formattedNumber + ' ₽'; // Добавляем символ рубля
-	};
-
 	//Сложение цен
 	function plusPrice(priceVar, price) {
 		return parseInt(priceVar) + parseInt(price);
-	};
-	//Вычитание цен
-	const minusPrice = (priceVar, price) => {
-		return parseInt(priceVar) - parseInt(price);
 	};
 
 	// Вычисление сумм цен
@@ -798,9 +901,21 @@ function cartInit() {
 
 	//Вывод в header количества продукта в корзине
 	function printQuantity() {
+		const orderButton = document.querySelector('.cart-result__button')
 		let quantity = cartItems.reduce((accumulator, obj) => accumulator + parseInt(obj.quantity), 0);
 		cartQuantity.textContent = quantity;
-		quantity > 0 ? cartQuantity.parentNode.classList.add('active') : cartQuantity.parentNode.classList.remove('active');
+		console.log(orderButton)
+		if (quantity > 0) {
+			cartQuantity.parentNode.classList.add('active');
+			if (orderButton) {
+				orderButton.dataset.disabled = false;
+			}
+		} else {
+			cartQuantity.parentNode.classList.remove('active');
+			if (orderButton) {
+				orderButton.dataset.disabled = true;
+			}
+		}
 	};
 	printQuantity()
 
@@ -1064,3 +1179,155 @@ function cartInit() {
 cartInit();
 //========================================================================================================================================================
 
+//========================================================================================================================================================
+// Оформление заказа
+//========================================================================================================================================================
+
+function order() {
+	if (!document.querySelector('.order')) return;
+
+	let cartItems = loadCartItems();
+
+	const quantityElem = document.querySelector('.order-result__quantity span')
+	let quantity = cartItems.reduce((accumulator, obj) => accumulator + parseInt(obj.quantity), 0)
+	//Cклонение слова, по определенному количеству товара
+	function morph(int, array) {
+		return (array = array || ['товар', 'товара', 'товаров']) && array[(int % 100 > 4 && int % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(int % 10 < 5) ? int % 10 : 5]];
+	}
+	quantityElem.textContent = `${quantity} ${morph(quantity)}`;
+
+	const sumElem = document.querySelector('.order-result__sum');
+
+	let sum = 0;
+	if (cartItems.length > 0) {
+		cartItems.forEach(product => {
+			sum += product.currentPrice * product.quantity
+		})
+	}
+	sumElem.textContent = normalPrice(sum);
+
+	const buttonSubmit = document.querySelector('.form-order__submit-button')
+	console.log(buttonSubmit)
+	console.log(sum < 1)
+	console.log(quantity)
+	if (sum < 1 || quantity < 1) {
+		console.log('должно работать')
+		buttonSubmit.disabled = true;
+	}
+
+	const addressResultElem = document.getElementById('result-address');
+	const nameResultElem = document.getElementById('result-name');
+	const phoneResultElem = document.getElementById('result-phone');
+	const emailResultElem = document.getElementById('result-email');
+
+	const firstNameInput = document.getElementById('input-first-name');
+	const lastNameInput = document.getElementById('input-last-name');
+	const cityInput = document.getElementById('input-city');
+	const streetInput = document.getElementById('input-street');
+	const houseInput = document.getElementById('input-house');
+	const apartmentInput = document.getElementById('input-apartment');
+	const phoneInput = document.getElementById('input-phone');
+	const emailInput = document.getElementById('input-email');
+
+	function buildAddress() {
+		let city;
+		cityInput.value !== '' ? city = cityInput.value + ',' : city = ''
+		let street;
+		streetInput.value !== '' ? street = 'ул. ' + streetInput.value + ',' : street = '';
+		let house;
+		houseInput.value !== '' ? house = 'д. ' + houseInput.value + ',' : house = '';
+		let apartment;
+		apartmentInput.value !== '' ? apartment = 'кв. ' + apartmentInput.value : apartment = '';
+
+		addressResultElem.textContent = `${city} ${street} ${house} ${apartment}`
+	}
+	buildAddress()
+
+	function buildName() {
+		let firstName = firstNameInput.value;
+		let lastName = lastNameInput.value;
+		let fullName = firstName + " " + lastName
+		nameResultElem.textContent = fullName;
+
+		return fullName
+	}
+	buildName()
+
+	phoneResultElem.textContent = phoneInput.value
+	emailResultElem.textContent = emailInput.value
+
+	firstNameInput.addEventListener('change', buildName)
+	lastNameInput.addEventListener('change', buildName)
+
+	cityInput.addEventListener('change', buildAddress)
+	streetInput.addEventListener('change', buildAddress)
+	houseInput.addEventListener('change', buildAddress)
+	apartmentInput.addEventListener('change', buildAddress)
+
+	phoneInput.addEventListener('change', () => {
+		phoneResultElem.textContent = phoneInput.value
+	})
+	emailInput.addEventListener('change', () => {
+		emailResultElem.textContent = emailInput.value
+	})
+
+	const deliveryElem = document.querySelector('.order-result__delivery')
+	deliveryElem.textContent = document.querySelector('.options__input[name="delivery"]:checked').closest('.options__item').querySelector('.options__text').textContent
+
+	const deliveryOptions = document.querySelectorAll('.options__input[name="delivery"]');
+	deliveryOptions.forEach(option => {
+		option.addEventListener('change', () => {
+			if (option.value = 1) {
+				deliveryElem.textContent = option.closest('.options__item').querySelector('.options__text').textContent
+			}
+		})
+	})
+
+	const formOrder = document.querySelector('.form-order')
+
+	formOrder.addEventListener('submit', (e) => {
+		e.preventDefault();
+		let self = e.currentTarget;
+		let formData = new FormData(self);
+		let name = buildName();
+		let phone = phoneInput.value;
+		let email = emailInput.value;
+		let address = addressResultElem.textContent;
+		let comment = self.querySelector('.form-order__textarea').value
+		formData.append('Товары', JSON.stringify(cartItems))
+		formData.append('Имя', name);
+		formData.append('Телефон', phone);
+		formData.append('Email', email);
+		formData.append('Адрес', address);
+		formData.append('Комментарий к заказу', comment);
+
+		let xhr = new XMLHttpRequest();
+
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+					console.log('Отправлено')
+				}
+			}
+		}
+
+		xhr.open('POST', self.getAttribute('action '), true);
+		xhr.send(formData);
+
+		for (var pair of formData.entries()) {
+			console.log(pair[0] + ': ' + pair[1]); // Вывести данные в консоль
+		}
+
+		//Обнуление корзины
+		localStorage.removeItem('cart-items');
+		cartItems = [];
+		const cartQuantity = document.querySelector('.actions-header__cart-quantity');
+		cartQuantity.parentNode.classList.remove('active')
+		cartQuantity.textContent = '0';
+		sumElem.textContent = normalPrice(0);
+		quantityElem.textContent = `${0} ${morph(0)}`;
+		buttonSubmit.setAttribute.disabled
+	})
+}
+
+order()

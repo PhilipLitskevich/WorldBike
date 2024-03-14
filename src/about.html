@@ -7,7 +7,9 @@
 <body>
 	@@include('html/_loader.htm',{})
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+		@@include('html/_header.htm',{
+			"class": ""
+		})
 		<main class="page">
 			@@include('html/_page-header.htm',{
 			"image":"about.jpg",
@@ -328,7 +330,7 @@
 								профессиональную консультацию, то это они.
 							</p>
 							<h3 class="team__list-title">Консультанты World-Bike помогут вам в любом вопросе:</h3>
-							<ul class="team__list">
+							<ul class="team__list mark-list">
 								<li class="team__item">
 									подбор велосипеда под ваш рост, вес, стиль езды и цели покупки байка;
 								</li>

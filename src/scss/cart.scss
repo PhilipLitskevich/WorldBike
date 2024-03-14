@@ -320,5 +320,10 @@
 		justify-content: center;
 		border-radius: rem(10);
 		padding: rem(16);
+
+		&[data-disabled='true']{
+			pointer-events: none;
+			opacity: .5;
+		}
 	}
 }

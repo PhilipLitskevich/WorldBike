@@ -9,16 +9,16 @@
 	transition: background-color .3s ease;
 	color: $lightColor;
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: $accentHoverColor;
-		}
-	}
-	&:active	{
+	&:active:not(*:disabled)	{
 		background-color: $accentActiveColor;
 	}
 	&._fw {
 		width: 100%;
+	}
+
+	&:disabled{
+		opacity: .5;
+		cursor: not-allowed;
 	}
 }
 
@@ -48,7 +48,7 @@
 	}
 
 	@media (any-hover: hover) {
-		&:hover {
+		&:hover:not(*:disabled) {
 			background-color: $accentHoverColor;
 			color: $lightColor;
 			&::before {

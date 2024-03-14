@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Пользовательское соглашение"
+"title":"Корзина"
 })
 
 <body>
 	@@include('html/_loader.htm',{})
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+		@@include('html/_header.htm',{
+			"class": ""
+		})
 		<main class="page page-cart">
 			<div class="page__container">
 				<nav class="breadcrambs breadcrambs-dark">
@@ -29,10 +31,11 @@
 					<div class="cart__wrapper">
 						<div class="cart__content content-cart">
 							<div class="content-cart__actions">
-								<a href="#" class="content-cart__actions-link">Вернуться к покупкам</a>
+								<a href="catalog.html" class="content-cart__actions-link">Вернуться к покупкам</a>
 								<button class="content-cart__actions-button" id="clean-cart">Очистить корзину</button>
 							</div>
 							<ul class="content-cart__list">
+
 								<!-- <li class="content-cart__item">
 									<article class="content-cart__product cart-product">
 										<img src="@img/bikes/bike-1.jpg" alt="продукт" class="cart-product__image">
@@ -57,6 +60,7 @@
 										</button>
 									</article>
 								</li>-->
+
 							</ul>
 						</div>
 						<div class="cart__result cart-result">
@@ -78,7 +82,7 @@
 									<dd id="total-price">0 ₽</dd>
 								</div>
 							</dl>
-							<button class="cart-result__button button">Оформить заказ</button>
+							<a href="order.html" class="cart-result__button button">Оформить заказ</a>
 						</div>
 					</div>
 				</div>

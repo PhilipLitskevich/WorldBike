@@ -18,7 +18,7 @@ body[style*="padding-right: 17px"] {
 
 //====================================================================================================
 .header {
-	position: relative;
+	position: absolute;
 	// position: fixed;
 	z-index: 100;
 	inset: 0 0 auto 0;
@@ -26,9 +26,21 @@ body[style*="padding-right: 17px"] {
 	@include adaptiveValue("padding-top", 28, 33, $containerWidth, 360, 1);
 	@include adaptiveValue("padding-bottom", 28, 32, $containerWidth, 360, 1);
 
-	&._absolute {
+	
+
+	&._transparrent:not(._header-scroll ) {
 		position: absolute;
 		background-color: transparent;
+		transition: background-color .3s ease;
+	}
+
+	&._header-scroll {
+		position: fixed;
+		transition: transform .3s ease;
+	}
+
+	&.hide{
+		transform: translateY(-100%);
 	}
 
 	// .header__container
@@ -63,6 +75,7 @@ body[style*="padding-right: 17px"] {
 
 
 .catalog-menu {
+	order: -1;
 	@include adaptiveValue("margin-right", 74, 15, $containerWidth, 780, 1);
 
 	li a {

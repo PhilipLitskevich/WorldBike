@@ -221,7 +221,7 @@ body::after {
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
-	
+
 		&:last-child {
 			margin-bottom: rem(16);
 		}
@@ -249,7 +249,7 @@ body::after {
 
 	// .thankfulness__img
 	&__img {
-		margin: 0 auto ;
+		margin: 0 auto;
 		@include adaptiveValue("margin-bottom", 32, 24, $containerWidth, 479.98, 1);
 		@include adaptiveValue("width", 98, 72, $containerWidth, 479.98, 1);
 		height: auto;
@@ -263,4 +263,88 @@ body::after {
 	}
 }
 
-.close {}
+.successful-order {
+
+	// .successful-__content
+	&__content {
+		max-width: rem(515);
+		@include adaptiveValue("padding-top", 48, 65);
+		@include adaptiveValue("padding-right", 48, 20);
+		@include adaptiveValue("padding-bottom", 56, 20);
+		@include adaptiveValue("padding-left", 48, 20);
+	}
+
+	// .successful-order__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 19, 16);
+	}
+
+	// .successful-order__text
+	&__text {
+		font-weight: 400;
+		font-size: rem(16);
+		line-height: 160%;
+		color: $light-grey;
+
+		@include adaptiveValue("margin-bottom", 40, 24);
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+
+	// .successful-order__link
+	&__link {
+		width: 100%;
+		justify-content: center;
+		border-radius: rem(10);
+	}
+}
+
+.successful-application {
+	// .successful-application__wrapper
+	&__wrapper {
+	}
+	// .successful-application__content
+	&__content {
+		// @include adaptiveValue("max-width", 650, 525);
+		max-width: rem(525);
+
+		@include adaptiveValue("padding-top", 104, 80, $containerWidth, 479.98, 1);
+		@include adaptiveValue("padding-right", 48, 20);
+		@include adaptiveValue("padding-bottom", 80, 60);
+		@include adaptiveValue("padding-left", 48, 20);
+		text-align: center;
+	}
+	// .successful-application__close
+	&__close {
+	}
+	// .successful-application__img
+	&__img {
+		margin: 0 auto;
+		@include adaptiveValue("margin-bottom", 32, 24, $containerWidth, 479.98, 1);
+		@include adaptiveValue("width", 98, 72, $containerWidth, 479.98, 1);
+		height: auto;
+		aspect-ratio: 1/1;
+		display: block;
+	}
+	// .successful-application__title
+	&__title {
+		@include adaptiveValue("margin-bottom", 19, 16);
+	}
+	// .successful-application__text
+	&__text {
+		font-weight: 400;
+		font-size: rem(18);
+		line-height: 160%;
+		color: $light-grey;
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+}

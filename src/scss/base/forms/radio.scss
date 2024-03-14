@@ -9,7 +9,7 @@
 		cursor: pointer;
 
 		&:not(:last-child) {
-			margin-bottom: em(5);
+			margin-bottom: em(16);
 		}
 	}
 
@@ -24,10 +24,8 @@
 			box-shadow: 0 0 5px #000;
 		}
 
-		&:checked+.options__label:before {}
-
-		&:checked+.options__label:after {
-			transform: scale(1);
+		&:checked+.options__label:before {
+			border: rem(9) solid $accentColor;
 		}
 	}
 
@@ -40,25 +38,13 @@
 
 		&:before {
 			content: "";
-			align-self: flex-start;
-			width: 20px;
-			height: 20px;
-			flex: 0 0 20px;
+			transition: border .3s ease;
+			align-self: center;
+			width: 24px;
+			height: 24px;
+			flex: 0 0 24px;
 			border-radius: 50%;
 			border: 1px solid #a7a9ac;
-		}
-
-		&:after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			transform: scale(0);
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background-color: #77243a;
-			position: absolute;
-			left: 5px;
-			top: 5px;
 		}
 	}
 
@@ -67,7 +53,6 @@
 }
 
 .merchandise-size {
-
 	// .merchandise-size__list
 	&__list {
 		display: flex;
@@ -148,7 +133,6 @@
 }
 
 .merchandise-colors {
-
 	// .merchandise-colors__list
 	&__list {
 		display: flex;

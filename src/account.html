@@ -7,7 +7,9 @@
 <body>
 	@@include('html/_loader.htm',{})
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+		@@include('html/_header.htm',{
+			"class": ""
+		})
 		<main class="page">
 			<div class="account">
 				<div data-tabs data-tabs-hash data-tabs-animate="1000" class="account__container">
@@ -235,7 +237,7 @@
 								<label class="account-form__input-label">
 									<span>E-mail</span>
 									<div class="input-wrapper">
-										<input autocomplete="off" type="email" name="Отображаемое имя"
+										<input autocomplete="off" type="email" name="E-mail"
 											data-error="E-mail введен не корректно" class="input input-high" maxlength="50" data-validate
 											data-required="email">
 									</div>

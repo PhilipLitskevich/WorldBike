@@ -7,13 +7,15 @@
 <body>
 	@@include('html/_loader.htm',{})
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+		@@include('html/_header.htm',{
+			"class": ""
+		})
 		<main class="page">
 			<div class="page__container">
 				<nav class="breadcrambs breadcrambs-dark">
 					<ul class="breadcrambs__list">
 						<li class="breadcrambs__item">
-							<a href="#" class="breadcrambs__link">Главная</a>
+							<a href="home.html" class="breadcrambs__link">Главная</a>
 						</li>
 						<li class="breadcrambs__item">
 							<span href="#" class="breadcrambs__current">Пользовательское соглашение</span>
