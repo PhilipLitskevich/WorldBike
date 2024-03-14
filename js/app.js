@@ -14007,28 +14007,85 @@ PERFORMANCE OF THIS SOFTWARE.
         window.addEventListener("load", (function(e) {
             initMap();
         }));
-        const products = document.querySelectorAll(".product");
-        if (products) products.forEach((el => {
-            let currentProduct = el;
-            const imageSwitchItems = currentProduct.querySelectorAll(".image-switch__item");
-            const imagePagination = currentProduct.querySelector(".image-pagination");
-            if (imageSwitchItems.length > 1) imageSwitchItems.forEach(((el, index) => {
-                el.setAttribute("data-index", index);
-                imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? "image-pagination__item--active" : ""}" data-index="${index}"></li>`;
-                el.addEventListener("mouseenter", (e => {
-                    currentProduct.querySelectorAll(".image-pagination__item").forEach((el => {
-                        el.classList.remove("image-pagination__item--active");
-                    }));
-                    currentProduct.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add("image-pagination__item--active");
-                }));
-                el.addEventListener("mouseleave", (e => {
-                    currentProduct.querySelectorAll(".image-pagination__item").forEach((el => {
-                        el.classList.remove("image-pagination__item--active");
-                    }));
-                    currentProduct.querySelector(`.image-pagination__item[data-index="0"]`).classList.add("image-pagination__item--active");
+        const wrapper = document.querySelector(".wrapper");
+        const header = document.querySelector("header.header");
+        if (!header.classList.contains("_transparrent")) {
+            wrapper.style.paddingTop = header.offsetHeight + "px";
+            window.addEventListener("resize", (() => {
+                wrapper.style.paddingTop = header.offsetHeight + "px";
+            }));
+        }
+        const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+        let scrollDirection = 0;
+        const containHide = () => header.classList.contains("hide");
+        const containScroll = () => header.classList.contains("_header-scroll");
+        let visible = false;
+        window.addEventListener("scroll", (e => {
+            const scrollTop = window.scrollY;
+            if (scrollTop >= startPoint) {
+                if (!containScroll() && !visible) {
+                    visible = true;
+                    header.style.opacity = 0;
+                    header.classList.add("_header-scroll");
+                    !containHide() ? header.classList.add("hide") : null;
+                    setTimeout((() => {
+                        header.removeAttribute("style");
+                    }), 300);
+                }
+                if (scrollTop > scrollDirection && !containHide()) !containHide() ? header.classList.add("hide") : null; else if (scrollTop < scrollDirection && containHide()) containHide() ? header.classList.remove("hide") : null;
+            } else if (scrollDirection < 15 && containScroll()) {
+                header.classList.remove("_header-scroll");
+                containHide() ? header.classList.remove("hide") : null;
+                visible = false;
+            }
+            scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+        }));
+        function videoInit() {
+            const videos = document.querySelectorAll(".video");
+            if (videos.length < 1) return;
+            videos.forEach((video => {
+                const pictureId = video.dataset.pictureId;
+                const videoId = video.dataset.videoId;
+                video.insertAdjacentHTML("afterbegin", buildFacade(pictureId));
+                const button = video.querySelector(".video-button");
+                button.addEventListener("click", (() => {
+                    video.querySelector(".video__facade").removeChild(button);
+                    video.insertAdjacentHTML("afterbegin", buildIframe(videoId));
                 }));
             }));
-        }));
+            function buildFacade(pictureId) {
+                return `\n\t\t<div class="video__facade">\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source srcset="https://img.youtube.com/vi_webp/${pictureId}/maxresdefault.webp" type="image/webp">\n\t\t\t\t\t\t\t\t\t<img class="video__content" src="https://img.youtube.com/vi/${pictureId}/maxresdefault.jpg" alt="Превью">\n\t\t\t\t\t\t\t\t</picture>\n\t\n\t\t\t\t\t\t\t\t<button class="video__button video-button">\n\t\t\t\t\t\t\t\t\t<svg class="video-button__icon">\n\t\t\t\t\t\t\t\t\t\t<use xlink:href="img/icons/icons.svg#svg-video-button"></use>\n\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t</button>\n\t\t</div>\n\t\t`;
+            }
+            function buildIframe(videoId) {
+                return `\n\t\t<iframe class="video__iframe"\n\t\t\tsrc="https://www.youtube.com/embed/${videoId}?autoplay=1"\n\t\t\ttitle="YouTube video player"\n\t\t\tallow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>\n\t\t</iframe>\n\t\t`;
+            }
+        }
+        videoInit();
+        function productCardsInit() {
+            const products = document.querySelectorAll(".product");
+            if (products) products.forEach((el => {
+                let currentProduct = el;
+                const imageSwitchItems = currentProduct.querySelectorAll(".image-switch__item");
+                const imagePagination = currentProduct.querySelector(".image-pagination");
+                if (imageSwitchItems.length > 1) imageSwitchItems.forEach(((el, index) => {
+                    el.setAttribute("data-index", index);
+                    imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? "image-pagination__item--active" : ""}" data-index="${index}"></li>`;
+                    el.addEventListener("mouseenter", (e => {
+                        currentProduct.querySelectorAll(".image-pagination__item").forEach((el => {
+                            el.classList.remove("image-pagination__item--active");
+                        }));
+                        currentProduct.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add("image-pagination__item--active");
+                    }));
+                    el.addEventListener("mouseleave", (e => {
+                        currentProduct.querySelectorAll(".image-pagination__item").forEach((el => {
+                            el.classList.remove("image-pagination__item--active");
+                        }));
+                        currentProduct.querySelector(`.image-pagination__item[data-index="0"]`).classList.add("image-pagination__item--active");
+                    }));
+                }));
+            }));
+        }
+        productCardsInit();
         if (isMobile.any) {
             let arrow = document.querySelectorAll(".menu-spoller__button");
             for (let i = 0; i < arrow.length; i++) {
@@ -14095,7 +14152,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 cloneSlide.classList.add("clone");
                 originalSlide.parentNode.insertBefore(cloneSlide, originalSlide.nextSibling);
                 partners.classList.add("_active");
-            })); else console.log("Ой, кажется на странице нет секции партнеров");
+            }));
         }
         partnersInit();
         function initSort() {
@@ -14214,7 +14271,7 @@ PERFORMANCE OF THIS SOFTWARE.
             if (currentForm.classList.contains("form-quick")) {
                 flsModules.popup.close();
                 setTimeout((() => {
-                    flsModules.popup.open("#thankfulness");
+                    flsModules.popup.open("#successful-application");
                 }), 500);
             } else if (currentForm.classList.contains("contact-us__form")) alert("Сообщение успешно отправлено"); else if (currentForm.classList.contains("personal-information__form")) alert("Данные успешно изменены"); else if (currentForm.classList.contains("account-password__form")) alert("Пароль успешно изменен");
         }));
@@ -14269,7 +14326,10 @@ PERFORMANCE OF THIS SOFTWARE.
             }
             function addProductToFavorites(product) {
                 let copyProduct = Object.assign({}, product);
-                if (favoriteList) favoriteList.insertAdjacentHTML("afterbegin", generateFavoriteProduct(copyProduct));
+                if (favoriteList) {
+                    favoriteList.insertAdjacentHTML("afterbegin", generateFavoriteProduct(copyProduct));
+                    productCardsInit();
+                }
                 printQuantity();
             }
             favoriteItems.forEach((item => {
@@ -14290,10 +14350,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
                 function countryVerification(copyProduct) {
                     if (copyProduct.country) return `<div class="product__country">\n\t\t\t\t<img src="${copyProduct.country.url}" alt="${copyProduct.country.alt}">\n\t\t\t</div>`; else return "";
-                }
-                function loadCartItems() {
-                    let storedItems = localStorage.getItem("cart-items");
-                    if (storedItems) return JSON.parse(storedItems); else return [];
                 }
                 let cartItems = loadCartItems();
                 let disabled;
@@ -14396,6 +14452,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     addProductToFavorites(product);
                     selecteButton(product.id);
                     printQuantity();
+                    productCardsInit();
                     if (favoriteItems) favoriteItems.forEach((item => {
                         setTimeout(selecteButton, 1e3, item.id);
                     }));
@@ -14408,6 +14465,14 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         }
         favoriteInit();
+        function loadCartItems() {
+            let storedItems = localStorage.getItem("cart-items");
+            if (storedItems) return JSON.parse(storedItems); else return [];
+        }
+        function normalPrice(str) {
+            const formattedNumber = String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
+            return formattedNumber + " ₽";
+        }
         function cartInit() {
             const cartButton = document.querySelectorAll(".cart-button");
             const merchendiseСartButton = document.querySelector(".merchendise-cart-button");
@@ -14420,10 +14485,6 @@ PERFORMANCE OF THIS SOFTWARE.
             let fullPriceVar = 0;
             let discountVar = 0;
             let totalPriceVar = 0;
-            function loadCartItems() {
-                let storedItems = localStorage.getItem("cart-items");
-                if (storedItems) return JSON.parse(storedItems); else return [];
-            }
             let cartItems = loadCartItems();
             function removeObjectById(id) {
                 cartItems = cartItems.filter((function(obj) {
@@ -14431,10 +14492,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 }));
             }
             const priceWithoutSpaces = str => str.replace(/\s/g, "");
-            function normalPrice(str) {
-                const formattedNumber = String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
-                return formattedNumber + " ₽";
-            }
             function plusPrice(priceVar, price) {
                 return parseInt(priceVar) + parseInt(price);
             }
@@ -14445,9 +14502,17 @@ PERFORMANCE OF THIS SOFTWARE.
                 discountVar = fullPriceVar - totalPriceVar;
             }
             function printQuantity() {
+                const orderButton = document.querySelector(".cart-result__button");
                 let quantity = cartItems.reduce(((accumulator, obj) => accumulator + parseInt(obj.quantity)), 0);
                 cartQuantity.textContent = quantity;
-                quantity > 0 ? cartQuantity.parentNode.classList.add("active") : cartQuantity.parentNode.classList.remove("active");
+                console.log(orderButton);
+                if (quantity > 0) {
+                    cartQuantity.parentNode.classList.add("active");
+                    if (orderButton) orderButton.dataset.disabled = false;
+                } else {
+                    cartQuantity.parentNode.classList.remove("active");
+                    if (orderButton) orderButton.dataset.disabled = true;
+                }
             }
             printQuantity();
             function disabledButton(id) {
@@ -14603,6 +14668,117 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         }
         cartInit();
+        function order() {
+            if (!document.querySelector(".order")) return;
+            let cartItems = loadCartItems();
+            const quantityElem = document.querySelector(".order-result__quantity span");
+            let quantity = cartItems.reduce(((accumulator, obj) => accumulator + parseInt(obj.quantity)), 0);
+            function morph(int, array) {
+                return (array = array || [ "товар", "товара", "товаров" ]) && array[int % 100 > 4 && int % 100 < 20 ? 2 : [ 2, 0, 1, 1, 1, 2 ][int % 10 < 5 ? int % 10 : 5]];
+            }
+            quantityElem.textContent = `${quantity} ${morph(quantity)}`;
+            const sumElem = document.querySelector(".order-result__sum");
+            let sum = 0;
+            if (cartItems.length > 0) cartItems.forEach((product => {
+                sum += product.currentPrice * product.quantity;
+            }));
+            sumElem.textContent = normalPrice(sum);
+            const buttonSubmit = document.querySelector(".form-order__submit-button");
+            console.log(buttonSubmit);
+            console.log(sum < 1);
+            console.log(quantity);
+            if (sum < 1 || quantity < 1) {
+                console.log("должно работать");
+                buttonSubmit.disabled = true;
+            }
+            const addressResultElem = document.getElementById("result-address");
+            const nameResultElem = document.getElementById("result-name");
+            const phoneResultElem = document.getElementById("result-phone");
+            const emailResultElem = document.getElementById("result-email");
+            const firstNameInput = document.getElementById("input-first-name");
+            const lastNameInput = document.getElementById("input-last-name");
+            const cityInput = document.getElementById("input-city");
+            const streetInput = document.getElementById("input-street");
+            const houseInput = document.getElementById("input-house");
+            const apartmentInput = document.getElementById("input-apartment");
+            const phoneInput = document.getElementById("input-phone");
+            const emailInput = document.getElementById("input-email");
+            function buildAddress() {
+                let city;
+                cityInput.value !== "" ? city = cityInput.value + "," : city = "";
+                let street;
+                streetInput.value !== "" ? street = "ул. " + streetInput.value + "," : street = "";
+                let house;
+                houseInput.value !== "" ? house = "д. " + houseInput.value + "," : house = "";
+                let apartment;
+                apartmentInput.value !== "" ? apartment = "кв. " + apartmentInput.value : apartment = "";
+                addressResultElem.textContent = `${city} ${street} ${house} ${apartment}`;
+            }
+            buildAddress();
+            function buildName() {
+                let firstName = firstNameInput.value;
+                let lastName = lastNameInput.value;
+                let fullName = firstName + " " + lastName;
+                nameResultElem.textContent = fullName;
+                return fullName;
+            }
+            buildName();
+            phoneResultElem.textContent = phoneInput.value;
+            emailResultElem.textContent = emailInput.value;
+            firstNameInput.addEventListener("change", buildName);
+            lastNameInput.addEventListener("change", buildName);
+            cityInput.addEventListener("change", buildAddress);
+            streetInput.addEventListener("change", buildAddress);
+            houseInput.addEventListener("change", buildAddress);
+            apartmentInput.addEventListener("change", buildAddress);
+            phoneInput.addEventListener("change", (() => {
+                phoneResultElem.textContent = phoneInput.value;
+            }));
+            emailInput.addEventListener("change", (() => {
+                emailResultElem.textContent = emailInput.value;
+            }));
+            const deliveryElem = document.querySelector(".order-result__delivery");
+            deliveryElem.textContent = document.querySelector('.options__input[name="delivery"]:checked').closest(".options__item").querySelector(".options__text").textContent;
+            const deliveryOptions = document.querySelectorAll('.options__input[name="delivery"]');
+            deliveryOptions.forEach((option => {
+                option.addEventListener("change", (() => {
+                    if (option.value = 1) deliveryElem.textContent = option.closest(".options__item").querySelector(".options__text").textContent;
+                }));
+            }));
+            const formOrder = document.querySelector(".form-order");
+            formOrder.addEventListener("submit", (e => {
+                e.preventDefault();
+                let self = e.currentTarget;
+                let formData = new FormData(self);
+                let name = buildName();
+                let phone = phoneInput.value;
+                let email = emailInput.value;
+                let address = addressResultElem.textContent;
+                let comment = self.querySelector(".form-order__textarea").value;
+                formData.append("Товары", JSON.stringify(cartItems));
+                formData.append("Имя", name);
+                formData.append("Телефон", phone);
+                formData.append("Email", email);
+                formData.append("Адрес", address);
+                formData.append("Комментарий к заказу", comment);
+                let xhr = new XMLHttpRequest;
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) if (xhr.status === 200) console.log("Отправлено");
+                };
+                xhr.open("POST", self.getAttribute("action "), true);
+                xhr.send(formData);
+                for (var pair of formData.entries()) console.log(pair[0] + ": " + pair[1]);
+                localStorage.removeItem("cart-items");
+                cartItems = [];
+                const cartQuantity = document.querySelector(".actions-header__cart-quantity");
+                cartQuantity.parentNode.classList.remove("active");
+                cartQuantity.textContent = "0";
+                sumElem.textContent = normalPrice(0);
+                quantityElem.textContent = `${0} ${morph(0)}`;
+                buttonSubmit.setAttribute.disabled;
+            }));
+        }
+        order();
         window["FLS"] = true;
         isWebp();
         addTouchClass();

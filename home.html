@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240305140933">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240314135723">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -201,7 +201,7 @@
 		</svg>
 	</div>
 	<div class="wrapper">
-		<header class="header _absolute">
+		<header class="header _transparrent" data-scroll="800">
 			<div class="header__container">
 				<a href="home.html" class="header__logo"><img src="img/logo.svg" alt="logo"></a>
 				<div class="header__menu menu">
@@ -373,7 +373,7 @@
 				<li class="more-menu__item"><a href="about.html" class="more-menu__link">О нас</a></li>
 				<li class="more-menu__item"><a href="workshop.html" class="more-menu__link">Веломастерская</a></li>
 				<li class="more-menu__item"><a href="storage.html" class="more-menu__link">Хранение</a></li>
-				<li class="more-menu__item"><a href="#" class="more-menu__link">Гарантии</a></li>
+				<li class="more-menu__item"><a href="guarantees.html" class="more-menu__link">Гарантии</a></li>
 				<li class="more-menu__item"><a href="agreement.html" class="more-menu__link">Пользовательское соглашение</a></li>
 				<li class="more-menu__item"><a href="delivery.html" class="more-menu__link">Доставка и оплата</a></li>
 				<li class="more-menu__item"><a href="blog.html" class="more-menu__link">Блог</a></li>
@@ -1011,7 +1011,7 @@
 					</div>
 				</div>
 				<div class="video-section__wrapper">
-					<iframe class="video-section__video" src="https://www.youtube.com/embed/F5ZKI-g-_qo?si=SW0So0WPrKuMDMnA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<div class="video-section__video video" data-picture-id="F5ZKI-g-_qo" data-video-id="F5ZKI-g-_qo?si=SW0So0WPrKuMDMnA"></div>
 				</div>
 				<div class="video-section__benefit benefits">
 					<div class="benefits__container">
@@ -1777,15 +1777,15 @@
 						<div class="articles-slider__slide swiper-slide">
 							<article class="article-card">
 								<a href="#" class="article-card__img-link">
-									<div class="article-card__img" style="background-image: url('img/articles/3.jpg');">
+									<div class="article-card__img" style="background-image: url('img/articles/@@url');">
 									</div>
 								</a>
 
 								<div class="article-card__content">
-									<time class="article-card__date" datetime="2023-01-23">23.01.2023</time>
-									<a href="#" class="article-card__tag-link">#обзор</a>
+									<time class="article-card__date" datetime="@@date.attr">@@date.text</time>
+									<a href="#" class="article-card__tag-link">@@tag</a>
 									<h3 class="article-card__title">
-										<a href="#">Все новые гоночные велосипеды BMC Fourstroke XC оснащены волшебным подседельным штырем Autodrop.</a>
+										<a href="#">@@title</a>
 									</h3>
 									<a href="#" class="article-card__more-link">Подробнее</a>
 								</div>
@@ -1811,15 +1811,15 @@
 						<div class="articles-slider__slide swiper-slide">
 							<article class="article-card">
 								<a href="#" class="article-card__img-link">
-									<div class="article-card__img" style="background-image: url('img/articles/5.jpg');">
+									<div class="article-card__img" style="background-image: url('img/articles/@@url');">
 									</div>
 								</a>
 
 								<div class="article-card__content">
-									<time class="article-card__date" datetime="2023-01-25">25.01.2023</time>
-									<a href="#" class="article-card__tag-link">#обзор</a>
+									<time class="article-card__date" datetime="@@date.attr">@@date.text</time>
+									<a href="#" class="article-card__tag-link">@@tag</a>
 									<h3 class="article-card__title">
-										<a href="#">Pinarello Dogma F развивает карбоновый шоссейный велосипед следующего поколения, сохраняя возможность выбора ободного тормоза!</a>
+										<a href="#">@@title</a>
 									</h3>
 									<a href="#" class="article-card__more-link">Подробнее</a>
 								</div>
@@ -1959,7 +1959,7 @@
 								</li>
 								<li class="navigations-footer__item"><a href="storage.html" class="navigations-footer__link footer-link">Хранение</a>
 								</li>
-								<li class="navigations-footer__item"><a href="#" class="navigations-footer__link footer-link">Гарантии</a>
+								<li class="navigations-footer__item"><a href="guarantees.html" class="navigations-footer__link footer-link">Гарантии</a>
 								</li>
 							</ul>
 						</nav>
@@ -1999,7 +1999,7 @@
 		</footer>
 	</div>
 	<div id="thankfulness" aria-hidden="true" class="popup thankfulness">
-		<div class="popup__wrapper popup-quick__wrapper">
+		<div class="popup__wrapper thankfulness__wrapper">
 			<div class="popup__content thankfulness__content">
 				<button data-close type="button" class="popup__close thankfulness__close">
 					<svg class="close">
@@ -2013,6 +2013,48 @@
 				<div class="thankfulness__text title">
 					<p>
 						Благодарим за подписку!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="successful-order" aria-hidden="true" class="popup successful-order">
+		<div class="popup__wrapper successful-order__wrapper">
+			<div class="popup__content successful-order__content">
+				<button data-close type="button" class="popup__close successful-order__close">
+					<svg class="close">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<h2 class="successful-order__title title">Ваш заказ подтверждён</h2>
+				<div class="successful-order__text">
+					<p>
+						Lorem ipsum dolor sit amet consectetur. Congue malesuada quisque purus faucibus est adipiscing aliquam malesuada. Turpis ultricies diam at facilisis varius nunc lectus scelerisque enim. Nisl pulvinar adipiscing turpis ultricies posuere nibh faucibus.
+					</p>
+				</div>
+				<a href="#" class="successful-order__link button">Отследить заказ</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="successful-application" aria-hidden="true" class="popup successful-application">
+		<div class="popup__wrapper successful-application__wrapper">
+			<div class="popup__content successful-application__content">
+				<button data-close type="button" class="popup__close successful-application__close">
+					<svg class="close">
+						<use xlink:href="img/icons/icons.svg#svg-close"></use>
+					</svg>
+				</button>
+				<svg class="successful-application__img" width="98" height="99" viewBox="0 0 98 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect y="0.5" width="98" height="98" rx="49" fill="#F57520" />
+					<path d="M21 51.9091L38.6897 69.5L78 26.5" stroke="white" stroke-width="8.16667" />
+				</svg>
+
+				<h2 class="successful-application__title title">Заявка успешно отправлена</h2>
+				<div class="successful-application__text">
+					<p>
+						Наш менеджер скоро свяжется с вами!
 					</p>
 				</div>
 			</div>
@@ -2069,7 +2111,7 @@
 	</div>
 
 
-	<script src="js/app.min.js?_v=20240305140933"></script>
+	<script src="js/app.min.js?_v=20240314135723"></script>
 </body>
 
 </html>
