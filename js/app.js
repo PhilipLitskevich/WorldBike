@@ -14044,17 +14044,16 @@ PERFORMANCE OF THIS SOFTWARE.
             const videos = document.querySelectorAll(".video");
             if (videos.length < 1) return;
             videos.forEach((video => {
-                const pictureId = video.dataset.pictureId;
                 const videoId = video.dataset.videoId;
-                video.insertAdjacentHTML("afterbegin", buildFacade(pictureId));
+                video.insertAdjacentHTML("afterbegin", buildFacade(videoId));
                 const button = video.querySelector(".video-button");
                 button.addEventListener("click", (() => {
                     video.querySelector(".video__facade").removeChild(button);
                     video.insertAdjacentHTML("afterbegin", buildIframe(videoId));
                 }));
             }));
-            function buildFacade(pictureId) {
-                return `\n\t\t<div class="video__facade">\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source srcset="https://img.youtube.com/vi_webp/${pictureId}/maxresdefault.webp" type="image/webp">\n\t\t\t\t\t\t\t\t\t<img class="video__content" src="https://img.youtube.com/vi/${pictureId}/maxresdefault.jpg" alt="Превью">\n\t\t\t\t\t\t\t\t</picture>\n\t\n\t\t\t\t\t\t\t\t<button class="video__button video-button">\n\t\t\t\t\t\t\t\t\t<svg class="video-button__icon">\n\t\t\t\t\t\t\t\t\t\t<use xlink:href="img/icons/icons.svg#svg-video-button"></use>\n\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t</button>\n\t\t</div>\n\t\t`;
+            function buildFacade(videoId) {
+                return `\n\t\t<div class="video__facade">\n\t\t\t<picture>\n\t\t\t\t<source srcset="https://img.youtube.com/vi_webp/${videoId}/maxresdefault.webp" type="image/webp">\n\t\t\t\t<img class="video__content" src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Превью">\n\t\t\t</picture>\n\t\t\t\n\t\t\t<button class="video__button video-button">\n\t\t\t\t<svg class="video-button__icon">\n\t\t\t\t\t<use xlink:href="img/icons/icons.svg#svg-video-button"></use>\n\t\t\t\t</svg>\n\t\t\t</button>\n\t\t</div>\n\t\t`;
             }
             function buildIframe(videoId) {
                 return `\n\t\t<iframe class="video__iframe"\n\t\t\tsrc="https://www.youtube.com/embed/${videoId}?autoplay=1"\n\t\t\ttitle="YouTube video player"\n\t\t\tallow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>\n\t\t</iframe>\n\t\t`;
