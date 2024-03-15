@@ -27,6 +27,14 @@
 		&:checked+.options__label:before {
 			border: rem(9) solid $accentColor;
 		}
+		
+		&:disabled+.options__label {
+			pointer-events: none;
+			opacity: .5;
+			&:before{
+				opacity: .5;
+			}
+		}
 	}
 
 	// .options__label
@@ -161,6 +169,32 @@
 
 		&:has(.merchandise-colors__input:checked) {
 			border-color: #e5e5e5;
+		}
+		&:has(.merchandise-colors__input:disabled) {
+			pointer-events: none;
+			opacity: .5;
+
+			position: relative;
+			overflow: hidden;
+			border: none;
+			&::after, &::before{
+				content:'';
+				position: absolute;
+				top: calc(50% - rem(2));
+				right: rem(-6);
+				left: rem(-6);
+
+				height: rem(4);
+				width: calc(100% + rem(12));
+
+				background-color: #e5e5e5;
+			}
+			&::after{
+				transform: rotate(45deg);
+			}
+			&::before{
+				transform: rotate(-45deg);
+			}
 		}
 
 		&:focus-within {

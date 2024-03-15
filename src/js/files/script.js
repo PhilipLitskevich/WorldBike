@@ -75,9 +75,8 @@ function videoInit() {
 	if (videos.length < 1) return;
 
 	videos.forEach(video => {
-		const pictureId = video.dataset.pictureId
 		const videoId = video.dataset.videoId
-		video.insertAdjacentHTML('afterbegin', buildFacade(pictureId))
+		video.insertAdjacentHTML('afterbegin', buildFacade(videoId))
 
 		const button = video.querySelector('.video-button');
 		button.addEventListener('click', () => {
@@ -86,19 +85,19 @@ function videoInit() {
 		})
 	})
 
-	function buildFacade(pictureId) {
+	function buildFacade(videoId) {
 		return `
 		<div class="video__facade">
-								<picture>
-									<source srcset="https://img.youtube.com/vi_webp/${pictureId}/maxresdefault.webp" type="image/webp">
-									<img class="video__content" src="https://img.youtube.com/vi/${pictureId}/maxresdefault.jpg" alt="Превью">
-								</picture>
-	
-								<button class="video__button video-button">
-									<svg class="video-button__icon">
-										<use xlink:href="img/icons/icons.svg#svg-video-button"></use>
-									</svg>
-								</button>
+			<picture>
+				<source srcset="https://img.youtube.com/vi_webp/${videoId}/maxresdefault.webp" type="image/webp">
+				<img class="video__content" src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Превью">
+			</picture>
+			
+			<button class="video__button video-button">
+				<svg class="video-button__icon">
+					<use xlink:href="img/icons/icons.svg#svg-video-button"></use>
+				</svg>
+			</button>
 		</div>
 		`
 	}

@@ -729,7 +729,7 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: $accentColor;
+			color: $accentColor;
 		}
 	}
 }
@@ -861,6 +861,12 @@
 
 	.offers__link {
 		color: $lightColor;
+
+		@media (any-hover: hover){
+			&:hover{
+				color: $accentColor;
+			}
+		}
 	}
 
 	.offers__button-prev,

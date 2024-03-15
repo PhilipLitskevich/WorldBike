@@ -149,7 +149,8 @@ body::after {
 	}
 
 	// .popup-quick__form
-	&__form {}
+	&__form {
+	}
 }
 
 .product-popup-quick {
@@ -215,6 +216,9 @@ body::after {
 	&__button {
 		width: 100%;
 		justify-content: center;
+
+		padding: rem(16);
+		border-radius: rem(10);
 	}
 
 	.input-wrapper {

@@ -14,7 +14,7 @@
 	}
 
 	&.title-small {
-		font-weight: 400;
+		font-weight: 500;
 		font-size: rem(40);
 		@include adaptiveValue("font-size", 40, 32, $containerWidth, 479.98, 1);
 		line-height: 123%;
@@ -114,6 +114,8 @@
 
 	// .video-button__icon
 	&__icon {
+		@include adaptiveValue("width", 121, 67);
+		@include adaptiveValue("height", 121, 67);
 		fill: $accentColor;
 	}
 
